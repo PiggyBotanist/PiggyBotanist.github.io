@@ -1,6 +1,6 @@
 # Piggy Botanist's Github Page
 
-This is the source code for my github page at [PiggyBotanist.github.io](#PiggyBotanist.github.io). This website is where I post educational content in the field of biology and computer science. The target audience is for people that knows little about biology, computer science, and bioinformatics. However, higher level content for research are also explored. 
+This is the source code for my github page at [PiggyBotanist.github.io](#https://piggybotanist.github.io/). This website is where I post educational content in the field of biology and computer science. The target audience is for people that knows little about biology, computer science, and bioinformatics. However, higher level content for research are also explored. 
 
 Note: This page is built using [Hugo](#https://gohugo.io/) with their template, and all content are written in markdown format
 
