@@ -55,9 +55,6 @@ Note: This page is built using [Hugo](#https://gohugo.io/) with their template, 
 
 8. **Deploy Your Site**:
    - Once you're satisfied with your site, you can deploy it to GitHub Pages or any other hosting service.
-   - To build your site for deployment, use:
-     ```bash
-     hugo
-     ```
-   - The generated site files will be located in the `public` directory.
+   - Please follow the content from hugo to do this: [here](#https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+   - Once complete you will be able to view your github website using <your_username>.github.io
 
