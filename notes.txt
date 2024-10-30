@@ -1,2 +1,7 @@
 Step 1: Create Hugo Website
 - run "hugo new site <folder_name> -f <format of the config file> --force"
+- next we can add the theme either using "hugo new theme <theme_name>" or download it online: https://themes.gohugo.io/
+
+
+Step 2: 
+- run environment "hugo server"
