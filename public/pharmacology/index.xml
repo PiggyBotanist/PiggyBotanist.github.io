@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Pharmacologies on My New Hugo Site</title>
+    <link>//localhost:1313/pharmacology/</link>
+    <description>Recent content in Pharmacologies on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Oct 2024 15:23:24 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/pharmacology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>General_abbreviations</title>
       <link>//localhost:1313/pharmacology/general_abbreviations/</link>
@@ -21,13 +21,6 @@
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
       <guid>//localhost:1313/pharmacology/general_history/</guid>
       <description>&lt;h1 id=&#34;history-of-pharmacology&#34;&gt;&#xD;&#xA;  History of Pharmacology&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#history-of-pharmacology&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;The field of pharmacology has a rich history that spans thousands of years, reflecting humanity&amp;rsquo;s quest to understand and manipulate the effects of drugs on the body. This tutorial will explore key milestones and developments in the history of pharmacology.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ancient-practices&#34;&gt;&#xD;&#xA;  Ancient Practices&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#ancient-practices&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Pharmacology can be traced back to ancient civilizations, where herbal remedies were used to treat various ailments. Early records from ancient Egypt, China, and India describe the use of plants and minerals in medicinal preparations. The Ebers Papyrus (circa 1550 BCE) from Egypt is one of the oldest medical texts, listing numerous remedies derived from plants.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>General_introduction</title>
-      <link>//localhost:1313/bioinformatics/general_introduction/</link>
-      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>//localhost:1313/bioinformatics/general_introduction/</guid>
-      <description>&lt;h1 id=&#34;introduction-to-bioinformatics&#34;&gt;&#xD;&#xA;  Introduction to Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;definition-of-bioinformatics&#34;&gt;&#xD;&#xA;  Definition of Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#definition-of-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The term &amp;ldquo;Bioinformatics,&amp;rdquo; first coined by Paulien Hogeweg and Ben Hesper in 1970, is now an interdisciplinary field that combines biology, computer science, mathematics, and statistics to analyze and interpret biological data such as DNA, RNA, and proteins.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;img/tutorials/bioinformatics/interdiscipline_venn_diagram.png&#34; alt=&#34;Venn Diagram of areas of studies&#34; /&gt;{:style=&amp;ldquo;max-width: 400px&amp;rdquo;}&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Figure: Venn Diagram of areas of studies&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;With computational power and deriving mathematical models, knowledge that would have taken traditional methods years to figure out can now be solved in months or even days.&lt;/p&gt;</description>
     </item>
     <item>
       <title>General_introduction</title>
