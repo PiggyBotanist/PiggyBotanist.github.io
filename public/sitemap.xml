@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>//localhost:1313/bioinformatics/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/general_abbreviations/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/general_history/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/bioinformatics/general_introduction/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/general_introduction/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/general_medication_origin/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/general_regulations/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/pharmacokinetics_introduction/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/pharmacology/</loc>
-    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/</loc>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    
+      <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/zh/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/he/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

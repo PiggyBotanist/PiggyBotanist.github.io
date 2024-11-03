@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bioinformatics on My New Hugo Site</title>
-    <link>//localhost:1313/bioinformatics/</link>
-    <description>Recent content in Bioinformatics on My New Hugo Site</description>
+    <title>Bioinformatics on Piggy Botanist</title>
+    <link>http://localhost:1313/bioinformatics/</link>
+    <description>Recent content in Bioinformatics on Piggy Botanist</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Wed, 30 Oct 2024 15:23:24 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>General_introduction</title>
-      <link>//localhost:1313/bioinformatics/general_introduction/</link>
+      <link>http://localhost:1313/bioinformatics/general_introduction/</link>
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>//localhost:1313/bioinformatics/general_introduction/</guid>
-      <description>&lt;h1 id=&#34;introduction-to-bioinformatics&#34;&gt;&#xD;&#xA;  Introduction to Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;definition-of-bioinformatics&#34;&gt;&#xD;&#xA;  Definition of Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#definition-of-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The term &amp;ldquo;Bioinformatics,&amp;rdquo; first coined by Paulien Hogeweg and Ben Hesper in 1970, is now an interdisciplinary field that combines biology, computer science, mathematics, and statistics to analyze and interpret biological data such as DNA, RNA, and proteins.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;img/tutorials/bioinformatics/interdiscipline_venn_diagram.png&#34; alt=&#34;Venn Diagram of areas of studies&#34; /&gt;{:style=&amp;ldquo;max-width: 400px&amp;rdquo;}&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Figure: Venn Diagram of areas of studies&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;With computational power and deriving mathematical models, knowledge that would have taken traditional methods years to figure out can now be solved in months or even days.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/bioinformatics/general_introduction/</guid>
+      <description>&lt;h1 id=&#34;introduction-to-bioinformatics&#34;&gt;&#xD;&#xA;  Introduction to Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;definition-of-bioinformatics&#34;&gt;&#xD;&#xA;  Definition of Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#definition-of-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The term &amp;ldquo;Bioinformatics,&amp;rdquo; first coined by Paulien Hogeweg and Ben Hesper in 1970, is now an interdisciplinary field that combines biology, computer science, mathematics, and statistics to analyze and interpret biological data such as DNA, RNA, and proteins.&lt;/p&gt;&#xA;&lt;p&gt;&#xD;&#xA;  &lt;img src=&#34;img/tutorials/bioinformatics/interdiscipline_venn_diagram.png&#34; alt=&#34;Venn Diagram of areas of studies&#34; /&gt;{:style=&amp;ldquo;max-width: 400px&amp;rdquo;}&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Figure: Venn Diagram of areas of studies&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;With computational power and deriving mathematical models, knowledge that would have taken traditional methods years to figure out can now be solved in months or even days.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,22 @@
+/* Styles for the profile picture */
+
+.profile-logo {
+    text-align: center; /* Center-align content within the container */
+}
+
+.logo-icon {
+    width: 80%; /* Make it responsive to the container's width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    display: block; /* Prevent any inline spacing issues */
+    margin: 0 auto; /* Center the image horizontally */
+    margin-top: 5%;
+}
+
+.profile-icon {
+    width: 100%;            /* Make it responsive to the container's width */
+    height: auto;           /* Maintain aspect ratio */
+    border-radius: 50%;     /* Make it circular */
+    object-fit: cover;      /* Ensure the image covers the area without distortion */
+    display: block;         /* Prevent any inline spacing issues */
+}

@@ -1,0 +1,33 @@
+<!--
+  This is template for hugo menus, accepts MenuEntity as context
+  https://gohugo.io/variables/menus/
+-->
+{{ if . }}
+  {{ template "book-menu-hugo" . }}
+{{ end }}
+
+{{ define "book-menu-hugo" }}
+<ul>
+  {{ range . }}
+  <li>
+    <a href="{{ .URL }}" {{ with .Params.class }}class="{{ . }}"{{ end }} {{ if not .Page }}target="_blank" rel="noopener"{{ end }}>
+      {{- .Pre -}}
+      {{ with .Page }}
+        {{ partial "docs/title" .Page }}
+      {{ else }}
+        {{ if eq .Name "Github" }} <!-- Condition for a specific name -->
+          <img src="{{ "images/icons/github.svg" | relURL }}" class="book-icon" alt="X icon" style="color: #333;"/>
+        {{ else if eq .Name "Linkedin" }} <!-- Another condition for Github -->
+          <img src="{{ "images/icons/linkedin.svg" | relURL }}" class="book-icon" alt="Github icon" style="color: #0077b5;"/>
+        {{ end }}
+        {{ .Name }}
+      {{ end }}
+      {{- .Post -}}
+    </a>
+    {{- with .Children }}
+      {{ template "book-menu-hugo" . }}
+    {{- end }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
