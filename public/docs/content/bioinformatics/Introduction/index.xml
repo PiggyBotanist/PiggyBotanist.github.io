@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Piggy Botanist</title>
+    <link>http://localhost:1313/docs/content/bioinformatics/Introduction/</link>
+    <description>Recent content on Piggy Botanist</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Oct 2024 15:23:24 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/content/bioinformatics/Introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Bioinformatics</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/Introduction/introduction_general/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/Introduction/introduction_general/</guid>
+      <description>&lt;h1 id=&#34;introduction-to-bioinformatics&#34;&gt;&#xD;&#xA;  Introduction to Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;definition-of-bioinformatics&#34;&gt;&#xD;&#xA;  Definition of Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#definition-of-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The term &amp;ldquo;Bioinformatics,&amp;rdquo; first coined by Paulien Hogeweg and Ben Hesper in 1970, is now an interdisciplinary field that combines biology, computer science, mathematics, and statistics to analyze and interpret biological data such as DNA, RNA, and proteins.&lt;/p&gt;&#xA;&lt;div style=&#34;text-align: center;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;http://localhost:1313/images/tutorials/bioinformatics/interdiscipline_venn_diagram.png&#34; alt=&#34;Image for search bar&#34; style=&#34;width: 300px;&#34; /&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;*Figure: Venn Diagram of areas of studies*&#xD;&#xA;&lt;p&gt;With computational power and deriving mathematical models, knowledge that would have taken traditional methods years to figure out can now be solved in months or even days.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

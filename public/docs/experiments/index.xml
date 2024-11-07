@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experiments on Piggy Botanist</title>
+    <link>http://localhost:1313/docs/experiments/</link>
+    <description>Recent content in Experiments on Piggy Botanist</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Oct 2024 15:23:24 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/experiments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maze Generator</title>
+      <link>http://localhost:1313/docs/experiments/maze_generator/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/experiments/maze_generator/</guid>
+      <description>&lt;div style=&#34;text-align: center;&#34;&gt;&#xD;&#xA;    &lt;div id=&#34;canvas&#34;&gt;&lt;/div&gt;&#xD;&#xA;    &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;script src=&#34;http://localhost:1313/experiments/maze_generator/sketch-v2.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;script src=&#34;http://localhost:1313/experiments/maze_generator/cell.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Snake Game</title>
+      <link>http://localhost:1313/docs/experiments/snake_game/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/experiments/snake_game/</guid>
+      <description>&lt;h1 id=&#34;the-classic-snake-game&#34;&gt;&#xD;&#xA;  The Classic Snake Game:&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#the-classic-snake-game&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;instructions&#34;&gt;&#xD;&#xA;  Instructions&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#instructions&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;To start the game, click on the &lt;strong&gt;Play&lt;/strong&gt; button. You can switch between &lt;strong&gt;Manual Mode&lt;/strong&gt; and &lt;strong&gt;AI Mode&lt;/strong&gt; by clicking the &lt;strong&gt;Switch to AI&lt;/strong&gt; button. In &lt;strong&gt;Manual Mode&lt;/strong&gt;, use the arrow keys to control the snake. In &lt;strong&gt;AI Mode&lt;/strong&gt;, the snake&amp;rsquo;s behavior is determined by the algorithm, and it will evolve over time.&lt;/p&gt;&#xA;&lt;p&gt;After the game ends, you can restart by clicking the &lt;strong&gt;Restart&lt;/strong&gt; button.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

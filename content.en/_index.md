@@ -14,10 +14,9 @@ If you have any questions about any specific topic related to *biology* or *comp
 To my knowledge there are currently no well documented website that systematically teaches people research oriented *biology* and *bioinformatics*. So, here is the website!
 
 **Current Available Topics**:
-- [Bioinformatics](https://github.com/PiggyBotanist)
-- [Biotechnologies](https://github.com/PiggyBotanist)
-- [Microbiology](https://github.com/PiggyBotanist)
-- [Pharmacology](https://github.com/PiggyBotanist)
+- [Bioinformatics](/docs/content/bioinformatics/)
+- [Biotechnologies](/docs/content/biotechnology)
+- [Pharmacology](/docs/content/pharmacology)
 
 All content created will be written by myself. 
 

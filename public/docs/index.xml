@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docs on Hugo Book</title>
+    <title>Docs on Piggy Botanist</title>
     <link>http://localhost:1313/docs/</link>
-    <description>Recent content in Docs on Hugo Book</description>
+    <description>Recent content in Docs on Piggy Botanist</description>
     <generator>Hugo</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/docs/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/about/</guid>
+      <description>&lt;h1 id=&#34;about-piggy-botanist&#34;&gt;&#xD;&#xA;  About Piggy Botanist:&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#about-piggy-botanist&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;My name is &lt;strong&gt;Jeremy Chang&lt;/strong&gt;, but you can call me Piggy Botanist.&lt;/p&gt;&#xA;&lt;p&gt;I earned my &lt;strong&gt;Bachelor of Science (BSc)&lt;/strong&gt; with a major in &lt;em&gt;Biomedical Science&lt;/em&gt; and a &lt;strong&gt;Master&amp;rsquo;s degree (MSc)&lt;/strong&gt; specializing in &lt;em&gt;Animal Science and Microbiology&lt;/em&gt; at the University of Guelph, where I studied from 2018 to 2023. I am currently pursuing a &lt;strong&gt;PhD&lt;/strong&gt; in the &lt;em&gt;Department of Computer Science at McGill University&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I consider myself neither a complete biologist nor a full-fledged computer scientist; rather, I embody a unique intersection of both fields. This interdisciplinary background has granted me valuable experience in biological experiments within a &lt;em&gt;wet lab&lt;/em&gt; environment, as well as in a traditional computer science lab focused on &lt;em&gt;algorithm development&lt;/em&gt;, &lt;em&gt;machine learning models&lt;/em&gt;, and &lt;em&gt;software implementations&lt;/em&gt;. These experiences have equipped me with a solid foundation in &lt;strong&gt;bioinformatics&lt;/strong&gt;, allowing me to bridge the gap between biology and computer science.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

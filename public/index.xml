@@ -6,63 +6,132 @@
     <description>Recent content in Welcome to My Website on Piggy Botanist</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Oct 2024 15:23:24 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>General_abbreviations</title>
-      <link>http://localhost:1313/pharmacology/general_abbreviations/</link>
+      <title>De Novo Assembly</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/01.de_novo_assembly/</link>
+      <pubDate>Wed, 30 Oct 2024 16:45:00 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/01.de_novo_assembly/</guid>
+      <description>&lt;h1 id=&#34;what-is-de-novo-assembly&#34;&gt;&#xD;&#xA;  What is De Novo Assembly?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-de-novo-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;De novo assembly&lt;/strong&gt; refers to the process of assembling short DNA or RNA sequence reads into longer contiguous sequences (contigs) without the need for a reference genome. This is particularly useful for sequencing novel genomes or species for which no prior reference sequences are available. The challenge in de novo assembly is to accurately piece together millions of short reads into a coherent and complete sequence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/docs/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/about/</guid>
+      <description>&lt;h1 id=&#34;about-piggy-botanist&#34;&gt;&#xD;&#xA;  About Piggy Botanist:&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#about-piggy-botanist&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;My name is &lt;strong&gt;Jeremy Chang&lt;/strong&gt;, but you can call me Piggy Botanist.&lt;/p&gt;&#xA;&lt;p&gt;I earned my &lt;strong&gt;Bachelor of Science (BSc)&lt;/strong&gt; with a major in &lt;em&gt;Biomedical Science&lt;/em&gt; and a &lt;strong&gt;Master&amp;rsquo;s degree (MSc)&lt;/strong&gt; specializing in &lt;em&gt;Animal Science and Microbiology&lt;/em&gt; at the University of Guelph, where I studied from 2018 to 2023. I am currently pursuing a &lt;strong&gt;PhD&lt;/strong&gt; in the &lt;em&gt;Department of Computer Science at McGill University&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I consider myself neither a complete biologist nor a full-fledged computer scientist; rather, I embody a unique intersection of both fields. This interdisciplinary background has granted me valuable experience in biological experiments within a &lt;em&gt;wet lab&lt;/em&gt; environment, as well as in a traditional computer science lab focused on &lt;em&gt;algorithm development&lt;/em&gt;, &lt;em&gt;machine learning models&lt;/em&gt;, and &lt;em&gt;software implementations&lt;/em&gt;. These experiences have equipped me with a solid foundation in &lt;strong&gt;bioinformatics&lt;/strong&gt;, allowing me to bridge the gap between biology and computer science.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reference-Guided Assembly</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/02.reference_guided_assembly/</link>
+      <pubDate>Wed, 30 Oct 2024 17:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/02.reference_guided_assembly/</guid>
+      <description>&lt;h1 id=&#34;what-is-reference-guided-assembly&#34;&gt;&#xD;&#xA;  What is Reference-Guided Assembly?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-reference-guided-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Reference-guided assembly&lt;/strong&gt; (also known as &lt;strong&gt;reference-based assembly&lt;/strong&gt;) is a process in which short sequence reads (such as those generated from next-generation sequencing platforms like Illumina) are mapped to a known reference genome to aid in the reconstruction of the genome or transcriptome of the organism of interest. This approach is commonly used when a reference genome is available for the species or a closely related species. It offers faster and more accurate assembly compared to de novo methods, especially for highly repetitive or complex regions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hybrid Assembly</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/03.hybrid_assembly/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/03.hybrid_assembly/</guid>
+      <description>&lt;h1 id=&#34;hybrid-assembly-in-sequence-assembly&#34;&gt;&#xD;&#xA;  Hybrid Assembly in Sequence Assembly&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#hybrid-assembly-in-sequence-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;what-is-hybrid-assembly&#34;&gt;&#xD;&#xA;  What is Hybrid Assembly?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-hybrid-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Hybrid assembly is a sequencing technique that combines the strengths of &lt;strong&gt;short-read&lt;/strong&gt; and &lt;strong&gt;long-read&lt;/strong&gt; sequencing technologies to produce more accurate and complete genome assemblies. By integrating the benefits of both read types, hybrid assembly helps overcome the limitations of using either approach alone.&lt;/p&gt;&#xA;&lt;h3 id=&#34;advantages-of-hybrid-assembly&#34;&gt;&#xD;&#xA;  &lt;strong&gt;Advantages of Hybrid Assembly:&lt;/strong&gt;&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#advantages-of-hybrid-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Short reads&lt;/strong&gt; (e.g., from Illumina sequencing) are highly accurate, cost-effective, and allow for high-depth sequencing. However, they struggle with assembling long, repetitive regions of the genome.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Long reads&lt;/strong&gt; (e.g., from PacBio or Oxford Nanopore) are capable of spanning through long repetitive regions and provide better resolution of structural variants, but they typically have higher error rates and lower throughput.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;how-hybrid-assembly-works&#34;&gt;&#xD;&#xA;  &lt;strong&gt;How Hybrid Assembly Works&lt;/strong&gt;&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#how-hybrid-assembly-works&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;Hybrid assembly typically involves the following steps:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quality Assessment in Sequence Assembly</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/04.quality_assessment/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/04.quality_assessment/</guid>
+      <description>&lt;h1 id=&#34;quality-assessment-in-sequence-assembly&#34;&gt;&#xD;&#xA;  Quality Assessment in Sequence Assembly&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#quality-assessment-in-sequence-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;what-is-quality-assessment-in-sequence-assembly&#34;&gt;&#xD;&#xA;  What is Quality Assessment in Sequence Assembly?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-quality-assessment-in-sequence-assembly&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Quality assessment in sequence assembly is the process of evaluating the accuracy, completeness, and reliability of assembled genomes or transcriptomes. This step is crucial to ensure that the final assembled sequence accurately represents the target genome and is free from errors, such as misassemblies, gaps, or incorrect bases.&lt;/p&gt;&#xA;&lt;p&gt;Quality assessment is typically performed using various &lt;strong&gt;metrics&lt;/strong&gt;, &lt;strong&gt;tools&lt;/strong&gt;, and &lt;strong&gt;methods&lt;/strong&gt; that allow researchers to evaluate the performance of assembly algorithms and determine whether the assembly is suitable for downstream analyses, such as gene annotation, variant calling, or comparative genomics.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Microbiome Diversity</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/microbiome/diversity/</link>
+      <pubDate>Tue, 05 Nov 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/microbiome/diversity/</guid>
+      <description>&lt;h1 id=&#34;microbiome-diversity&#34;&gt;&#xD;&#xA;  Microbiome Diversity&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#microbiome-diversity&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Microbiome diversity&lt;/strong&gt; refers to the variety and variability of microbial species present within a specific environment or host. In the context of human health, microbiome diversity often focuses on the bacterial communities found in the gut, skin, mouth, and other body sites. The diversity of microbial life plays a critical role in maintaining health, influencing the immune system, metabolism, and the resistance to diseases.&lt;/p&gt;&#xA;&lt;h2 id=&#34;measures-of-microbiome-diversity&#34;&gt;&#xD;&#xA;  Measures of Microbiome Diversity&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#measures-of-microbiome-diversity&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;There are two primary measures of microbiome diversity:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Genetic Algorithm</title>
+      <link>http://localhost:1313/docs/algorithms/Genetic-Algorithm/</link>
+      <pubDate>Wed, 06 Nov 2024 09:58:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/algorithms/Genetic-Algorithm/</guid>
+      <description>&lt;h1 id=&#34;genetic-algorithm&#34;&gt;&#xD;&#xA;  Genetic Algorithm&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#genetic-algorithm&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>DNA</title>
+      <link>http://localhost:1313/docs/content/biotechnology/macromolecules/DNA/</link>
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/pharmacology/general_abbreviations/</guid>
+      <guid>http://localhost:1313/docs/content/biotechnology/macromolecules/DNA/</guid>
+      <description>&lt;h1 id=&#34;what-is-dna&#34;&gt;&#xD;&#xA;  What is DNA?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-dna&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;DNA&lt;/strong&gt; (Deoxyribonucleic Acid) is the molecule that contains the instructions an organism needs to develop, live, and reproduce. It carries genetic information crucial for the growth, development, functioning, and reproduction of all living organisms. DNA is found in nearly every cell of an organism, housed in the cell&amp;rsquo;s nucleus (in eukaryotes) or in the cytoplasm (in prokaryotes). In humans, DNA is located in the chromosomes within the nucleus.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maze Generator</title>
+      <link>http://localhost:1313/docs/experiments/maze_generator/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/experiments/maze_generator/</guid>
+      <description>&lt;div style=&#34;text-align: center;&#34;&gt;&#xD;&#xA;    &lt;div id=&#34;canvas&#34;&gt;&lt;/div&gt;&#xD;&#xA;    &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;script src=&#34;http://localhost:1313/experiments/maze_generator/sketch-v2.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;    &lt;script src=&#34;http://localhost:1313/experiments/maze_generator/cell.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Proteins</title>
+      <link>http://localhost:1313/docs/content/biotechnology/macromolecules/Proteins/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/biotechnology/macromolecules/Proteins/</guid>
+      <description>&lt;h1 id=&#34;what-are-proteins&#34;&gt;&#xD;&#xA;  What are Proteins?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-are-proteins&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;Proteins are complex macromolecules that play a fundamental role in almost every biological process. They are composed of &lt;strong&gt;amino acids&lt;/strong&gt;, which are the building blocks of proteins. Proteins perform a wide range of essential functions in living organisms, including catalyzing biochemical reactions (as enzymes), supporting cellular structures, and facilitating communication between cells.&lt;/p&gt;&#xA;&lt;p&gt;Proteins are often referred to as the &amp;ldquo;molecular machines&amp;rdquo; of cells because they carry out most of the cell&amp;rsquo;s functions. The sequence and structure of a protein determine its function, making them highly specialized molecules.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RNA</title>
+      <link>http://localhost:1313/docs/content/biotechnology/macromolecules/RNA/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/biotechnology/macromolecules/RNA/</guid>
+      <description>&lt;h1 id=&#34;what-is-rna&#34;&gt;&#xD;&#xA;  What is RNA?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-rna&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;RNA&lt;/strong&gt; (Ribonucleic Acid) is a vital molecule in the biology of all living organisms, playing essential roles in the expression of genetic information stored in DNA. While DNA is the primary carrier of genetic information, RNA serves as a &lt;strong&gt;temporary copy&lt;/strong&gt; of the genetic code that can be used to make proteins, regulate gene expression, and carry out other critical functions.&lt;/p&gt;&#xA;&lt;p&gt;RNA is similar to DNA, but there are some important differences in structure and function. While DNA is typically double-stranded, RNA is usually &lt;strong&gt;single-stranded&lt;/strong&gt;. In addition, the sugar molecule in RNA is &lt;strong&gt;ribose&lt;/strong&gt;, whereas DNA contains &lt;strong&gt;deoxyribose&lt;/strong&gt;. Lastly, RNA contains the nitrogenous base &lt;strong&gt;uracil (U)&lt;/strong&gt; in place of thymine (T), which is found in DNA.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Snake Game</title>
+      <link>http://localhost:1313/docs/experiments/snake_game/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/experiments/snake_game/</guid>
+      <description>&lt;h1 id=&#34;the-classic-snake-game&#34;&gt;&#xD;&#xA;  The Classic Snake Game:&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#the-classic-snake-game&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;instructions&#34;&gt;&#xD;&#xA;  Instructions&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#instructions&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;To start the game, click on the &lt;strong&gt;Play&lt;/strong&gt; button. You can switch between &lt;strong&gt;Manual Mode&lt;/strong&gt; and &lt;strong&gt;AI Mode&lt;/strong&gt; by clicking the &lt;strong&gt;Switch to AI&lt;/strong&gt; button. In &lt;strong&gt;Manual Mode&lt;/strong&gt;, use the arrow keys to control the snake. In &lt;strong&gt;AI Mode&lt;/strong&gt;, the snake&amp;rsquo;s behavior is determined by the algorithm, and it will evolve over time.&lt;/p&gt;&#xA;&lt;p&gt;After the game ends, you can restart by clicking the &lt;strong&gt;Restart&lt;/strong&gt; button.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Importance of 16S rRNA in Microbiome Research</title>
+      <link>http://localhost:1313/docs/content/bioinformatics/microbiome/16S_rRNA/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/bioinformatics/microbiome/16S_rRNA/</guid>
+      <description>&lt;h1 id=&#34;the-importance-of-16s-rrna-in-microbiome-research&#34;&gt;&#xD;&#xA;  The Importance of 16S rRNA in Microbiome Research&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#the-importance-of-16s-rrna-in-microbiome-research&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;what-is-the-16s-rrna-gene&#34;&gt;&#xD;&#xA;  What is the 16S rRNA Gene?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-the-16s-rrna-gene&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The &lt;strong&gt;16S ribosomal RNA (rRNA)&lt;/strong&gt; gene is a component of the small subunit of the ribosome in prokaryotes (bacteria and archaea). It is one of the most conserved genes across all bacteria and archaea, meaning that it evolves very slowly and is present in all microbial species. The 16S rRNA gene contains both conserved regions (similar across species) and variable regions (which differ between species). These variable regions allow for the differentiation and classification of microbial species based on sequence similarities and differences.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>General_abbreviations</title>
+      <link>http://localhost:1313/docs/content/pharmacology/general_abbreviations/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/pharmacology/general_abbreviations/</guid>
       <description>&lt;h1 id=&#34;common-abbreviations&#34;&gt;&#xD;&#xA;  Common Abbreviations&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#common-abbreviations&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;common-abbreviations-in-prescriptions&#34;&gt;&#xD;&#xA;  Common Abbreviations in Prescriptions&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#common-abbreviations-in-prescriptions&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Have you ever wondered what the weird abbreviations like &amp;ldquo;p.o&amp;rdquo; or &amp;ldquo;p.e&amp;rdquo; mean? These are, in fact, common abbreviations used in prescriptions to help pharmacologists prepare the drugs and instructions you see when you get your medications.&lt;/p&gt;&#xA;&lt;p&gt;Here is a handy list of commonly used abbreviations. Note that these terms might or might not be used and will depend on how the professionals are trained:&lt;/p&gt;</description>
     </item>
     <item>
       <title>General_histroy</title>
-      <link>http://localhost:1313/pharmacology/general_history/</link>
+      <link>http://localhost:1313/docs/content/pharmacology/general_history/</link>
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/pharmacology/general_history/</guid>
+      <guid>http://localhost:1313/docs/content/pharmacology/general_history/</guid>
       <description>&lt;h1 id=&#34;history-of-pharmacology&#34;&gt;&#xD;&#xA;  History of Pharmacology&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#history-of-pharmacology&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;The field of pharmacology has a rich history that spans thousands of years, reflecting humanity&amp;rsquo;s quest to understand and manipulate the effects of drugs on the body. This tutorial will explore key milestones and developments in the history of pharmacology.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ancient-practices&#34;&gt;&#xD;&#xA;  Ancient Practices&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#ancient-practices&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Pharmacology can be traced back to ancient civilizations, where herbal remedies were used to treat various ailments. Early records from ancient Egypt, China, and India describe the use of plants and minerals in medicinal preparations. The Ebers Papyrus (circa 1550 BCE) from Egypt is one of the oldest medical texts, listing numerous remedies derived from plants.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>General_introduction</title>
-      <link>http://localhost:1313/bioinformatics/general_introduction/</link>
-      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/bioinformatics/general_introduction/</guid>
-      <description>&lt;h1 id=&#34;introduction-to-bioinformatics&#34;&gt;&#xD;&#xA;  Introduction to Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;definition-of-bioinformatics&#34;&gt;&#xD;&#xA;  Definition of Bioinformatics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#definition-of-bioinformatics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The term &amp;ldquo;Bioinformatics,&amp;rdquo; first coined by Paulien Hogeweg and Ben Hesper in 1970, is now an interdisciplinary field that combines biology, computer science, mathematics, and statistics to analyze and interpret biological data such as DNA, RNA, and proteins.&lt;/p&gt;&#xA;&lt;p&gt;&#xD;&#xA;  &lt;img src=&#34;img/tutorials/bioinformatics/interdiscipline_venn_diagram.png&#34; alt=&#34;Venn Diagram of areas of studies&#34; /&gt;{:style=&amp;ldquo;max-width: 400px&amp;rdquo;}&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Figure: Venn Diagram of areas of studies&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;With computational power and deriving mathematical models, knowledge that would have taken traditional methods years to figure out can now be solved in months or even days.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>General_introduction</title>
-      <link>http://localhost:1313/pharmacology/general_introduction/</link>
-      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/pharmacology/general_introduction/</guid>
-      <description>&lt;h1 id=&#34;introduction-to-pharmacology&#34;&gt;&#xD;&#xA;  Introduction to Pharmacology&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-pharmacology&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;terminologies&#34;&gt;&#xD;&#xA;  Terminologies&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#terminologies&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Terms&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Pharmacokinetics&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;The study of how the body affects a drug.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Pharmacodynamics&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;The study of how drugs exert their effects on the body.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Toxicology&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;The study of adverse effects of drugs.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Pharmacogenomics&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;The study of how an individual&amp;rsquo;s genetic makeup influences their response to drugs.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;what-is-pharmacology&#34;&gt;&#xD;&#xA;  What is Pharmacology?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-pharmacology&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Pharmacology is the study of drugs and their effects on living organisms, which can be subdivided into:&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>General_medication_origin</title>
-      <link>http://localhost:1313/pharmacology/general_medication_origin/</link>
+      <link>http://localhost:1313/docs/content/pharmacology/general_medication_origin/</link>
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/pharmacology/general_medication_origin/</guid>
+      <guid>http://localhost:1313/docs/content/pharmacology/general_medication_origin/</guid>
       <description>&lt;h1 id=&#34;medication-sourcing-and-origins&#34;&gt;&#xD;&#xA;  Medication Sourcing and Origins&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#medication-sourcing-and-origins&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;sources-of-medication&#34;&gt;&#xD;&#xA;  Sources of Medication&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#sources-of-medication&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;In modern medicine, medication refers to the active ingredient or one specific chemical exerting effect on our body. These are often &lt;strong&gt;purified&lt;/strong&gt; from natural sources and through the study of such compounds, more efficacious &lt;strong&gt;synthetic&lt;/strong&gt; forms are created.&lt;/p&gt;&#xA;&lt;p&gt;In general, sources of modern medicine can be divided into:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Natural Derivatives&lt;/li&gt;&#xA;&lt;li&gt;Semi-Synthetic&lt;/li&gt;&#xA;&lt;li&gt;Synthetic&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;natural-source-of-medication&#34;&gt;&#xD;&#xA;  Natural Source of Medication&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#natural-source-of-medication&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;plant-derivatives&#34;&gt;&#xD;&#xA;  Plant Derivatives&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#plant-derivatives&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;The use of medicinal plants can date back to ancient Sumeria (3,000 BC), where hundreds of medicinal plants are listed on clay tablets. Although ancient people didn&amp;rsquo;t understand the mechanisms behind them, our ancestors learned to use these plants for curing diseases.&lt;/p&gt;</description>
     </item>
     <item>
       <title>General_regulations</title>
-      <link>http://localhost:1313/pharmacology/general_regulations/</link>
+      <link>http://localhost:1313/docs/content/pharmacology/general_regulations/</link>
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/pharmacology/general_regulations/</guid>
+      <guid>http://localhost:1313/docs/content/pharmacology/general_regulations/</guid>
       <description>&lt;h1 id=&#34;classification-of-drugs-by-law&#34;&gt;&#xD;&#xA;  Classification of Drugs By Law&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#classification-of-drugs-by-law&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;drug-classification&#34;&gt;&#xD;&#xA;  Drug Classification&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#drug-classification&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;In general, drugs used in healthcare can be classified into four groups by law, including Over-the-Counter (OTC) drugs, prescription drugs, and illegal drugs, ranked from low to high regulation levels.&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Class&lt;/th&gt;&#xA;          &lt;th&gt;Legal Status&lt;/th&gt;&#xA;          &lt;th&gt;Examples&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Over-the-Counter (OTC) Drugs&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Available for purchase without a prescription.&lt;/td&gt;&#xA;          &lt;td&gt;Pain relievers, antacids, allergy medications.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Prescription Drugs&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Available only with a prescription from a licensed healthcare professional.&lt;/td&gt;&#xA;          &lt;td&gt;Antibiotics, antidepressants, opioids.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Illegal Drugs&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Prohibited by law for recreational use, sale, or possession.&lt;/td&gt;&#xA;          &lt;td&gt;Heroin, LSD, marijuana (in some jurisdictions).&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;otc-drugs&#34;&gt;&#xD;&#xA;  OTC Drugs&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#otc-drugs&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Drugs labeled as OTC are generally used for common ailments, chronic conditions, preventive care, first aid, and dietary supplements.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pharmacokinetics_introduction</title>
-      <link>http://localhost:1313/pharmacology/pharmacokinetics_introduction/</link>
+      <link>http://localhost:1313/docs/content/pharmacology/pharmacokinetics_introduction/</link>
       <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
-      <guid>http://localhost:1313/pharmacology/pharmacokinetics_introduction/</guid>
+      <guid>http://localhost:1313/docs/content/pharmacology/pharmacokinetics_introduction/</guid>
       <description>&lt;h1 id=&#34;introduction-to-pharmacokinetics&#34;&gt;&#xD;&#xA;  Introduction to Pharmacokinetics&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction-to-pharmacokinetics&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;As mentioned in the introduction, pharmacokinetics studies how the body interacts with drugs through absorption, distribution, metabolism, and elimination (ADME). Before we talk about each individually, there are a few fundamental concepts you should understand.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-fluid-mosaic-model&#34;&gt;&#xD;&#xA;  The Fluid Mosaic Model&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#the-fluid-mosaic-model&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;When we talk about medications, it is really hard not to mention some fundamental concepts from cell biology and physiology. But don&amp;rsquo;t panic; they won&amp;rsquo;t be so hard to understand.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About Piggy Botanist</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h1 id=&#34;about-piggy-botanist&#34;&gt;&#xD;&#xA;  About Piggy Botanist:&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#about-piggy-botanist&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;My name is &lt;strong&gt;Jeremy Chang&lt;/strong&gt;, but you can call me Piggy Botanist.&lt;/p&gt;&#xA;&lt;p&gt;I earned my &lt;strong&gt;Bachelor of Science (BSc)&lt;/strong&gt; with a major in &lt;em&gt;Biomedical Science&lt;/em&gt; and a &lt;strong&gt;Master&amp;rsquo;s degree (MSc)&lt;/strong&gt; specializing in &lt;em&gt;Animal Science and Microbiology&lt;/em&gt; at the University of Guelph, where I studied from 2018 to 2023. I am currently pursuing a &lt;strong&gt;PhD&lt;/strong&gt; in the &lt;em&gt;Department of Computer Science at McGill University&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I consider myself neither a complete biologist nor a full-fledged computer scientist; rather, I embody a unique intersection of both fields. This interdisciplinary background has granted me valuable experience in biological experiments within a &lt;em&gt;wet lab&lt;/em&gt; environment, as well as in a traditional computer science lab focused on &lt;em&gt;algorithm development&lt;/em&gt;, &lt;em&gt;machine learning models&lt;/em&gt;, and &lt;em&gt;software implementations&lt;/em&gt;. These experiences have equipped me with a solid foundation in &lt;strong&gt;bioinformatics&lt;/strong&gt;, allowing me to bridge the gap between biology and computer science.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

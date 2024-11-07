@@ -2,52 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/bioinformatics/</loc>
+    <loc>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/01.de_novo_assembly/</loc>
+    <lastmod>2024-10-30T16:45:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/02.reference_guided_assembly/</loc>
+    <lastmod>2024-10-30T17:00:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/03.hybrid_assembly/</loc>
+    <lastmod>2024-11-05T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/04.quality_assessment/</loc>
+    <lastmod>2024-11-05T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/bioinformatics/microbiome/diversity/</loc>
+    <lastmod>2024-11-05T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/algorithms/Genetic-Algorithm/</loc>
+    <lastmod>2024-11-06T09:58:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/</loc>
+    <lastmod>2024-11-05T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/algorithms/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/general_abbreviations/</loc>
+    <loc>http://localhost:1313/docs/content/bioinformatics/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/general_history/</loc>
+    <loc>http://localhost:1313/docs/content/biotechnology/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/bioinformatics/general_introduction/</loc>
+    <loc>http://localhost:1313/docs/content/biotechnology/macromolecules/DNA/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/general_introduction/</loc>
+    <loc>http://localhost:1313/docs/experiments/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/general_medication_origin/</loc>
+    <loc>http://localhost:1313/docs/content/biotechnology/macromolecules/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/general_regulations/</loc>
+    <loc>http://localhost:1313/docs/experiments/maze_generator/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/pharmacokinetics_introduction/</loc>
+    <loc>http://localhost:1313/docs/content/pharmacology/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/pharmacology/</loc>
+    <loc>http://localhost:1313/docs/content/biotechnology/macromolecules/Proteins/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/docs/content/biotechnology/macromolecules/RNA/</loc>
     <lastmod>2024-10-30T15:23:24-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://localhost:1313/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="he"
-                href="http://localhost:1313/he/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/"
-                />
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/docs/content/bioinformatics/sequence_assembly/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/experiments/snake_game/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/bioinformatics/microbiome/16S_rRNA/</loc>
+    <lastmod>2024-11-05T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/bioinformatics/microbiome/</loc>
+    <lastmod>2024-11-05T00:00:00-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/</loc>
+    <lastmod>2024-11-06T09:58:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/pharmacology/general_abbreviations/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/pharmacology/general_history/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/pharmacology/general_medication_origin/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/pharmacology/general_regulations/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/content/pharmacology/pharmacokinetics_introduction/</loc>
+    <lastmod>2024-10-30T15:23:24-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
@@ -81,6 +117,24 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-11-03T00:30:58-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://localhost:1313/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="he"
+                href="http://localhost:1313/he/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/"
                 />
   </url>
 </urlset>

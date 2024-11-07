@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  What is Reference-Guided Assembly?
+  #
+
+Reference-guided assembly (also known as reference-based assembly) is a process in which short sequence reads (such as those generated from next-generation sequencing platforms like Illumina) are mapped to a known reference genome to aid in the reconstruction of the genome or transcriptome of the organism of interest. This approach is commonly used when a reference genome is available for the species or a closely related species. It offers faster and more accurate assembly compared to de novo methods, especially for highly repetitive or complex regions.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/content/bioinformatics/sequence_assembly/03.reference_guided_assembly/">
+  <meta property="og:site_name" content="Piggy Botanist">
+  <meta property="og:title" content="02.Reference-Guided Assembly">
+  <meta property="og:description" content="What is Reference-Guided Assembly?#Reference-guided assembly (also known as reference-based assembly) is a process in which short sequence reads (such as those generated from next-generation sequencing platforms like Illumina) are mapped to a known reference genome to aid in the reconstruction of the genome or transcriptome of the organism of interest. This approach is commonly used when a reference genome is available for the species or a closely related species. It offers faster and more accurate assembly compared to de novo methods, especially for highly repetitive or complex regions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2024-10-30T17:00:00-04:00">
+    <meta property="article:modified_time" content="2024-10-30T17:00:00-04:00">
+<title>02.Reference-Guided Assembly | Piggy Botanist</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/content/bioinformatics/sequence_assembly/03.reference_guided_assembly/">
+<link rel="stylesheet" href="/book.min.44d5ccb42462e82aeacba793b8741941d656e82df8f372a14dc096b64b47e8ec.css" integrity="sha256-RNXMtCRi6Crqy6eTuHQZQdZW6C3483KhTcCWtktH6Ow=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.10382f1a8025f40f515a573acb4280fc6d00677adcc574de3dff8098758bd0ea.js" integrity="sha256-EDgvGoAl9A9RWlc6y0KA/G0AZ3rcxXTePf&#43;AmHWL0Oo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<link rel="stylesheet" href="/css/general/logo_and_profile_pic.css">
+
+<div class="profile-logo">
+  <h1><a href="/">Piggy Botanist</a></h1>
+  <img src="/images/others/profile_picture.png" alt="Profile Picture" class="profile-icon" />
+  <img src="/images/others/logo.png" alt="Profile Picture" class="logo-icon" />
+</div>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+  
+
+
+
+  
+    
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="/zh/">
+          Chinese
+        </a>
+      </li>
+      
+      <li>
+        <a href="/he/">
+          Hebrew
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7c4a3b16aeeb5b7194b232c1eef2f4fb" class="toggle"  />
+    <label for="section-7c4a3b16aeeb5b7194b232c1eef2f4fb" class="flex justify-between">
+      <a href="/docs/algorithms/" class="">Algorithms</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a3f7b01a7ee2dbb305c009e77ac23374" class="toggle"  />
+    <label for="section-a3f7b01a7ee2dbb305c009e77ac23374" class="flex justify-between">
+      <a href="/docs/algorithms/Genetic-Algorithm/" class="">Genetic Algorithm</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5f82f4ff00a90553aeaba102665eb86e" class="toggle" checked />
+    <label for="section-5f82f4ff00a90553aeaba102665eb86e" class="flex justify-between">
+      <a href="/docs/content/bioinformatics/" class="">Bioinformatics</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-db43f665eb6cf4bfa7b722c8881f5bbc" class="toggle" checked />
+    <label for="section-db43f665eb6cf4bfa7b722c8881f5bbc" class="flex justify-between">
+      <a href="/docs/content/bioinformatics/sequence_assembly/" class="">Sequence Assembly</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/bioinformatics/sequence_assembly/01.de_novo_assembly/" class="">01.De Novo Assembly</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0c17a4e644dde4433e186c8db82ff78e" class="toggle"  />
+    <label for="section-0c17a4e644dde4433e186c8db82ff78e" class="flex justify-between">
+      <a href="/docs/content/bioinformatics/sequence_assembly/02.hybrid_assembly/" class="">03.Hybrid Assembly</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bd978dcef2c30bda6f408b0b9c559cbe" class="toggle" checked />
+    <label for="section-bd978dcef2c30bda6f408b0b9c559cbe" class="flex justify-between">
+      <a href="/docs/content/bioinformatics/sequence_assembly/03.reference_guided_assembly/" class="active">02.Reference-Guided Assembly</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-085bf7a59bcc6ac4dc4bbeda19941f1f" class="toggle"  />
+    <label for="section-085bf7a59bcc6ac4dc4bbeda19941f1f" class="flex justify-between">
+      <a href="/docs/content/bioinformatics/sequence_assembly/04.quality_assessment/" class="">Quality Assessment in Sequence Assembly</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2d4dbef3a7d25d04745f2946afc1c34c" class="toggle"  />
+    <label for="section-2d4dbef3a7d25d04745f2946afc1c34c" class="flex justify-between">
+      <a href="/docs/content/biotechnology/" class="">Biotechnology</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8e4f86ac924c6613e16ac3233854ea38" class="toggle"  />
+    <label for="section-8e4f86ac924c6613e16ac3233854ea38" class="flex justify-between">
+      <a href="/docs/content/biotechnology/macromolecules/" class="">Macromolecules</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/biotechnology/macromolecules/DNA/" class="">DNA</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/biotechnology/macromolecules/Proteins/" class="">Proteins</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/biotechnology/macromolecules/RNA/" class="">RNA</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09f647ced6bdd1083d19c06ec1c17ad4" class="toggle"  />
+    <label for="section-09f647ced6bdd1083d19c06ec1c17ad4" class="flex justify-between">
+      <a href="/docs/content/pharmacology/" class="">Pharmacology</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/pharmacology/general_abbreviations/" class="">General_abbreviations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/pharmacology/general_history/" class="">General_histroy</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/pharmacology/general_medication_origin/" class="">General_medication_origin</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/pharmacology/general_regulations/" class="">General_regulations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/content/pharmacology/pharmacokinetics_introduction/" class="">Pharmacokinetics_introduction</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/PiggyBotanist"  target="_blank" rel="noopener">
+         
+          <img src="/images/icons/github.svg" class="book-icon" alt="X icon" style="color: #333;"/>
+        
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/jeremy-chang-393b00245/"  target="_blank" rel="noopener">
+         
+          <img src="/images/icons/linkedin.svg" class="book-icon" alt="Github icon" style="color: #0077b5;"/>
+        
+        Linkedin
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>02.Reference-Guided Assembly</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-reference-guided-assembly">What is Reference-Guided Assembly?</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#key-features-of-reference-guided-assembly">Key Features of Reference-Guided Assembly</a></li>
+          </ul>
+        </li>
+        <li><a href="#steps-in-reference-guided-assembly">Steps in Reference-Guided Assembly</a>
+          <ul>
+            <li><a href="#1-read-mapping">1. <strong>Read Mapping</strong></a></li>
+            <li><a href="#2-alignment-filtering-and-quality-control">2. <strong>Alignment Filtering and Quality Control</strong></a></li>
+            <li><a href="#3-contig-construction">3. <strong>Contig Construction</strong></a></li>
+            <li><a href="#4-variant-calling-and-polishing">4. <strong>Variant Calling and Polishing</strong></a></li>
+            <li><a href="#5-scaffolding-and-gap-filling">5. <strong>Scaffolding and Gap Filling</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#algorithms-for-reference-guided-assembly">Algorithms for Reference-Guided Assembly</a>
+          <ul>
+            <li><a href="#1-burrows-wheeler-aligner-bwa">1. <strong>Burrows-Wheeler Aligner (BWA)</strong></a></li>
+            <li><a href="#2-bowtie2">2. <strong>Bowtie2</strong></a></li>
+            <li><a href="#3-minimap2">3. <strong>Minimap2</strong></a></li>
+            <li><a href="#4-samtools">4. <strong>SAMtools</strong></a></li>
+            <li><a href="#5-gatk-genome-analysis-toolkit">5. <strong>GATK (Genome Analysis Toolkit)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#common-software-for-reference-guided-assembly">Common Software for Reference-Guided Assembly</a>
+          <ul>
+            <li><a href="#1-genome-analysis-toolkit-gatk">1. <strong>Genome Analysis Toolkit (GATK)</strong></a></li>
+            <li><a href="#2-canu-for-long-read-assemblies">2. <strong>Canu (for long-read assemblies)</strong></a></li>
+            <li><a href="#3-star-for-rna-seq">3. <strong>STAR (for RNA-Seq)</strong></a></li>
+            <li><a href="#4-cortex-for-large-scale-variant-detection">4. <strong>Cortex (for large-scale variant detection)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#advantages-of-reference-guided-assembly">Advantages of Reference-Guided Assembly</a></li>
+        <li><a href="#limitations-of-reference-guided-assembly">Limitations of Reference-Guided Assembly</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="what-is-reference-guided-assembly">
+  What is Reference-Guided Assembly?
+  <a class="anchor" href="#what-is-reference-guided-assembly">#</a>
+</h1>
+<p><strong>Reference-guided assembly</strong> (also known as <strong>reference-based assembly</strong>) is a process in which short sequence reads (such as those generated from next-generation sequencing platforms like Illumina) are mapped to a known reference genome to aid in the reconstruction of the genome or transcriptome of the organism of interest. This approach is commonly used when a reference genome is available for the species or a closely related species. It offers faster and more accurate assembly compared to de novo methods, especially for highly repetitive or complex regions.</p>
+<h3 id="key-features-of-reference-guided-assembly">
+  Key Features of Reference-Guided Assembly
+  <a class="anchor" href="#key-features-of-reference-guided-assembly">#</a>
+</h3>
+<ul>
+<li><strong>Relies on a Reference Genome</strong>: A reference genome or a closely related genome serves as the scaffold for aligning and assembling the sequencing reads.</li>
+<li><strong>Faster and More Accurate</strong>: Since the assembly process uses a known genome as a guide, it can be much faster and more accurate than de novo assembly for species with a reference available.</li>
+<li><strong>Efficient for Small Variants</strong>: Reference-guided assembly is particularly effective for detecting small-scale genetic variations, such as single nucleotide polymorphisms (SNPs), insertions, deletions, and structural variants.</li>
+<li><strong>Limitations</strong>: The approach is limited by the quality and completeness of the reference genome. If the reference is incomplete or highly diverged from the sample, the assembly may be less accurate.</li>
+</ul>
+<h2 id="steps-in-reference-guided-assembly">
+  Steps in Reference-Guided Assembly
+  <a class="anchor" href="#steps-in-reference-guided-assembly">#</a>
+</h2>
+<p>Reference-guided assembly typically involves the following steps:</p>
+<h3 id="1-read-mapping">
+  1. <strong>Read Mapping</strong>
+  <a class="anchor" href="#1-read-mapping">#</a>
+</h3>
+<p>The first step is to align the sequencing reads to the reference genome. This is done using read-mapping algorithms that find the most probable position of each read in the reference genome, considering both sequence similarity and alignment quality.</p>
+<ul>
+<li><strong>Mapping Options</strong>: Short reads are typically mapped using algorithms that handle large volumes of data efficiently, such as Bowtie2 or BWA. Long reads may require different mapping tools, such as Minimap2.</li>
+</ul>
+<h3 id="2-alignment-filtering-and-quality-control">
+  2. <strong>Alignment Filtering and Quality Control</strong>
+  <a class="anchor" href="#2-alignment-filtering-and-quality-control">#</a>
+</h3>
+<p>After the reads are mapped to the reference, quality control steps are performed to ensure accurate alignments:</p>
+<ul>
+<li><strong>Removing Low-Quality Alignments</strong>: Reads that map with low confidence (i.e., with too many mismatches or low mapping quality) are filtered out.</li>
+<li><strong>Duplicate Removal</strong>: Duplicate reads (e.g., from PCR amplification) may be removed to avoid over-representation of certain sequences.</li>
+</ul>
+<h3 id="3-contig-construction">
+  3. <strong>Contig Construction</strong>
+  <a class="anchor" href="#3-contig-construction">#</a>
+</h3>
+<p>Once the reads are mapped and filtered, contigs are built by stitching together the aligned reads. This step may involve resolving ambiguities in regions where multiple reads map to repetitive or highly variable regions of the genome.</p>
+<h3 id="4-variant-calling-and-polishing">
+  4. <strong>Variant Calling and Polishing</strong>
+  <a class="anchor" href="#4-variant-calling-and-polishing">#</a>
+</h3>
+<p>In reference-guided assembly, variant calling is often performed to identify differences between the sample and the reference genome. This includes identifying single nucleotide polymorphisms (SNPs), insertions, deletions, and structural variations.</p>
+<ul>
+<li><strong>Polishing</strong>: After variant calling, the assembly may undergo polishing using additional data or more refined algorithms to improve the accuracy of the final assembly, particularly for regions with low coverage.</li>
+</ul>
+<h3 id="5-scaffolding-and-gap-filling">
+  5. <strong>Scaffolding and Gap Filling</strong>
+  <a class="anchor" href="#5-scaffolding-and-gap-filling">#</a>
+</h3>
+<p>For genomes with gaps or incomplete regions, scaffolding techniques are employed to order and orient contigs. This process may also include gap filling to try to close any regions that could not be assembled from the mapped reads alone.</p>
+<h2 id="algorithms-for-reference-guided-assembly">
+  Algorithms for Reference-Guided Assembly
+  <a class="anchor" href="#algorithms-for-reference-guided-assembly">#</a>
+</h2>
+<p>The most common algorithms for reference-guided assembly focus on efficient read mapping and variant detection. Some key algorithms used include:</p>
+<h3 id="1-burrows-wheeler-aligner-bwa">
+  1. <strong>Burrows-Wheeler Aligner (BWA)</strong>
+  <a class="anchor" href="#1-burrows-wheeler-aligner-bwa">#</a>
+</h3>
+<p>BWA is one of the most widely used mapping algorithms for aligning short reads to a reference genome. It uses the Burrows-Wheeler Transform (BWT) and is efficient for both large genomes and high-throughput sequencing datasets.</p>
+<ul>
+<li><strong>BWA-MEM</strong>: A popular BWA mode for mapping long reads (e.g., from Illumina or PacBio).</li>
+<li><strong>BWA-backtrack</strong>: A mode used for mapping short reads, typically with higher accuracy.</li>
+</ul>
+<p>BWA works well for read mapping, providing a fast and accurate alignment, making it a core tool for reference-guided assembly.</p>
+<h3 id="2-bowtie2">
+  2. <strong>Bowtie2</strong>
+  <a class="anchor" href="#2-bowtie2">#</a>
+</h3>
+<p>Bowtie2 is another widely used read mapper that is optimized for large genomes and high-throughput sequencing data. It uses a Burrows-Wheeler index for efficient read mapping, similar to BWA.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Handles short and long reads efficiently.</li>
+<li>Provides options for aligning reads to large genomes with varying levels of complexity.</li>
+<li>Often used for RNA-seq, ChIP-seq, and other high-throughput sequencing data types.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-minimap2">
+  3. <strong>Minimap2</strong>
+  <a class="anchor" href="#3-minimap2">#</a>
+</h3>
+<p>Minimap2 is a long-read mapping tool optimized for high-throughput sequencing data from platforms like PacBio or Oxford Nanopore. It is particularly well-suited for aligning long reads to a reference genome.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Fast and accurate, suitable for aligning long reads with large variations.</li>
+<li>Ideal for assembling complex or highly repetitive genomes.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-samtools">
+  4. <strong>SAMtools</strong>
+  <a class="anchor" href="#4-samtools">#</a>
+</h3>
+<p>SAMtools is a suite of tools used for working with alignment files in the Sequence Alignment/Map (SAM) format. After read mapping, SAMtools can be used for sorting, indexing, and converting SAM/BAM files, as well as for variant calling and filtering.</p>
+<h3 id="5-gatk-genome-analysis-toolkit">
+  5. <strong>GATK (Genome Analysis Toolkit)</strong>
+  <a class="anchor" href="#5-gatk-genome-analysis-toolkit">#</a>
+</h3>
+<p>GATK is a powerful toolkit primarily used for variant calling and post-processing of sequence data. It is often used after read mapping to identify genetic variants between the sample and the reference genome.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Excellent for detecting SNPs, indels, and structural variants.</li>
+<li>Offers tools for variant filtration, annotation, and visualization.</li>
+</ul>
+</li>
+</ul>
+<h2 id="common-software-for-reference-guided-assembly">
+  Common Software for Reference-Guided Assembly
+  <a class="anchor" href="#common-software-for-reference-guided-assembly">#</a>
+</h2>
+<p>Here are some common software tools that integrate the reference-guided assembly pipeline, combining read mapping, variant calling, and contig construction:</p>
+<h3 id="1-genome-analysis-toolkit-gatk">
+  1. <strong>Genome Analysis Toolkit (GATK)</strong>
+  <a class="anchor" href="#1-genome-analysis-toolkit-gatk">#</a>
+</h3>
+<p>GATK is an integrated toolkit from the Broad Institute used for variant discovery in reference-guided assembly. It is particularly useful in genome re-sequencing projects, enabling the identification of genetic differences between a sample and a reference genome.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Supports SNP, indel, and structural variant calling.</li>
+<li>Provides tools for quality control and data filtering.</li>
+<li>Requires mapping files (e.g., BAM files) generated from tools like BWA or Bowtie2.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-canu-for-long-read-assemblies">
+  2. <strong>Canu (for long-read assemblies)</strong>
+  <a class="anchor" href="#2-canu-for-long-read-assemblies">#</a>
+</h3>
+<p>Canu is designed for high-accuracy de novo assembly of long-read data, but it also has the ability to perform reference-guided assembly in certain scenarios. It is optimized for long-read data from platforms like PacBio and Nanopore.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Supports hybrid assemblies with both short and long reads.</li>
+<li>Can integrate with BWA and other tools for read mapping.</li>
+<li>Often used in large-scale sequencing projects where long-read data is a key component.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-star-for-rna-seq">
+  3. <strong>STAR (for RNA-Seq)</strong>
+  <a class="anchor" href="#3-star-for-rna-seq">#</a>
+</h3>
+<p>STAR is a fast RNA-Seq read aligner designed for mapping reads to a reference genome or transcriptome. It is widely used for RNA sequencing data, enabling reference-guided assembly and variant discovery.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Supports paired-end and single-end read mapping.</li>
+<li>Generates accurate alignments in a short amount of time.</li>
+<li>Can handle splice-aware alignments for RNA-Seq data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-cortex-for-large-scale-variant-detection">
+  4. <strong>Cortex (for large-scale variant detection)</strong>
+  <a class="anchor" href="#4-cortex-for-large-scale-variant-detection">#</a>
+</h3>
+<p>Cortex is a software suite that can perform reference-guided assembly and detect structural variants. It is particularly useful in cases where complex structural variants need to be identified from mapped sequencing reads.</p>
+<ul>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Supports large-scale genome sequencing projects.</li>
+<li>Detects SNPs, indels, and structural variations with high accuracy.</li>
+<li>Integrates with other tools like GATK for variant analysis.</li>
+</ul>
+</li>
+</ul>
+<h2 id="advantages-of-reference-guided-assembly">
+  Advantages of Reference-Guided Assembly
+  <a class="anchor" href="#advantages-of-reference-guided-assembly">#</a>
+</h2>
+<ul>
+<li><strong>Speed and Accuracy</strong>: Reference-guided assembly is faster and more accurate compared to de novo assembly, especially when the reference genome is high-quality and closely related to the sample.</li>
+<li><strong>Reduced Computational Requirements</strong>: It typically requires less computational power than de novo assembly, as the algorithm only needs to align reads to an existing reference instead of assembling them from scratch.</li>
+<li><strong>SNP and Variant Detection</strong>: Reference-guided assembly is highly effective for detecting SNPs and small-scale genetic variations between the sample and the reference genome.</li>
+</ul>
+<h2 id="limitations-of-reference-guided-assembly">
+  Limitations of Reference-Guided Assembly
+  <a class="anchor" href="#limitations-of-reference-guided-assembly">#</a>
+</h2>
+<ul>
+<li><strong>Limited to Known Genomes</strong>: This method requires a reference genome, making it unsuitable for novel species or highly divergent genomes.</li>
+<li><strong>Reference Bias</strong>: The accuracy of the assembly is influenced by the quality and completeness of the reference genome. Poor or incomplete references can lead to misassemblies or missed variants.</li>
+<li><strong>Inability to Handle Large Structural Variants</strong>: Reference-guided assembly may struggle with large structural variants (e.g., large insertions or deletions) unless the reference genome has already been annotated for such features.</li>
+</ul>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<p>Reference-guided assembly remains a powerful tool for many genomic studies, especially when a high-quality reference genome is available. It is faster, more accurate, and less computationally intensive than de novo assembly, making it ideal for projects where a known genome or a closely related species&rsquo; genome is available. However, its utility is limited when working with</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <link rel="stylesheet" href="/css/general/footer.css">
+<div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content.en/docs/content/bioinformatics/sequence_assembly/03.reference_guided_assembly.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-reference-guided-assembly">What is Reference-Guided Assembly?</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#key-features-of-reference-guided-assembly">Key Features of Reference-Guided Assembly</a></li>
+          </ul>
+        </li>
+        <li><a href="#steps-in-reference-guided-assembly">Steps in Reference-Guided Assembly</a>
+          <ul>
+            <li><a href="#1-read-mapping">1. <strong>Read Mapping</strong></a></li>
+            <li><a href="#2-alignment-filtering-and-quality-control">2. <strong>Alignment Filtering and Quality Control</strong></a></li>
+            <li><a href="#3-contig-construction">3. <strong>Contig Construction</strong></a></li>
+            <li><a href="#4-variant-calling-and-polishing">4. <strong>Variant Calling and Polishing</strong></a></li>
+            <li><a href="#5-scaffolding-and-gap-filling">5. <strong>Scaffolding and Gap Filling</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#algorithms-for-reference-guided-assembly">Algorithms for Reference-Guided Assembly</a>
+          <ul>
+            <li><a href="#1-burrows-wheeler-aligner-bwa">1. <strong>Burrows-Wheeler Aligner (BWA)</strong></a></li>
+            <li><a href="#2-bowtie2">2. <strong>Bowtie2</strong></a></li>
+            <li><a href="#3-minimap2">3. <strong>Minimap2</strong></a></li>
+            <li><a href="#4-samtools">4. <strong>SAMtools</strong></a></li>
+            <li><a href="#5-gatk-genome-analysis-toolkit">5. <strong>GATK (Genome Analysis Toolkit)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#common-software-for-reference-guided-assembly">Common Software for Reference-Guided Assembly</a>
+          <ul>
+            <li><a href="#1-genome-analysis-toolkit-gatk">1. <strong>Genome Analysis Toolkit (GATK)</strong></a></li>
+            <li><a href="#2-canu-for-long-read-assemblies">2. <strong>Canu (for long-read assemblies)</strong></a></li>
+            <li><a href="#3-star-for-rna-seq">3. <strong>STAR (for RNA-Seq)</strong></a></li>
+            <li><a href="#4-cortex-for-large-scale-variant-detection">4. <strong>Cortex (for large-scale variant detection)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#advantages-of-reference-guided-assembly">Advantages of Reference-Guided Assembly</a></li>
+        <li><a href="#limitations-of-reference-guided-assembly">Limitations of Reference-Guided Assembly</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

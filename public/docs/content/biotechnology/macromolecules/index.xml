@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Macromolecules on Piggy Botanist</title>
+    <link>http://localhost:1313/docs/content/biotechnology/macromolecules/</link>
+    <description>Recent content in Macromolecules on Piggy Botanist</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Oct 2024 15:23:24 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/content/biotechnology/macromolecules/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DNA</title>
+      <link>http://localhost:1313/docs/content/biotechnology/macromolecules/DNA/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/biotechnology/macromolecules/DNA/</guid>
+      <description>&lt;h1 id=&#34;what-is-dna&#34;&gt;&#xD;&#xA;  What is DNA?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-dna&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;DNA&lt;/strong&gt; (Deoxyribonucleic Acid) is the molecule that contains the instructions an organism needs to develop, live, and reproduce. It carries genetic information crucial for the growth, development, functioning, and reproduction of all living organisms. DNA is found in nearly every cell of an organism, housed in the cell&amp;rsquo;s nucleus (in eukaryotes) or in the cytoplasm (in prokaryotes). In humans, DNA is located in the chromosomes within the nucleus.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Proteins</title>
+      <link>http://localhost:1313/docs/content/biotechnology/macromolecules/Proteins/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/biotechnology/macromolecules/Proteins/</guid>
+      <description>&lt;h1 id=&#34;what-are-proteins&#34;&gt;&#xD;&#xA;  What are Proteins?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-are-proteins&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;Proteins are complex macromolecules that play a fundamental role in almost every biological process. They are composed of &lt;strong&gt;amino acids&lt;/strong&gt;, which are the building blocks of proteins. Proteins perform a wide range of essential functions in living organisms, including catalyzing biochemical reactions (as enzymes), supporting cellular structures, and facilitating communication between cells.&lt;/p&gt;&#xA;&lt;p&gt;Proteins are often referred to as the &amp;ldquo;molecular machines&amp;rdquo; of cells because they carry out most of the cell&amp;rsquo;s functions. The sequence and structure of a protein determine its function, making them highly specialized molecules.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RNA</title>
+      <link>http://localhost:1313/docs/content/biotechnology/macromolecules/RNA/</link>
+      <pubDate>Wed, 30 Oct 2024 15:23:24 -0400</pubDate>
+      <guid>http://localhost:1313/docs/content/biotechnology/macromolecules/RNA/</guid>
+      <description>&lt;h1 id=&#34;what-is-rna&#34;&gt;&#xD;&#xA;  What is RNA?&#xD;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#what-is-rna&#34;&gt;#&lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;RNA&lt;/strong&gt; (Ribonucleic Acid) is a vital molecule in the biology of all living organisms, playing essential roles in the expression of genetic information stored in DNA. While DNA is the primary carrier of genetic information, RNA serves as a &lt;strong&gt;temporary copy&lt;/strong&gt; of the genetic code that can be used to make proteins, regulate gene expression, and carry out other critical functions.&lt;/p&gt;&#xA;&lt;p&gt;RNA is similar to DNA, but there are some important differences in structure and function. While DNA is typically double-stranded, RNA is usually &lt;strong&gt;single-stranded&lt;/strong&gt;. In addition, the sugar molecule in RNA is &lt;strong&gt;ribose&lt;/strong&gt;, whereas DNA contains &lt;strong&gt;deoxyribose&lt;/strong&gt;. Lastly, RNA contains the nitrogenous base &lt;strong&gt;uracil (U)&lt;/strong&gt; in place of thymine (T), which is found in DNA.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
