@@ -1,7 +1,7 @@
 // Initialize number of snakes based on population
-function initializeSnake(snakeMap, population_size, network_layer){
+function initializeSnake(snakeMap, population_size, network_layer) {
     let snake = [];
-    for(let i = 0; i < population_size; i++){
+    for (let i = 0; i < population_size; i++) {
         // Create a snake
         let newSnake = new Snake(
             snakeMap,
@@ -18,17 +18,18 @@ function initializeSnake(snakeMap, population_size, network_layer){
 }
 
 // Initialize number of fruits based on population
-function initializeFruit(snakeMap, snake, population_size){
+function initializeFruit(snakeMap, snake, population_size) {
     let fruit = [];
-    for(let i = 0; i < population_size; i++){
+    for (let i = 0; i < population_size; i++) {
         let newFruit = new Fruit(snakeMap, snake[i]);
         fruit.push(newFruit);
     }
     return fruit;
 }
 
+// Function to generate the next generation of snakes
 function nextGeneration(snakes, survived_population, top_percentage, mutationRate, population) {
-    // Step 1: Select the top snakes based on their score
+    // Step 1: Select the top snakes based on their fitness score
     let selectedSnakes = select_top(snakes, top_percentage);
 
     // Step 2: Create a new population of snakes through crossover and mutation
@@ -39,8 +40,7 @@ function nextGeneration(snakes, survived_population, top_percentage, mutationRat
         let topSnake = selectedSnakes[i];
 
         // Directly clone the top snake’s network (avoid reference issues)
-        let newSnake = new Snake(snakeMap, "up", 3, 400, "AI", [topSnake.input, topSnake.hidden, topSnake.output]);
-        newSnake.network = new MLP(topSnake.network.input, topSnake.network.hidden, topSnake.network.output);
+        let newSnake = new Snake(snakeMap, "up", 3, 400, "AI", topSnake.network); // Use the whole network here
         newGeneration.push(newSnake);
     }
 
@@ -53,12 +53,11 @@ function nextGeneration(snakes, survived_population, top_percentage, mutationRat
         // Step 5: Perform crossover to create a child network
         let childNetwork = crossover(parent1, parent2);
 
-        // Step 6: Mutate the child network
-        mutate(childNetwork, mutationRate, 10);
+        // Step 6: Mutate the child network (mutation applied layer by layer)
+        mutate(childNetwork, mutationRate);
 
         // Create a new snake with the mutated child network and add it to the new generation
-        let newSnake = new Snake(snakeMap, "up", 3, 400, "AI", [parent1.input, parent1.hidden, parent1.output]);
-        newSnake.network = childNetwork;  // Assign the child network to the new snake
+        let newSnake = new Snake(snakeMap, "up", 3, 400, "AI", childNetwork);  // Pass the child network here
         newGeneration.push(newSnake);
 
         // Ensure the new generation size doesn't exceed the population size
@@ -71,9 +70,10 @@ function nextGeneration(snakes, survived_population, top_percentage, mutationRat
     return newGeneration;
 }
 
+// Function to select the top snakes based on their fitness score
 function select_top(snakes, top_percentage) {
-    // Sort snakes by score in descending order
-    snakes.sort((a, b) => b.score - a.score);
+    // Sort snakes by fitness score (which is calculated from their performance)
+    snakes.sort((a, b) => b.fitness - a.fitness); // Sort in descending order
 
     // Calculate the number of snakes to keep (top percentage)
     const topPercentCount = Math.ceil(snakes.length * top_percentage);
@@ -84,6 +84,7 @@ function select_top(snakes, top_percentage) {
     return selectedSnakes;
 }
 
+// Function to perform crossover between two parent networks
 function crossover(parent1, parent2) {
     // Assuming MLP is a neural network class and we need to create a new network for the child
     let childNetwork = new MLP(parent1.network.input, parent1.network.hidden, parent1.network.output);
@@ -112,30 +113,50 @@ function crossover(parent1, parent2) {
     return childNetwork;
 }
 
-function mutate(childNetwork, mutationRate, learningRate) {
+// Function to mutate a child's network by randomly adjusting weights and biases
+function mutate(childNetwork, mutationRate) {
     // Loop through each layer of the network
     for (let i = 0; i < childNetwork.layers.length; i++) {
         let layer = childNetwork.layers[i];
 
-        // Mutate weights with the given mutation rate and learning rate
+        // Mutate weights with the given mutation rate
         for (let j = 0; j < layer.weights.length; j++) {
             for (let k = 0; k < layer.weights[j].length; k++) {
                 if (Math.random() < mutationRate) {
-                    // Mutate the weight by adding a small random value scaled by the learning rate
-                    let mutation = Math.random() * 0.1 - 0.05;  // Random value between -0.05 and 0.05
-                    layer.weights[j][k] += mutation * learningRate;  // Scale by the learning rate
+                    let mutation;
+                    
+                    // Decide if it's a large mutation
+                    if (Math.random() < 0.05) { // 5% chance for a large mutation
+                        // Apply a large mutation (e.g., +0.5 or -0.5)
+                        mutation = Math.random() < 0.5 ? 0.5 : -0.5; 
+                    } else {
+                        // Apply a small mutation (-0.05 to +0.05)
+                        mutation = Math.random() * 0.1 - 0.05; // Random value between -0.05 and 0.05
+                    }
+
+                    // Adjust weight by mutation value
+                    layer.weights[j][k] += mutation;  
                 }
             }
         }
 
-        // Mutate biases with the given mutation rate and learning rate
+        // Mutate biases with the given mutation rate
         for (let j = 0; j < layer.biases.length; j++) {
             if (Math.random() < mutationRate) {
-                // Mutate the bias by adding a small random value scaled by the learning rate
-                let mutation = Math.random() * 0.1 - 0.05;  // Random value between -0.05 and 0.05
-                layer.biases[j] += mutation * learningRate;  // Scale by the learning rate
+                let mutation;
+                
+                // Decide if it's a large mutation
+                if (Math.random() < 0.05) { // 5% chance for a large mutation
+                    // Apply a large mutation (e.g., +0.5 or -0.5)
+                    mutation = Math.random() < 0.5 ? 0.5 : -0.5;
+                } else {
+                    // Apply a small mutation (-0.05 to +0.05)
+                    mutation = Math.random() * 0.1 - 0.05;  // Random value between -0.05 and 0.05
+                }
+
+                // Adjust bias by mutation value
+                layer.biases[j] += mutation;  
             }
         }
     }
 }
-

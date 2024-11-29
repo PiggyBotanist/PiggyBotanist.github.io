@@ -1,5 +1,5 @@
-class MLP{
-    constructor(input, hidden, output){
+class MLP {
+    constructor(input, hidden, output) {
         this.input = input;
         this.hidden = hidden;
         this.output = output;
@@ -94,8 +94,20 @@ class MLP{
         const sumExpValues = expValues.reduce((acc, value) => acc + value, 0);
         return expValues.map(value => value / sumExpValues); // Normalize
     }
-}
 
-// How to call the parameters:
-// mlp.layers[i].weights[input_node][output_node]
-// mlp.layers[i].biases[output_node]
+    // Cloning function to create a new network with the same architecture and weights
+    clone_network() {
+        // Deep clone each layer's weights and biases
+        let clonedLayers = this.layers.map(layer => {
+            return {
+                weights: layer.weights.map(weightRow => weightRow.slice()), // Clone each weight row
+                biases: layer.biases.slice() // Clone biases
+            };
+        });
+
+        // Create a new MLP with the same structure and cloned layers
+        let clonedNetwork = new MLP(this.input, this.hidden, this.output);
+        clonedNetwork.layers = clonedLayers; // Set the cloned layers to the new MLP
+        return clonedNetwork;
+    }
+}

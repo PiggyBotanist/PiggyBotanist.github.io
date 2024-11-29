@@ -4,17 +4,29 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <!-- Menu Section -->
+        <div id="menu" style="text-align: center;">
+            <h1>Hungry Snake</h1>
+            <button id="playButton">Play</button>
+            <button id="playMethodButton">Switch to AI</button>
+        </div>
+        <!-- Game Over Section -->
+        <div id="gameOverMenu" style="text-align: center; display: none;">
+            <h1>Game Over</h1>
+            <button id="restartButton">Restart</button>
+        </div>
+        <!-- Game Canvas -->
         <canvas id="snakeCanvas"></canvas>
-        <div id ="textBox"></div>
+        <!-- Information Box (Optional) -->
+        <div id="textBox"></div>
 
         <script src="map.js"></script>
         <script src="fruit.js"></script>
-        <script src="controls.js"></script>
-        <script src="sensor.js"></script>
         <script src="snake.js"></script>
-
+        <script src="main.js"></script>
+        <script src="sensor.js"></script>
+        <script src="controls.js"></script>
         <script src="mlp.js"></script>
-
         <script src="genetic_algorithm.js"></script>
         <script src="main.js"></script>
     </body>

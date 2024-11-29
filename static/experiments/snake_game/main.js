@@ -36,7 +36,7 @@ var snake, fruit;
 function initializeGame() {
     if (play_method == "AI") {
         // Create a population of snakes and fruits for AI
-        snake = initializeSnake(snakeMap, population, [6, 10, 10, 4]);
+        snake = initializeSnake(snakeMap, population, [6, 4, 4]);
         fruit = initializeFruit(snakeMap, snake, population);
     } else {
         // Create a snake and a fruit for manual play
