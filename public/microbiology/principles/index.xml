@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Principles :: About My Website</title>
+    <link>http://localhost:1313/microbiology/principles/index.html</link>
+    <description>Microbiology Fundementals</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Dec 2024 21:49:15 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/microbiology/principles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Antiseptic Procedures</title>
+      <link>http://localhost:1313/microbiology/principles/01.antisepsis/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:47:05 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/principles/01.antisepsis/index.html</guid>
+      <description>This is a new page.</description>
+    </item>
+    <item>
+      <title>Culture Methods</title>
+      <link>http://localhost:1313/microbiology/principles/02.culture/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:48:37 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/principles/02.culture/index.html</guid>
+      <description>This is a new page.</description>
+    </item>
+    <item>
+      <title>Pathogenesis</title>
+      <link>http://localhost:1313/microbiology/principles/03.pathogenesis/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:48:57 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/principles/03.pathogenesis/index.html</guid>
+      <description>This is a new page.</description>
+    </item>
+    <item>
+      <title>Diagnostics</title>
+      <link>http://localhost:1313/microbiology/principles/04.diagnostics/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:49:15 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/principles/04.diagnostics/index.html</guid>
+      <description>This is a new page.</description>
+    </item>
+  </channel>
+</rss>

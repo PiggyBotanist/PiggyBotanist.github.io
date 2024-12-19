@@ -1,25 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
-    
-      <lastmod>2024-11-06T21:30:22-05:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>http://localhost:1313/zh/sitemap.xml</loc>
-    
-      <lastmod>2024-11-06T22:01:27-05:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>http://localhost:1313/fr/sitemap.xml</loc>
-    
-      <lastmod>2024-11-06T22:01:27-05:00</lastmod>
-    
-  </sitemap>
-  
-</sitemapindex>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/computer_science/algorithms/genetic_algorithm/index.html</loc>
+    <lastmod>2024-12-19T12:41:04-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/principles/index.html</loc>
+    <lastmod>2024-12-17T21:33:24-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/index.html</loc>
+    <lastmod>2024-12-17T21:09:25-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/principles/01.antisepsis/index.html</loc>
+    <lastmod>2024-12-17T21:47:05-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/bacteriology/index.html</loc>
+    <lastmod>2024-12-17T21:32:07-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/principles/02.culture/index.html</loc>
+    <lastmod>2024-12-17T21:48:37-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/mycology/index.html</loc>
+    <lastmod>2024-12-17T21:32:30-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/principles/03.pathogenesis/index.html</loc>
+    <lastmod>2024-12-17T21:48:57-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/virology/index.html</loc>
+    <lastmod>2024-12-17T21:32:53-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/principles/04.diagnostics/index.html</loc>
+    <lastmod>2024-12-17T21:49:15-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/microbiology/parasitology/index.html</loc>
+    <lastmod>2024-12-17T21:32:22-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/computer_science/index.html</loc>
+    <lastmod>2024-12-19T12:41:04-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/biology/index.html</loc>
+    <lastmod>2024-12-19T09:34:31-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/about/index.html</loc>
+    <lastmod>2024-12-17T17:49:46-05:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
+  </url>
+</urlset>

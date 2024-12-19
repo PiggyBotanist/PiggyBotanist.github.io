@@ -1,120 +1,166 @@
-# hugo server --minify --themesDir ../.. --baseURL=http://0.0.0.0:1313/theme/hugo-book/
+baseURL = 'https://piggybotanist.github.io/'
+languageCode = 'en-us'
+title = 'Portfolio'
+theme = 'relearn'
 
-baseURL = 'https://example.com/'
-title = 'Piggy Botanist'
-theme = 'hugo-book'
+[languages]
+  [languages.en]
+    title = 'About My Website'
+    weight = 1
+    languageCode = 'en'
+    languageName = 'English'
+    [languages.en.params]
+      landingPageName = '<i class="fa-fw fas fa-home"></i> Home'
 
-# Book configuration
-disablePathToLower = true
-enableGitInfo = true
+  [[languages.en.menu.shortcuts]]
+    pre = '<i class="fa-fw fab fa-github"></i> '
+    name = 'GitHub'
+    url = 'https://github.com/PiggyBotanist/'
+    weight = 10
 
-# Needed for mermaid/katex shortcodes
+  [[languages.en.menu.shortcuts]]
+    pre = '<i class="fa-fw fab fa-linkedin"></i> '
+    name = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/jeremy-kh-chang/'
+    weight = 20
+
 [markup]
 [markup.goldmark.renderer]
   unsafe = true
 
-[markup.tableOfContents]
-  startLevel = 1
-
-# Multi-lingual mode config
-# There are different options to translate files
-# See https://gohugo.io/content-management/multilingual/#translation-by-filename
-# And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
-[languages]
-[languages.en]
-  languageName = 'English'
-  contentDir = 'content.en'
-  weight = 1
-
-[languages.zh]
-  languageName = 'Chinese'
-  contentDir = 'content.zh'
-  weight = 2
-
-[languages.fr]
-  languageName = 'French'
-  contentDir = 'content.fr'
-  weight = 3
-
-[menu]
-#[[menu.before]]
-
-[[menu.after]]
-  name = "Github"
-  url = "https://github.com/PiggyBotanist"
-  weight = 10
-
-[[menu.after]]
-  name = "Linkedin"
-  url = "https://www.linkedin.com/in/jeremy-chang-393b00245/"
-  weight = 20
-
-
 [params]
-  # (Optional, default light) Sets color theme: light, dark or auto.
-  # Theme 'auto' switches between dark and light modes based on browser/os preferences
-  BookTheme = 'light'
+  additionalContentLanguage = ['en']
+  themeVariantAuto = ['relearn-light', 'relearn-dark']
+  alwaysopen = ''
+  breadcrumbSeparator = '>'
+  collapsibleMenu = true
+  customMathJaxURL = ''
+  customMermaidURL = ''
+  customOpenapiURL = ''
+  disableAnchorCopy = false
+  disableAnchorScrolling = false
+  disableAssetsBusting = false
+  disableBreadcrumb = false
+  disableDefaultRelref = false
+  disableExplicitIndexURLs = false
+  disableGeneratorVersion = false
+  disableHoverBlockCopyToClipBoard = false
+  disableInlineCopyToClipBoard = true
+  disableLandingPageButton = true
+  disableLanguageSwitchingButton = false
+  disableNextPrev = false
+  disableRandomIds = false
+  disableRootBreadcrumb = true
+  disableSearch = false
+  disableSearchHiddenPages = false
+  disableSearchIndex = false
+  disableSearchPage = false
+  disableSeoHiddenPages = true
+  disableShortcutsTitle = false
+  disableTagHiddenPages = false
+  disableTermBreadcrumbs = false
+  disableToc = false
+  editURL = 'https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/${FilePath}'
+  externalLinkTarget = '_self'
+  highlightWrap = true
+  images = ['images/hero.png']
+  linkTitle = 'Piggybotanist'
+  math = false
+  mathJaxInitialize = '{}'
+  mermaidInitialize = '{ "securityLevel": "loose" }'
+  mermaidZoom = true
+  minify = ''
+  ordersectionsby = 'weight'
+  searchIndexURL = 'searchindex.js'
+  searchPageURL = 'search'
+  showVisitedLinks = true
+  titleSeparator = '::'
 
-  # (Optional, default true) Controls table of contents visibility on right side of pages.
-  # Start and end levels can be controlled with markup.tableOfContents setting.
-  # You can also specify this parameter per page in front matter.
-  BookToC = true
+  [params.author]
+    name = 'Sören Weber'
 
-  # (Optional, default favicon.png) Set the path to a favicon file.
-  # If the favicon is /static/favicon.png then the path would be favicon.png
-  # BookFavicon = 'favicon.png'
+  [[params.boxStyle]]
+    color = 'gold'
+    i18n = ''
+    icon = 'rainbow'
+    identifier = 'magic'
+    title = 'Magic'
 
-  # (Optional, default none) Set the path to a logo for the book.
-  # If the logo is /static/logo.png then the path would be logo.png
-  # BookLogo = 'logo.png'
+  [params.image]
+    errorlevel = 'error'
 
-  # (Optional, default docs) Specify root page to render child pages as menu.
-  # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
-  # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
-  BookSection = 'docs'
+  [params.imageEffects]
+    border = true
+    lazy = true
+    lightbox = true
+    shadow = false
 
-  # Set source repository location.
-  # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/alex-shpak/hugo-book'
+  [params.include]
+    errorlevel = 'error'
 
-  # (Optional, default 'commit') Specifies commit portion of the link to the page's last modified
-  # commit hash for 'doc' page type.
-  # Requires 'BookRepo' param.
-  # Value used to construct a URL consisting of BookRepo/BookCommitPath/<commit-hash>
-  # Github uses 'commit', Bitbucket uses 'commits'
-  # BookCommitPath = 'commit'
+  [params.link]
+    errorlevel = 'error'
 
-  # Enable "Edit this page" links for 'doc' page type.
-  # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
-  # Edit path must point to root directory of repo.
-  BookEditPath = 'edit/main/exampleSite'
+  [params.mermaid]
+    force = false
 
-  # Configure the date format used on the pages
-  # - In git information
-  # - In blog posts
-  BookDateFormat = 'January 2, 2006'
+  [params.openapi]
+    errorlevel = 'error'
 
-  # (Optional, default true) Enables search function with flexsearch,
-  # Index is built on fly, therefore it might slowdown your website.
-  # Configuration for indexing can be adjusted in i18n folder per language.
-  BookSearch = true
+  [params.oppenapi]
+    force = false
 
-  # (Optional, default true) Enables comments template on pages
-  # By default partals/docs/comments.html includes Disqus template
-  # See https://gohugo.io/content-management/comments/#configure-disqus
-  # Can be overwritten by same param in page frontmatter
-  BookComments = true
+  [[params.sidebarmenus]]
+    disableTitle = true
+    identifier = 'home'
+    main = true
+    pageRef = ''
+    type = 'page'
 
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
-  # Portable links meant to work with text editors and let you write markdown without {{< relref >}} shortcode
-  # Theme will print warning if page referenced in markdown does not exists.
-  BookPortableLinks = true
+  [[params.sidebarmenus]]
+    disableTitle = false
+    identifier = 'shortcuts'
+    main = false
+    type = 'menu'
 
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
-  BookServiceWorker = true
+  [params.social]
+    facebook_admin = ''
+    twitter = ''
 
-  # /!\ This is an experimental feature, might be removed or changed at any time
-  # (Optional, experimental, default false) Enables a drop-down menu for translations only if a translation is present.
-  BookTranslatedOnly = false
+  [[params.themeVariant]]
+    auto = []
+    identifier = 'relearn-auto'
+    name = 'Default Theme'
+
+  [[params.themeVariant]]
+    identifier = 'zen-light'
+
+  [[params.themeVariant]]
+    identifier = 'zen-dark'
+
+  [[params.themeVariant]]
+    identifier = 'relearn-light'
+    name = 'Custom Light'
+
+  [[params.themeVariant]]
+    identifier = 'relearn-dark'
+    name = 'Custom Dark'
+
+  [[params.themeVariant]]
+    identifier = 'relearn-bright'
+    name = 'Custom Bright'
+
+  [[params.themeVariant]]
+    identifier = 'neon'
+
+  [[params.themeVariant]]
+    identifier = 'purple'
+
+  [[params.themeVariant]]
+    identifier = 'blue'
+
+  [[params.themeVariant]]
+    identifier = 'green'
+
+  [[params.themeVariant]]
+    identifier = 'red'

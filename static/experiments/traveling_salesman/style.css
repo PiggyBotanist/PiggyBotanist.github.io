@@ -1,6 +1,0 @@
-#canvas {
-    background-color: white;
-    width: 100%;              /* Make it responsive, takes up full width of its parent */
-    height: 100%;        /* Set maximum height to 700px */
-    border: 1px solid black; /* Adds a black border around the canvas */
-}

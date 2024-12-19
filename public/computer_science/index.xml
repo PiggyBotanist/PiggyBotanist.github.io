@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer_sciences :: About My Website</title>
+    <link>http://localhost:1313/computer_science/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 19 Dec 2024 12:41:04 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/computer_science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Genetic Algorithm</title>
+      <link>http://localhost:1313/computer_science/algorithms/genetic_algorithm/index.html</link>
+      <pubDate>Thu, 19 Dec 2024 12:41:04 -0500</pubDate>
+      <guid>http://localhost:1313/computer_science/algorithms/genetic_algorithm/index.html</guid>
+      <description>Node Arrangement: Random Nodes Circular Nodes Number of Nodes (Recommended: 2 - 1000): Population Size (Recommend: 10 - 500): Generations (Recommend: 100 - 5,000): Mutation Rate (Recommend: 0.01 - 0.5): Run Pause Restart Introduction to Genetic Algorithm Genetic Algorithms (GA) is first proposed by John Holland in 1975, is a metaheuristic inspired by the process of natural selection in biology and belongs to a large class of algorithms known as evolutionary algorithms (EA) (Holland, 1975).&#xA;The algorithm mimics the process of nature selection, fitness, offspring production, and mutation. With repetition in these process over many generations, we will eventually arrive at a solution that is better and better overtime.</description>
+    </item>
+  </channel>
+</rss>

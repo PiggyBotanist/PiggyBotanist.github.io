@@ -1,8 +1,0 @@
-/* Styles for the profile picture */
-.profile-icon {
-    width: 100%;            /* Make it responsive to the container's width */
-    height: auto;           /* Maintain aspect ratio */
-    border-radius: 50%;     /* Make it circular */
-    object-fit: cover;      /* Ensure the image covers the area without distortion */
-    display: block;         /* Prevent any inline spacing issues */
-}

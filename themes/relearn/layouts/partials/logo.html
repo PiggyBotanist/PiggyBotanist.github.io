@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="{{ "css/sider.css" | relURL }}">
+<a id="R-logo" class="R-default" href="{{ partial "permalink.gotmpl" (dict "to" .Site.Home) }}">
+    <div class="sider-title">
+        <img src="{{ "images/favicon.png" | relURL }}" alt="Profile Picture" class="profile-icon" />
+        <h1>{{ .Site.Params.linkTitle | default .Site.Title }}</h1>
+    </div>
+</a>

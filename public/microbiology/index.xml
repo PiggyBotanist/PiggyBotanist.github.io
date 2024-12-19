@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microbiology :: About My Website</title>
+    <link>http://localhost:1313/microbiology/index.html</link>
+    <description>Microbiology is the study of micro-organisms which can be sub-divided into:&#xA;Bacteriology: study of bacteria (single: bacterium) Mycology: study of fungus (single: fungi) Virology: study of virus Parasitology: study of parasites Although both virus and parasite are not considered micro-organisms to be precise, they are commonly grouped into the field of medical microbiology due to their clinical significance.&#xA;Although we will not discuss about Imunology (study of immune system) and protistology (study of protist) they are also commonly grouped into the field of microbiology as well.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Dec 2024 21:33:24 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/microbiology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principles</title>
+      <link>http://localhost:1313/microbiology/principles/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:33:24 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/principles/index.html</guid>
+      <description>Microbiology Fundementals</description>
+    </item>
+    <item>
+      <title>Bacteriology</title>
+      <link>http://localhost:1313/microbiology/bacteriology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:07 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/bacteriology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Mycology</title>
+      <link>http://localhost:1313/microbiology/mycology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:30 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/mycology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Virology</title>
+      <link>http://localhost:1313/microbiology/virology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:53 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/virology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Parasitology</title>
+      <link>http://localhost:1313/microbiology/parasitology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:22 -0500</pubDate>
+      <guid>http://localhost:1313/microbiology/parasitology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+  </channel>
+</rss>

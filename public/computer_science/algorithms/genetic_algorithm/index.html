@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.136.5">
+    <meta name="generator" content="Relearn 7.2.1+16d4de84becfa2d2e6bdb2394a2f4fa411bc0007">
+    <meta name="description" content="Node Arrangement: Random Nodes Circular Nodes Number of Nodes (Recommended: 2 - 1000): Population Size (Recommend: 10 - 500): Generations (Recommend: 100 - 5,000): Mutation Rate (Recommend: 0.01 - 0.5): Run Pause Restart Introduction to Genetic Algorithm Genetic Algorithms (GA) is first proposed by John Holland in 1975, is a metaheuristic inspired by the process of natural selection in biology and belongs to a large class of algorithms known as evolutionary algorithms (EA) (Holland, 1975).
+The algorithm mimics the process of nature selection, fitness, offspring production, and mutation. With repetition in these process over many generations, we will eventually arrive at a solution that is better and better overtime.">
+    <meta name="author" content="Sören Weber">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:1313/images/hero.png">
+    <meta name="twitter:title" content="Genetic Algorithm :: About My Website">
+    <meta name="twitter:description" content="Node Arrangement: Random Nodes Circular Nodes Number of Nodes (Recommended: 2 - 1000): Population Size (Recommend: 10 - 500): Generations (Recommend: 100 - 5,000): Mutation Rate (Recommend: 0.01 - 0.5): Run Pause Restart Introduction to Genetic Algorithm Genetic Algorithms (GA) is first proposed by John Holland in 1975, is a metaheuristic inspired by the process of natural selection in biology and belongs to a large class of algorithms known as evolutionary algorithms (EA) (Holland, 1975).
+The algorithm mimics the process of nature selection, fitness, offspring production, and mutation. With repetition in these process over many generations, we will eventually arrive at a solution that is better and better overtime.">
+    <meta property="og:url" content="http://localhost:1313/computer_science/algorithms/genetic_algorithm/index.html">
+    <meta property="og:site_name" content="About My Website">
+    <meta property="og:title" content="Genetic Algorithm :: About My Website">
+    <meta property="og:description" content="Node Arrangement: Random Nodes Circular Nodes Number of Nodes (Recommended: 2 - 1000): Population Size (Recommend: 10 - 500): Generations (Recommend: 100 - 5,000): Mutation Rate (Recommend: 0.01 - 0.5): Run Pause Restart Introduction to Genetic Algorithm Genetic Algorithms (GA) is first proposed by John Holland in 1975, is a metaheuristic inspired by the process of natural selection in biology and belongs to a large class of algorithms known as evolutionary algorithms (EA) (Holland, 1975).
+The algorithm mimics the process of nature selection, fitness, offspring production, and mutation. With repetition in these process over many generations, we will eventually arrive at a solution that is better and better overtime.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Computer_sciences">
+    <meta property="article:published_time" content="2024-12-19T12:41:04-05:00">
+    <meta property="article:modified_time" content="2024-12-19T12:41:04-05:00">
+    <meta property="og:image" content="http://localhost:1313/images/hero.png">
+    <meta itemprop="name" content="Genetic Algorithm :: About My Website">
+    <meta itemprop="description" content="Node Arrangement: Random Nodes Circular Nodes Number of Nodes (Recommended: 2 - 1000): Population Size (Recommend: 10 - 500): Generations (Recommend: 100 - 5,000): Mutation Rate (Recommend: 0.01 - 0.5): Run Pause Restart Introduction to Genetic Algorithm Genetic Algorithms (GA) is first proposed by John Holland in 1975, is a metaheuristic inspired by the process of natural selection in biology and belongs to a large class of algorithms known as evolutionary algorithms (EA) (Holland, 1975).
+The algorithm mimics the process of nature selection, fitness, offspring production, and mutation. With repetition in these process over many generations, we will eventually arrive at a solution that is better and better overtime.">
+    <meta itemprop="datePublished" content="2024-12-19T12:41:04-05:00">
+    <meta itemprop="dateModified" content="2024-12-19T12:41:04-05:00">
+    <meta itemprop="wordCount" content="1078">
+    <meta itemprop="image" content="http://localhost:1313/images/hero.png">
+    <title>Genetic Algorithm :: About My Website</title>
+    <link href="/images/favicon.png?1734649395" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1734649395" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1734649395" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1734649395" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1734649395" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1734649395" rel="stylesheet">
+    <link href="/css/theme.css?1734649395" rel="stylesheet">
+    <link href="/css/format-html.css?1734649395" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-auto', 'zen-light', 'zen-dark', 'relearn-light', 'relearn-dark', 'relearn-bright', 'neon', 'purple', 'blue', 'green', 'red' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/computer_science/algorithms/genetic_algorithm/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction-to-genetic-algorithm">Introduction to Genetic Algorithm</a></li>
+        <li><a href="#traveling-salesman-problem-as-an-example">Traveling Salesman Problem as an Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#solving-the-problem">Solving the Problem</a>
+      <ul>
+        <li><a href="#example-source-code-using-python">Example source code using python:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/computer_science/index.html"><span itemprop="name">Computer_sciences</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Genetic Algorithm</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/computer_science/algorithms/genetic_algorithm.md" target="_self" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/computer_science/index.html" title="Computer_sciences (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/biology/index.html" title="Biologies (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable computer_science" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="genetic-algorithm">Genetic Algorithm</h1>
+
+<span class="math align-center"></span>
+<link rel="stylesheet" href="/demo/algorithms/geneticAlgorithm_TSP/style.css">
+<div class="form-container">
+    <div class="form-group">
+        <label for="node-arrangement">Node Arrangement:</label>
+        <select id="node-arrangement" class="select">
+            <option value="random">Random Nodes</option>
+            <option value="circular">Circular Nodes</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="node-count">Number of Nodes (Recommended: 2 - 1000):</label>
+        <input id="node-count" class="input" type="number" value="100" min="2" max="500">
+    </div>
+    <div class="form-group">
+        <label for="population-size">Population Size (Recommend: 10 - 500):</label>
+        <input id="population-size" class="input" type="number" value="100" min="10" max="500">
+    </div>
+    <div class="form-group">
+        <label for="generations">Generations (Recommend: 100 - 5,000):</label>
+        <input id="generations" class="input" type="number" value="20" min="1" max="5000">
+    </div>
+    <div class="form-group">
+        <label for="mutation-rate">Mutation Rate (Recommend: 0.01 - 0.5):</label>
+        <input id="mutation-rate" class="input" type="number" value="0.05" min="0.01" max="0.5" step="0.01">
+    </div>
+    <div class="button-group">
+        <button id="run-geneticAlgorithm" class="button">Run</button>
+        <button id="pause" class="button">Pause</button>
+        <button id="reset" class="button">Restart</button>
+    </div>
+    <canvas id="canvas"></canvas>
+</div>
+<script src="/demo/algorithms/geneticAlgorithm_TSP/map.js"></script>
+<script src="/demo/algorithms/geneticAlgorithm_TSP/main.js"></script>
+<script src="/demo/algorithms/geneticAlgorithm_TSP/input_listener.js"></script>
+<script src="/demo/algorithms/geneticAlgorithm_TSP/genetic_algorithm.js"></script>
+<h3 id="introduction-to-genetic-algorithm">Introduction to Genetic Algorithm</h3>
+<p><strong>Genetic Algorithms (GA)</strong> is first proposed by <strong>John Holland</strong> in 1975, is a metaheuristic inspired by the process of <strong>natural selection</strong> in biology and belongs to a large class of algorithms known as <strong>evolutionary algorithms (EA)</strong> <a href="https://doi.org/10.7551/mitpress/1090.001.0001" rel="external" target="_self">(Holland, 1975)</a>.</p>
+<p>The algorithm mimics the process of nature selection, fitness, offspring production, and mutation. With repetition in these process over many generations, we will eventually arrive at a solution that is better and better overtime.</p>
+<p>The Key concepts in the algorithm involves:</p>
+<ol>
+<li><strong>Natural Selection</strong>: given a definition of fitness, only a certain proportion of population will be able to survive.</li>
+<li><strong>Offspring Production / Cross Over</strong>: for those who survived, they have the opportunity to breed and carry their genetic material. The offspring will have genes randomly assigned for one of its parents.</li>
+<li><strong>Mutation</strong>: after the offspring is produce, it will be subject to potential mutations where it will get a gene randomly assigned.</li>
+<li><strong>Repetition</strong>: usually step 1-3 are repeated over and over again until a specific threshold is met.</li>
+</ol>
+<p>The parameters involved in this algorithm includes:</p>
+<ul>
+<li><strong>Population Size</strong>: which represents how many individuals are present in each generation.</li>
+<li><strong>Max Iteration</strong>: max number of generations we allow (e.g: run 100 generations total).</li>
+<li><strong>Survive Ratio</strong>: proportion of top individuals that can survive (e.g: 0.1 means top 10% survives each iteration).</li>
+<li><strong>Mutation Rate</strong>: the probability for one gene to be mutated for each individual.</li>
+</ul>
+<h3 id="traveling-salesman-problem-as-an-example">Traveling Salesman Problem as an Example</h3>
+<p>The <strong>Traveling Salesman Problem (TSP)</strong> is a classic optimization problem defined by a set of $n$ cities, each represented by a pair of Cartesian coordinates $(x_i, y_i)$, where ${i = 1, 2, \dots, n}$. The goal of the problem is to find the shortest possible route that visits each node exactly once and returns to the starting node. The challenge is to explore the vast solution space efficiently to minimize the total distance traveled. If we were to calculate the result for all possibilities we will have <strong>$n!n!$</strong> may possibilities, hence will take a long time to get the optimal solution even with only a few hundred cities. Hence, we can use <strong>genetic algorithm</strong> to find a relatively optimal solution in a short amount of time. <em>NOTE: it is only a relative optimal, because this method can never guarentee finding the best solution</em>.</p>
+<p>In this problem lets assume we have a solution P where $ P = (p_1, p_2, \dots, p_n)$. $p_1$ is the first city we visit, followed by $p_2$, $p_3$ &hellip; until the last p which is $p_n$. The total distance can then be calculated by adding the distance between the two points together like this:</p>
+<p>$$
+D(P) = \sum_{i=1}^{n-1} \text{dist}(p_i, p_{i+1})
+$$</p>
+<p>where $\text{dist}(p_i, p_j)$ is the Euclidean distance between nodes $p_i$ and $p_j$, calculated as:</p>
+<p>$$
+\text{dist}(p_i, p_j) = \sqrt{(x_i - x_j)^2 + (y_i - y_j)^2}
+$$</p>
+<p>We can then define the <strong>fitness</strong> of a specific solution to be:</p>
+<p>$$
+F(P) = \frac{1}{D(P)}
+$$</p>
+<h2 id="solving-the-problem">Solving the Problem</h2>
+<p>Now we have the definition we can go about optimizing the solution.</p>
+<p>Here the permutation of cities is its entire genome where each city at position i is one gene, all we need to do is find the fitness of a group of population with different sets of city, get offspring (city of permutation from two parents) with some mutation.</p>
+<h3 id="example-source-code-using-python">Example source code using python:</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GeneticAlgorithm</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, population_size, survive_ratio, mutation_rate, max_iteration):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>population_size <span style="color:#f92672">=</span> population_size
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>survive_ratio <span style="color:#f92672">=</span> survive_ratio
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>mutation_rate <span style="color:#f92672">=</span> mutation_rate
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>max_iteration <span style="color:#f92672">=</span> max_iteration
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>best_path <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>populations <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Fisher-Yates Shuffle (The shuffle is unique here because we cannot have repeat, but also need all to be included)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">shuffle</span>(self, array):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(array) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            j <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, i)
+</span></span><span style="display:flex;"><span>            array[i], array[j] <span style="color:#f92672">=</span> array[j], array[i]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> array
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Initialize the population of paths</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">init_population</span>(self, nodes):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>populations <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>population_size):
+</span></span><span style="display:flex;"><span>            new_shuffle <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>shuffle(nodes[:])  <span style="color:#75715e"># Copy nodes and shuffle</span>
+</span></span><span style="display:flex;"><span>            path <span style="color:#f92672">=</span> [new_shuffle[<span style="color:#ae81ff">0</span>]]
+</span></span><span style="display:flex;"><span>            distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Create a path from the shuffled nodes and calculate its distance</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(new_shuffle) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>                distance <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>calculate_distance(new_shuffle[i], new_shuffle[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>                path<span style="color:#f92672">.</span>append(new_shuffle[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>populations<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#39;path&#39;</span>: path, <span style="color:#e6db74">&#39;distance&#39;</span>: distance})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate Euclidean distance between two points</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_distance</span>(self, node1, node2):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> math<span style="color:#f92672">.</span>sqrt((node2[<span style="color:#e6db74">&#39;x&#39;</span>] <span style="color:#f92672">-</span> node1[<span style="color:#e6db74">&#39;x&#39;</span>]) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (node2[<span style="color:#e6db74">&#39;y&#39;</span>] <span style="color:#f92672">-</span> node1[<span style="color:#e6db74">&#39;y&#39;</span>]) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Run the Genetic Algorithm to evolve the population</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run_one_iteration</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Sort the population by distance</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>populations<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x[<span style="color:#e6db74">&#39;distance&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Save the best path found so far</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>best_path <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">or</span> self<span style="color:#f92672">.</span>populations[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;distance&#39;</span>] <span style="color:#f92672">&lt;</span> self<span style="color:#f92672">.</span>best_path[<span style="color:#e6db74">&#39;distance&#39;</span>]:
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>best_path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>populations[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Perform natural selection to generate the next generation</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>populations <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>natural_selection(self<span style="color:#f92672">.</span>populations, self<span style="color:#f92672">.</span>survive_ratio, self<span style="color:#f92672">.</span>mutation_rate)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>best_path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Natural selection step: survival of the fittest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">natural_selection</span>(self, sorted_population, survive_ratio, mutation_rate):
+</span></span><span style="display:flex;"><span>        num_survived <span style="color:#f92672">=</span> int(survive_ratio <span style="color:#f92672">*</span> len(sorted_population))
+</span></span><span style="display:flex;"><span>        survived_population <span style="color:#f92672">=</span> sorted_population[:num_survived]  <span style="color:#75715e"># Survivors</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        new_population <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Create new individuals (offspring) through crossover and mutation</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(len(sorted_population) <span style="color:#f92672">-</span> num_survived):
+</span></span><span style="display:flex;"><span>            parent_1 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(survived_population)
+</span></span><span style="display:flex;"><span>            parent_2 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(survived_population)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            child <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>crossover(parent_1, parent_2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Apply mutation to the child with a given mutation rate</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> random<span style="color:#f92672">.</span>random() <span style="color:#f92672">&lt;</span> mutation_rate:
+</span></span><span style="display:flex;"><span>                child <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>mutate(child)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            new_population<span style="color:#f92672">.</span>append(child)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Combine survivors and new population to form the next generation</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> survived_population <span style="color:#f92672">+</span> new_population
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Crossover function (Order Crossover - OX)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">crossover</span>(self, parent_1, parent_2):
+</span></span><span style="display:flex;"><span>        parent_1_path <span style="color:#f92672">=</span> parent_1[<span style="color:#e6db74">&#39;path&#39;</span>]
+</span></span><span style="display:flex;"><span>        parent_2_path <span style="color:#f92672">=</span> parent_2[<span style="color:#e6db74">&#39;path&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        crossover_point_1 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, len(parent_1_path) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        crossover_point_2 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(crossover_point_1, len(parent_1_path) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        child_path <span style="color:#f92672">=</span> [<span style="color:#66d9ef">None</span>] <span style="color:#f92672">*</span> len(parent_1_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Copy the portion of parent_1&#39;s path between the crossover points</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(crossover_point_1, crossover_point_2 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            child_path[i] <span style="color:#f92672">=</span> parent_1_path[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Fill the remaining positions in the child path with nodes from parent_2</span>
+</span></span><span style="display:flex;"><span>        parent_2_index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(parent_2_path)):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> parent_2_path[i] <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> child_path:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">while</span> child_path[parent_2_index] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                    parent_2_index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                child_path[parent_2_index] <span style="color:#f92672">=</span> parent_2_path[i]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        distance <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>calculate_path_distance(child_path)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;path&#39;</span>: child_path, <span style="color:#e6db74">&#39;distance&#39;</span>: distance}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Mutate function (mutation swaps two nodes)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mutate</span>(self, child):
+</span></span><span style="display:flex;"><span>        mutation_point_1 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, len(child[<span style="color:#e6db74">&#39;path&#39;</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        mutation_point_2 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, len(child[<span style="color:#e6db74">&#39;path&#39;</span>]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Swap two nodes in the path</span>
+</span></span><span style="display:flex;"><span>        child[<span style="color:#e6db74">&#39;path&#39;</span>][mutation_point_1], child[<span style="color:#e6db74">&#39;path&#39;</span>][mutation_point_2] <span style="color:#f92672">=</span> child[<span style="color:#e6db74">&#39;path&#39;</span>][mutation_point_2], child[<span style="color:#e6db74">&#39;path&#39;</span>][mutation_point_1]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Recalculate the distance after mutation</span>
+</span></span><span style="display:flex;"><span>        child[<span style="color:#e6db74">&#39;distance&#39;</span>] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>calculate_path_distance(child[<span style="color:#e6db74">&#39;path&#39;</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> child
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate total distance of a given path</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_path_distance</span>(self, path):
+</span></span><span style="display:flex;"><span>        total_distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(path) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            total_distance <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>calculate_distance(path[i], path[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Optionally add distance to return to the starting city (round-trip TSP)</span>
+</span></span><span style="display:flex;"><span>        total_distance <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>calculate_distance(path[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], path[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> total_distance</span></span></code></pre></div>
+<p>Reference:</p>
+<ul>
+<li><a href="https://doi.org/10.7551/mitpress/1090.001.0001" rel="external" target="_self">Holland, J. H. (1975). Adaptation in natural and artificial systems</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<link rel="stylesheet" href="/css/sider.css">
+<a id="R-logo" class="R-default" href="/index.html">
+    <div class="sider-title">
+        <img src="/images/favicon.png" alt="Profile Picture" class="profile-icon" />
+        <h1>Piggybotanist</h1>
+    </div>
+</a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1734649395";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1734649395" defer></script>
+        <script src="/js/lunr/lunr.min.js?1734649395" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1734649395" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1734649395" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1734649395" defer></script>
+        <script src="/js/search.js?1734649395" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/computer_science/index.html"><input type="checkbox" id="R-section-9d56b47bdcde399608b92c5d1e2584e9" aria-controls="R-subsections-9d56b47bdcde399608b92c5d1e2584e9" checked><label for="R-section-9d56b47bdcde399608b92c5d1e2584e9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Computer_sciences</span></label><a class="padding" href="/computer_science/index.html">Computer_sciences<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9d56b47bdcde399608b92c5d1e2584e9" class="collapsible-menu">
+            <li class="active " data-nav-id="/computer_science/algorithms/genetic_algorithm/index.html"><a class="padding" href="/computer_science/algorithms/genetic_algorithm/index.html">Genetic Algorithm<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/biology/index.html"><input type="checkbox" id="R-section-d3515fc8b40fcd324067ac8344325617" aria-controls="R-subsections-d3515fc8b40fcd324067ac8344325617"><label for="R-section-d3515fc8b40fcd324067ac8344325617"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Biologies</span></label><a class="padding" href="/biology/index.html">Biologies<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d3515fc8b40fcd324067ac8344325617" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/biology/microbiology/index.html"><input type="checkbox" id="R-section-052fa7ffa331b840f5849fc4789ee508" aria-controls="R-subsections-052fa7ffa331b840f5849fc4789ee508" checked><label for="R-section-052fa7ffa331b840f5849fc4789ee508"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Microbiology</span></label><a class="padding" href="/biology/microbiology/index.html"><i class='fa-fw fas fa-bacterium'></i> Microbiology<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-052fa7ffa331b840f5849fc4789ee508" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/biology/microbiology/principles/index.html"><input type="checkbox" id="R-section-e7f470fe67df2ab168e4187297df0594" aria-controls="R-subsections-e7f470fe67df2ab168e4187297df0594" checked><label for="R-section-e7f470fe67df2ab168e4187297df0594"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Principles</span></label><a class="padding" href="/biology/microbiology/principles/index.html">Principles<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e7f470fe67df2ab168e4187297df0594" class="collapsible-menu">
+            <li class="" data-nav-id="/biology/microbiology/principles/01.antisepsis/index.html"><a class="padding" href="/biology/microbiology/principles/01.antisepsis/index.html">Antiseptic Procedures<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/biology/microbiology/principles/02.culture/index.html"><a class="padding" href="/biology/microbiology/principles/02.culture/index.html">Culture Methods<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/biology/microbiology/principles/03.pathogenesis/index.html"><a class="padding" href="/biology/microbiology/principles/03.pathogenesis/index.html">Pathogenesis<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/biology/microbiology/principles/04.diagnostics/index.html"><a class="padding" href="/biology/microbiology/principles/04.diagnostics/index.html">Diagnostics<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/biology/microbiology/bacteriology/index.html"><a class="padding" href="/biology/microbiology/bacteriology/index.html">Bacteriology<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/biology/microbiology/mycology/index.html"><a class="padding" href="/biology/microbiology/mycology/index.html">Mycology<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/biology/microbiology/virology/index.html"><a class="padding" href="/biology/microbiology/virology/index.html">Virology<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/biology/microbiology/parasitology/index.html"><a class="padding" href="/biology/microbiology/parasitology/index.html">Parasitology<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/about/index.html"><a class="padding" href="/about/index.html"><i class='fa-fw fas fa-user'></i> About<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div id="R-shortcutmenu-shortcuts" class="R-sidebarmenu">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="https://github.com/PiggyBotanist/"><a class="padding" href="https://github.com/PiggyBotanist/" target="_self"><i class="fa-fw fab fa-github"></i> GitHub<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="https://www.linkedin.com/in/jeremy-kh-chang/"><a class="padding" href="https://www.linkedin.com/in/jeremy-kh-chang/" target="_self"><i class="fa-fw fab fa-linkedin"></i> LinkedIn<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/computer_science/algorithms/genetic_algorithm/index.html" lang="en" selected>English</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-relearn-auto" value="relearn-auto" selected>Default Theme</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Custom Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Custom Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Custom Bright</option>
+                      <option id="R-select-variant-neon" value="neon">Neon</option>
+                      <option id="R-select-variant-purple" value="purple">Purple</option>
+                      <option id="R-select-variant-blue" value="blue">Blue</option>
+                      <option id="R-select-variant-green" value="green">Green</option>
+                      <option id="R-select-variant-red" value="red">Red</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1734649395" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1734649395" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1734649395"></script>
+    <script src="/js/theme.js?1734649395" defer></script>
+  </body>
+</html>

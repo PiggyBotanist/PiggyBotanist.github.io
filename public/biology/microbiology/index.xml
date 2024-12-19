@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microbiology :: About My Website</title>
+    <link>http://localhost:1313/biology/microbiology/index.html</link>
+    <description>Microbiology is the scientific study of microorganisms — tiny, often invisible organisms that play crucial roles in health, the environment, and various industrial processes. Microbiology can be broadly divided into several specialized fields, each focusing on different types of microorganisms:&#xA;Bacteriology: The study of bacteria, which are single-celled organisms that can exist independently or as pathogens, causing infections in humans, animals, and plants. Mycology: The study of fungi, which include yeasts, molds, and mushrooms. Fungi can be beneficial (e.g., in food production) but also harmful (e.g., causing infections). Virology: The study of viruses, which are non-living entities that require a host cell to reproduce and can cause a variety of diseases. 4 Parasitology: The study of parasites, organisms that live on or inside another organism (the host) and can cause diseases. Although viruses and parasites are technically not classified as microorganisms in the traditional sense, they are commonly included within the broader field of medical microbiology due to their significant clinical impact.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Dec 2024 21:33:24 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/biology/microbiology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principles</title>
+      <link>http://localhost:1313/biology/microbiology/principles/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:33:24 -0500</pubDate>
+      <guid>http://localhost:1313/biology/microbiology/principles/index.html</guid>
+      <description>Microbiology Fundementals</description>
+    </item>
+    <item>
+      <title>Bacteriology</title>
+      <link>http://localhost:1313/biology/microbiology/bacteriology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:07 -0500</pubDate>
+      <guid>http://localhost:1313/biology/microbiology/bacteriology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Mycology</title>
+      <link>http://localhost:1313/biology/microbiology/mycology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:30 -0500</pubDate>
+      <guid>http://localhost:1313/biology/microbiology/mycology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Virology</title>
+      <link>http://localhost:1313/biology/microbiology/virology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:53 -0500</pubDate>
+      <guid>http://localhost:1313/biology/microbiology/virology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+    <item>
+      <title>Parasitology</title>
+      <link>http://localhost:1313/biology/microbiology/parasitology/index.html</link>
+      <pubDate>Tue, 17 Dec 2024 21:32:22 -0500</pubDate>
+      <guid>http://localhost:1313/biology/microbiology/parasitology/index.html</guid>
+      <description>This is a new chapter.</description>
+    </item>
+  </channel>
+</rss>

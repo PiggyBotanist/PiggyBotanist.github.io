@@ -1,0 +1,56 @@
+#canvas {
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+/* Container for the form */
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px; /* Adds space between form groups */
+    margin: 0 auto; /* Centers the form */
+    padding: 20px;
+}
+
+/* Group for each input and its label */
+.form-group {
+    display: flex;
+    align-items: center; /* Aligns label and input in the same row */
+    gap: 10px; /* Adds space between label and input */
+}
+
+/* Style for labels */
+.form-group label {
+    font-weight: bold;
+    font-size: 12px;
+    width: 300px; /* Ensures labels have consistent width */
+}
+
+/* Style for inputs */
+.form-group .input, .select {
+    padding: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    max-width: 150px; /* Restricts max width of inputs */
+}
+
+/* Style for buttons */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effects */
+.button:hover {
+    background-color: #45a049;
+}

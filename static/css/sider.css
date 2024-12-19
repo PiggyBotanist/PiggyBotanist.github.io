@@ -1,0 +1,20 @@
+.sider-title {
+    display: flex;              /* Use flexbox to arrange children */
+    flex-direction: column;     /* Stack the items vertically */
+    align-items: center;        /* Horizontally center the items */
+    justify-content: center;    /* Vertically center the items */
+    width: 100%;                /* Full width of the container */
+    text-align: center;         /* Center the text */
+}
+
+.sider-title img {
+    width: 30%;                 /* Make the image 30% of the container width */
+    height: auto;               /* Maintain aspect ratio */
+    border-radius: 50%;         /* Make it circular */
+    object-fit: cover;          /* Ensure the image covers the area without distortion */
+}
+
+.sider-title h1 {
+    margin: 0;                  /* Remove default margin around the h1 */
+    font-size: 1.5rem;          /* Adjust the font size */
+}
