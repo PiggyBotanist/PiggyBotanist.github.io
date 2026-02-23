@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Orthogonal Matrices on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/orthogonal-matrices/</link>
+    <description>Recent content in Orthogonal Matrices on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/orthogonal-matrices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>03. Orthogonality</title>
+      <link>http://localhost:1313/notes/linear-algebra/03-orthogonality/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/03-orthogonality/</guid>
+      <description>&lt;p&gt;Orthogonality generalizes “perpendicular” and leads to orthonormal bases and matrices that preserve lengths and angles—essential for stable numerics and many algorithms.&lt;/p&gt;
+&lt;h2 id=&#34;definitions&#34;&gt;Definitions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Orthogonal vectors&lt;/strong&gt;: $\mathbf{u} \perp \mathbf{v}$ if $\mathbf{u} \cdot \mathbf{v} = 0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Orthogonal set&lt;/strong&gt;: Every pair of vectors in the set is orthogonal.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Orthonormal set&lt;/strong&gt;: An orthogonal set of &lt;strong&gt;unit&lt;/strong&gt; vectors: $\mathbf{q}_i \cdot \mathbf{q}&lt;em&gt;j = \delta&lt;/em&gt;{ij}$ (Kronecker delta).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;key-properties&#34;&gt;Key properties&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Pythagorean theorem&lt;/strong&gt;: $\mathbf{u} \perp \mathbf{v} \iff |\mathbf{u}+\mathbf{v}|^2 = |\mathbf{u}|^2 + |\mathbf{v}|^2$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

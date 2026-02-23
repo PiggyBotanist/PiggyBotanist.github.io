@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Operators on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/tags/operators/</link>
+    <description>Recent content in Operators on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>03. Matrices</title>
+      <link>http://localhost:1313/notes/linear-algebra/03-matrix-definition/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/03-matrix-definition/</guid>
+      <description>&lt;p&gt;A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.&lt;/p&gt;
+&lt;h2 id=&#34;1-fundamental-definitions&#34;&gt;1. Fundamental Definitions&lt;/h2&gt;
+&lt;p&gt;For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transpose&lt;/strong&gt;: $A^T$ where $[A]^T_{ij} = a_{ji}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trace&lt;/strong&gt;: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Cyclic Property&lt;/em&gt;: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-matrix-multiplication-four-perspectives&#34;&gt;2. Matrix Multiplication: Four Perspectives&lt;/h2&gt;
+&lt;p&gt;Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>06. Matrix Inverses</title>
+      <link>http://localhost:1313/notes/linear-algebra/06-inverses/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/06-inverses/</guid>
+      <description>&lt;p&gt;An invertible matrix (or non-singular matrix) represents an operator that can be &amp;ldquo;undone.&amp;rdquo; If $A$ maps $\mathbf{x}$ to $\mathbf{b}$, then $A^{-1}$ maps $\mathbf{b}$ back to $\mathbf{x}$.&lt;/p&gt;
+&lt;h2 id=&#34;1-definition-and-existence&#34;&gt;1. Definition and Existence&lt;/h2&gt;
+&lt;p&gt;A square matrix $A \in \mathbb{F}^{n \times n}$ is &lt;strong&gt;invertible&lt;/strong&gt; if there exists a matrix $A^{-1}$ such that:&lt;/p&gt;
+&lt;p&gt;
+$$
+AA^{-1} = A^{-1}A = I_n
+$$
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Uniqueness&lt;/strong&gt;: If an inverse exists, it is unique.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Existence Condition&lt;/strong&gt;: $A$ is invertible if and only if $\det(A) \neq 0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Singular Matrix&lt;/strong&gt;: A square matrix with no inverse ($\det(A) = 0$).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-calculation-methods&#34;&gt;2. Calculation Methods&lt;/h2&gt;
+&lt;h3 id=&#34;21-the-2-times-2-case&#34;&gt;2.1 The $2 \times 2$ Case&lt;/h3&gt;
+&lt;p&gt;For $A = \begin{bmatrix} a &amp;amp; b \ c &amp;amp; d \end{bmatrix}$, the inverse is:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

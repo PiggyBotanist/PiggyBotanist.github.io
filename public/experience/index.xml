@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Experience on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/experience/</link>
+    <description>Recent content in Experience on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/experience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thyself - Full Stack Developer</title>
+      <link>http://localhost:1313/experience/05-thyself/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/05-thyself/</guid>
+      <description>&lt;p&gt;Worked on a startup project in a group of 15 people over 3 month period and resulted in over &lt;strong&gt;1,000 users&lt;/strong&gt;. Designed Retrieval-Augmented Generation (RAG) based Article Recommendation System with pre-trained LLMs. Developed backend service using PostgreSQL and a FastAPI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MSc Student - University of Guelph</title>
+      <link>http://localhost:1313/experience/03-msc/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/03-msc/</guid>
+      <description>&lt;p&gt;Apply and assess standard ML pipelines including random forests, SVM, classic NN on proteomics and metabolomics of urines to pre-dict litter size and fertility status of pigs. Optimize feed fermentation process by analyzing high dimensional time-series data on temperature, moisture content, and pH level to reduce anti-nutritional factors.&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;During my Master&amp;rsquo;s program at the University of Guelph, I applied machine learning techniques to analyze high-dimensional biological data for predictive modeling and process optimization.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Backend Developer - Animal Health Laboratory</title>
+      <link>http://localhost:1313/experience/02-ahl/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/02-ahl/</guid>
+      <description>&lt;p&gt;Started as a Technician in Bacteriology. But then heavily involved in the design and development of efficient internal inventory management system using VBA, MySQL, and internal API integrations. Successfully reduced workload of all technicians by &lt;strong&gt;10 hours per week&lt;/strong&gt; through automation and streamlined processes.&lt;/p&gt;
+&lt;h2 id=&#34;technologies--skills&#34;&gt;Technologies &amp;amp; Skills&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;VBA&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;REST APIs&lt;/li&gt;
+&lt;li&gt;Backend Development&lt;/li&gt;
+&lt;li&gt;System Design&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Summer Research (URSA)</title>
+      <link>http://localhost:1313/experience/01-ursa/</link>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/01-ursa/</guid>
+      <description>&lt;p&gt;Degradation of antinutritional factors in soybean meal with bacterial fermentation process. Lead to two publications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

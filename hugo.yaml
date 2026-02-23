@@ -1,0 +1,131 @@
+baseURL: "https://PiggyBotanist.github.io/"
+languageCode: en-us
+title: "Jeremy (Kai-Hsiang) Chang"
+theme: PaperMod
+
+# PaperMod theme configuration
+params:
+  env: production
+  title: "Jeremy (Kai-Hsiang) Chang"
+  description: "PhD Student in Computer Science at McGill University | ML, Computational Biology, Human-in-the-Loop AI"
+  keywords: [CS, Machine Learning, Computational Biology, Research, Metagenomics, AI, PyTorch]
+  author: "Jeremy (Kai-Hsiang) Chang"
+  #images: ["/images/profile.jpg"]
+  # Enable KaTeX math globally (per-page can still override with params.math)
+  math: true
+
+  # Profile mode settings
+  profileMode:
+    enabled: true
+    title: "Jeremy Chang"
+    subtitle: "A Passionate PhD Student in Computational Biology"
+    imageUrl: "/images/profile.jpg"
+    #imageTitle: "Profile Picture"
+    imageWidth: 390
+    imageHeight: 408
+    buttons:
+      - name: "Download Resume"
+        url: "/uploads/resume.pdf"
+        icon: "download"
+
+  # Social icons
+  socialIcons:
+    - name: github
+      url: "https://github.com/PiggyBotanist"
+    - name: linkedin
+      url: "https://linkedin.com/in/jeremy-kai-hsiang-chang"
+    - name: email
+      url: "mailto:jeremy.chang@mail.mcgill.ca"
+
+  # Theme features
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  # SEO
+  assets:
+    favicon: "/images/favicon.ico"
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+    safari_pinned_tab: "/images/safari-pinned-tab.svg"
+
+# Menu configuration
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+    #- identifier: experience
+    #  name: Experience
+    #  url: /experience/
+    #  weight: 30
+    - identifier: publications
+      name: Publications
+      url: /publications/
+      weight: 40
+    #- identifier: projects
+    #  name: Projects
+    #  url: /projects/
+    #  weight: 50
+    #- identifier: notes
+    #  name: Notes
+    #  url: /notes/
+    #  weight: 60
+    #- identifier: resume
+    #  name: "📄 Resume"
+    #  url: /uploads/resume.pdf
+    #  weight: 70
+
+# Taxonomies
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+# Markup configuration
+markup:
+  highlight:
+    style: github
+    lineNos: true
+    copy: true
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    tabWidth: 2
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    enabled: true
+    startLevel: 2
+    endLevel: 6
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Build settings
+buildDrafts: false
+buildFuture: false
+buildExpired: false

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01. Vectors and Norms</title>
+      <link>http://localhost:1313/notes/linear-algebra/01-vectors-norms/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/01-vectors-norms/</guid>
+      <description>&lt;p&gt;A vector $\mathbf{v} \in \mathbb{R}^n$ is an ordered $n$-tuple of real numbers, often represented as a column. Vectors are the basic objects in linear algebra and appear as feature vectors, parameter vectors, gradients, and encodings in high-dimensional manifolds.&lt;/p&gt;
+&lt;h2 id=&#34;basic-definitions&#34;&gt;Basic Definitions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Zero vector&lt;/strong&gt;: $\mathbf{0} = [0, \ldots, 0]^T$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unit vector&lt;/strong&gt;: A vector $\mathbf{u}$ with $|\mathbf{u}| = 1$. To &lt;strong&gt;normalize&lt;/strong&gt; a nonzero $\mathbf{v}$:
+&lt;p&gt;
+$$
+\hat{\mathbf{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}
+$$
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linear combination&lt;/strong&gt;: $\mathbf{w} = c_1 \mathbf{v}_1 + \cdots + c_k \mathbf{v}_k$ for scalars $c_i \in \mathbb{R}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Span&lt;/strong&gt;: The set of all linear combinations $\text{span}({\mathbf{v}_i}) = { \sum c_i \mathbf{v}_i }$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vector-norms&#34;&gt;Vector Norms&lt;/h2&gt;
+&lt;p&gt;A norm $|\cdot|$ maps vectors to non‑negative reals, inducing a topology on $\mathbb{R}^n$. The &lt;strong&gt;$p$-norm&lt;/strong&gt; ($p \ge 1$) is defined as:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>02. Geometry and Products</title>
+      <link>http://localhost:1313/notes/linear-algebra/02-geometry-products/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/02-geometry-products/</guid>
+      <description>&lt;p&gt;Geometry in $\mathbb{R}^n$ is induced by the &lt;strong&gt;inner product&lt;/strong&gt;, which allows for the definition of angles, orthogonality, and projections.&lt;/p&gt;
+&lt;h2 id=&#34;1-inner-product-spaces-ips&#34;&gt;1. Inner Product Spaces (IPS)&lt;/h2&gt;
+&lt;p&gt;An inner product $\langle \cdot, \cdot \rangle$ on a vector space $\mathcal{V}$ is a mapping $\mathcal{V} \times \mathcal{V} \to \mathbb{F}$ satisfying:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Conjugate Symmetry&lt;/strong&gt;: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linearity&lt;/strong&gt;: $\langle c\mathbf{u} + \mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle + \langle \mathbf{w}, \mathbf{v} \rangle$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Positive Definiteness&lt;/strong&gt;: $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$ and $\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = \mathbf{0}$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The &lt;strong&gt;standard dot product&lt;/strong&gt; in $\mathbb{R}^n$ is $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum u_i v_i$.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>03. Matrices</title>
+      <link>http://localhost:1313/notes/linear-algebra/03-matrix-definition/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/03-matrix-definition/</guid>
+      <description>&lt;p&gt;A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.&lt;/p&gt;
+&lt;h2 id=&#34;1-fundamental-definitions&#34;&gt;1. Fundamental Definitions&lt;/h2&gt;
+&lt;p&gt;For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transpose&lt;/strong&gt;: $A^T$ where $[A]^T_{ij} = a_{ji}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trace&lt;/strong&gt;: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Cyclic Property&lt;/em&gt;: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-matrix-multiplication-four-perspectives&#34;&gt;2. Matrix Multiplication: Four Perspectives&lt;/h2&gt;
+&lt;p&gt;Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>04. Linear Combinations and Span</title>
+      <link>http://localhost:1313/notes/linear-algebra/04-combination-span/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/04-combination-span/</guid>
+      <description>&lt;p&gt;Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the &lt;strong&gt;Span&lt;/strong&gt;, which geometrically represents the subspace reachable by a set of vectors.&lt;/p&gt;
+&lt;h2 id=&#34;1-linear-combinations&#34;&gt;1. Linear Combinations&lt;/h2&gt;
+&lt;p&gt;A vector $\mathbf{w}$ is a &lt;strong&gt;linear combination&lt;/strong&gt; of a set $S = {\mathbf{v}_1, \dots, \mathbf{v}_k}$ if there exist scalars $c_i \in \mathbb{F}$ such that:&lt;/p&gt;
+&lt;p&gt;
+$$
+\mathbf{w} = \sum_{i=1}^k c_i \mathbf{v}_i = c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \dots + c_k \mathbf{v}_k
+$$
+&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>05. Basis and Dimension</title>
+      <link>http://localhost:1313/notes/linear-algebra/05-basis-dimension/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/05-basis-dimension/</guid>
+      <description>&lt;p&gt;A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.&lt;/p&gt;
+&lt;h2 id=&#34;1-the-basis&#34;&gt;1. The Basis&lt;/h2&gt;
+&lt;p&gt;A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a &lt;strong&gt;basis&lt;/strong&gt; for a vector space $\mathcal{V}$ if:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\mathcal{B}$ is &lt;strong&gt;linearly independent&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;$\text{span}(\mathcal{B}) = \mathcal{V}$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;11-unique-representation-theorem&#34;&gt;1.1 Unique Representation Theorem&lt;/h3&gt;
+&lt;p&gt;If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a &lt;strong&gt;unique&lt;/strong&gt; set of scalars $c_1, \dots, c_n$ such that:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>06. Matrix Inverses</title>
+      <link>http://localhost:1313/notes/linear-algebra/06-inverses/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/06-inverses/</guid>
+      <description>&lt;p&gt;An invertible matrix (or non-singular matrix) represents an operator that can be &amp;ldquo;undone.&amp;rdquo; If $A$ maps $\mathbf{x}$ to $\mathbf{b}$, then $A^{-1}$ maps $\mathbf{b}$ back to $\mathbf{x}$.&lt;/p&gt;
+&lt;h2 id=&#34;1-definition-and-existence&#34;&gt;1. Definition and Existence&lt;/h2&gt;
+&lt;p&gt;A square matrix $A \in \mathbb{F}^{n \times n}$ is &lt;strong&gt;invertible&lt;/strong&gt; if there exists a matrix $A^{-1}$ such that:&lt;/p&gt;
+&lt;p&gt;
+$$
+AA^{-1} = A^{-1}A = I_n
+$$
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Uniqueness&lt;/strong&gt;: If an inverse exists, it is unique.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Existence Condition&lt;/strong&gt;: $A$ is invertible if and only if $\det(A) \neq 0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Singular Matrix&lt;/strong&gt;: A square matrix with no inverse ($\det(A) = 0$).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-calculation-methods&#34;&gt;2. Calculation Methods&lt;/h2&gt;
+&lt;h3 id=&#34;21-the-2-times-2-case&#34;&gt;2.1 The $2 \times 2$ Case&lt;/h3&gt;
+&lt;p&gt;For $A = \begin{bmatrix} a &amp;amp; b \ c &amp;amp; d \end{bmatrix}$, the inverse is:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>07. Determinants</title>
+      <link>http://localhost:1313/notes/linear-algebra/07-determinants/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/07-determinants/</guid>
+      <description>&lt;p&gt;The determinant $\det(A)$ is a scalar value that characterizes a square matrix $A \in \mathbb{F}^{n \times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.&lt;/p&gt;
+&lt;h2 id=&#34;1-formal-definitions&#34;&gt;1. Formal Definitions&lt;/h2&gt;
+&lt;h3 id=&#34;11-leibniz-formula&#34;&gt;1.1 Leibniz Formula&lt;/h3&gt;
+&lt;p&gt;The determinant can be defined using permutations $\sigma$ of the set ${1, \dots, n}$:&lt;/p&gt;
+&lt;p&gt;
+$$
+\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i, \sigma(i)}
+$$
+&lt;/p&gt;
+where $\text{sgn}(\sigma)$ is the signature of the permutation ($+1$ for even, $-1$ for odd).
+&lt;h3 id=&#34;12-laplace-expansion-cofactors&#34;&gt;1.2 Laplace Expansion (Cofactors)&lt;/h3&gt;
+&lt;p&gt;Expanding along row $i$:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cheat Sheet</title>
+      <link>http://localhost:1313/notes/linear-algebra/cheatsheet/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/cheatsheet/</guid>
+      <description>&lt;p&gt;A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.&lt;/p&gt;
+&lt;h2 id=&#34;1-the-basis&#34;&gt;1. The Basis&lt;/h2&gt;
+&lt;p&gt;A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a &lt;strong&gt;basis&lt;/strong&gt; for a vector space $\mathcal{V}$ if:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\mathcal{B}$ is &lt;strong&gt;linearly independent&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;$\text{span}(\mathcal{B}) = \mathcal{V}$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;11-unique-representation-theorem&#34;&gt;1.1 Unique Representation Theorem&lt;/h3&gt;
+&lt;p&gt;If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a &lt;strong&gt;unique&lt;/strong&gt; set of scalars $c_1, \dots, c_n$ such that:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thyself - Full Stack Developer</title>
+      <link>http://localhost:1313/experience/05-thyself/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/05-thyself/</guid>
+      <description>&lt;p&gt;Worked on a startup project in a group of 15 people over 3 month period and resulted in over &lt;strong&gt;1,000 users&lt;/strong&gt;. Designed Retrieval-Augmented Generation (RAG) based Article Recommendation System with pre-trained LLMs. Developed backend service using PostgreSQL and a FastAPI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MSc Student - University of Guelph</title>
+      <link>http://localhost:1313/experience/03-msc/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/03-msc/</guid>
+      <description>&lt;p&gt;Apply and assess standard ML pipelines including random forests, SVM, classic NN on proteomics and metabolomics of urines to pre-dict litter size and fertility status of pigs. Optimize feed fermentation process by analyzing high dimensional time-series data on temperature, moisture content, and pH level to reduce anti-nutritional factors.&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;During my Master&amp;rsquo;s program at the University of Guelph, I applied machine learning techniques to analyze high-dimensional biological data for predictive modeling and process optimization.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Backend Developer - Animal Health Laboratory</title>
+      <link>http://localhost:1313/experience/02-ahl/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/02-ahl/</guid>
+      <description>&lt;p&gt;Started as a Technician in Bacteriology. But then heavily involved in the design and development of efficient internal inventory management system using VBA, MySQL, and internal API integrations. Successfully reduced workload of all technicians by &lt;strong&gt;10 hours per week&lt;/strong&gt; through automation and streamlined processes.&lt;/p&gt;
+&lt;h2 id=&#34;technologies--skills&#34;&gt;Technologies &amp;amp; Skills&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;VBA&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;REST APIs&lt;/li&gt;
+&lt;li&gt;Backend Development&lt;/li&gt;
+&lt;li&gt;System Design&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Summer Research (URSA)</title>
+      <link>http://localhost:1313/experience/01-ursa/</link>
+      <pubDate>Tue, 30 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/01-ursa/</guid>
+      <description>&lt;p&gt;Degradation of antinutritional factors in soybean meal with bacterial fermentation process. Lead to two publications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/linear-algebra/08-subspaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/08-subspaces/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/linear-algebra/09-eigenvalues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/09-eigenvalues/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/linear-algebra/10-decompositions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/10-decompositions/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

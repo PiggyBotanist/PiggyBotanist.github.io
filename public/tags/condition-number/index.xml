@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Condition Number on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/condition-number/</link>
+    <description>Recent content in Condition Number on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/condition-number/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reference: Key Identities and Miscellaneous</title>
+      <link>http://localhost:1313/notes/linear-algebra/reference-identities-and-misc/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/reference-identities-and-misc/</guid>
+      <description>&lt;p&gt;This page collects useful formulas and concepts that appear across linear algebra and numerical analysis.&lt;/p&gt;
+&lt;h2 id=&#34;condition-number&#34;&gt;Condition number&lt;/h2&gt;
+&lt;p&gt;For invertible $A$ and a chosen norm:&lt;/p&gt;
+&lt;p&gt;$$
+\kappa(A) = |A| ,|A^{-1}|.
+$$&lt;/p&gt;
+&lt;p&gt;In 2‑norm, $\kappa(A) = \sigma_{\max}/\sigma_{\min}$, the ratio of largest to smallest singular value. Large $\kappa(A)$ means the system $A\mathbf{x}=\mathbf{b}$ is ill‑conditioned (small input errors can cause large output errors).&lt;/p&gt;
+&lt;h2 id=&#34;matrix-norms&#34;&gt;Matrix norms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Induced norms: $|A|&lt;em&gt;p = \sup&lt;/em&gt;{\mathbf{x}\ne0} \frac{|A\mathbf{x}|_p}{|\mathbf{x}|_p}$.&lt;/li&gt;
+&lt;li&gt;Frobenius norm: $|A|&lt;em&gt;F = \sqrt{\sum&lt;/em&gt;{i,j} |a_{ij}|^2} = \sqrt{\text{tr}(A^T A)}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;block-determinants-and-schur-complement&#34;&gt;Block determinants and Schur complement&lt;/h2&gt;
+&lt;p&gt;If $A$ is invertible,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

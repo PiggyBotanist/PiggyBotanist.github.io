@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rref on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/tags/rref/</link>
+    <description>Recent content in Rref on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rref/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>04. Linear Combinations and Span</title>
+      <link>http://localhost:1313/notes/linear-algebra/04-combination-span/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/04-combination-span/</guid>
+      <description>&lt;p&gt;Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the &lt;strong&gt;Span&lt;/strong&gt;, which geometrically represents the subspace reachable by a set of vectors.&lt;/p&gt;
+&lt;h2 id=&#34;1-linear-combinations&#34;&gt;1. Linear Combinations&lt;/h2&gt;
+&lt;p&gt;A vector $\mathbf{w}$ is a &lt;strong&gt;linear combination&lt;/strong&gt; of a set $S = {\mathbf{v}_1, \dots, \mathbf{v}_k}$ if there exist scalars $c_i \in \mathbb{F}$ such that:&lt;/p&gt;
+&lt;p&gt;
+$$
+\mathbf{w} = \sum_{i=1}^k c_i \mathbf{v}_i = c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \dots + c_k \mathbf{v}_k
+$$
+&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Change of Basis on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/change-of-basis/</link>
+    <description>Recent content in Change of Basis on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/change-of-basis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>08. Basis and Dimension</title>
+      <link>http://localhost:1313/notes/linear-algebra/08-basis-and-dimension/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/08-basis-and-dimension/</guid>
+      <description>&lt;p&gt;A basis is a minimal generating set for a space; dimension is the number of vectors in any basis.&lt;/p&gt;
+&lt;h2 id=&#34;basis&#34;&gt;Basis&lt;/h2&gt;
+&lt;p&gt;$\mathcal{B} = {\mathbf{b}_1,\dots,\mathbf{b}_n}$ is a &lt;strong&gt;basis&lt;/strong&gt; for a subspace $H$ if&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\mathcal{B}$ is linearly independent.&lt;/li&gt;
+&lt;li&gt;$H = \text{span}(\mathcal{B})$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Then every $\mathbf{x} \in H$ has a unique coordinate representation&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{x} = c_1 \mathbf{b}_1 + \cdots + c_n \mathbf{b}_n.
+$$&lt;/p&gt;
+&lt;h2 id=&#34;basis-theorem-and-dimension&#34;&gt;Basis theorem and dimension&lt;/h2&gt;
+&lt;p&gt;If $V$ is $p$‑dimensional:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any L.I. set of exactly $p$ vectors in $V$ is a basis.&lt;/li&gt;
+&lt;li&gt;Any spanning set of exactly $p$ vectors in $V$ is a basis.&lt;/li&gt;
+&lt;li&gt;$\dim(V)$ is the number of vectors in any basis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consequences:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

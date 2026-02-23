@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Orthonormal on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/orthonormal/</link>
+    <description>Recent content in Orthonormal on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/orthonormal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gram–Schmidt Process and QR</title>
+      <link>http://localhost:1313/notes/linear-algebra/gram-schmidt-and-qr/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/gram-schmidt-and-qr/</guid>
+      <description>&lt;p&gt;The Gram–Schmidt process turns any basis into an orthonormal basis; it is the constructive step behind the QR factorization and many orthogonalization methods.&lt;/p&gt;
+&lt;h2 id=&#34;algorithm&#34;&gt;Algorithm&lt;/h2&gt;
+&lt;p&gt;Given a basis ${\mathbf{v}_1, \ldots, \mathbf{v}_n}$:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1 – Orthogonalize:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\mathbf{u}_1 = \mathbf{v}_1$&lt;/li&gt;
+&lt;li&gt;$\mathbf{u}_2 = \mathbf{v}&lt;em&gt;2 - \text{proj}&lt;/em&gt;{\mathbf{u}_1}(\mathbf{v}_2) = \mathbf{v}_2 - \frac{\langle \mathbf{v}_2, \mathbf{u}_1 \rangle}{\langle \mathbf{u}_1, \mathbf{u}_1 \rangle} \mathbf{u}_1$&lt;/li&gt;
+&lt;li&gt;$\mathbf{u}_k = \mathbf{v}&lt;em&gt;k - \sum&lt;/em&gt;{j=1}^{k-1} \frac{\langle \mathbf{v}_k, \mathbf{u}_j \rangle}{\langle \mathbf{u}_j, \mathbf{u}_j \rangle} \mathbf{u}_j$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Step 2 – Normalize:&lt;/strong&gt; $\mathbf{e}_i = \mathbf{u}_i / |\mathbf{u}_i|$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

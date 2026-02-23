@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+        <html lang="en" dir=" auto" data-theme="auto">
+
+            <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Cheat Sheet | Jeremy (Kai-Hsiang) Chang</title>
+<meta name="keywords" content="linear algebra, cheat Sheet">
+<meta name="description" content="A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.
+1. The Basis
+A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a basis for a vector space $\mathcal{V}$ if:
+
+$\mathcal{B}$ is linearly independent.
+$\text{span}(\mathcal{B}) = \mathcal{V}$.
+
+1.1 Unique Representation Theorem
+If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a unique set of scalars $c_1, \dots, c_n$ such that:">
+<meta name="author" content="Jeremy (Kai-Hsiang) Chang">
+<link rel="canonical" href="http://localhost:1313/notes/linear-algebra/cheatsheet/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/linear-algebra/cheatsheet/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/notes/linear-algebra/cheatsheet/">
+  <meta property="og:site_name" content="Jeremy (Kai-Hsiang) Chang">
+  <meta property="og:title" content="Cheat Sheet">
+  <meta property="og:description" content="A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.
+1. The Basis A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a basis for a vector space $\mathcal{V}$ if:
+$\mathcal{B}$ is linearly independent. $\text{span}(\mathcal{B}) = \mathcal{V}$. 1.1 Unique Representation Theorem If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a unique set of scalars $c_1, \dots, c_n$ such that:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:tag" content="Linear Algebra">
+    <meta property="article:tag" content="Cheat Sheet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cheat Sheet">
+<meta name="twitter:description" content="A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.
+1. The Basis
+A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a basis for a vector space $\mathcal{V}$ if:
+
+$\mathcal{B}$ is linearly independent.
+$\text{span}(\mathcal{B}) = \mathcal{V}$.
+
+1.1 Unique Representation Theorem
+If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a unique set of scalars $c_1, \dots, c_n$ such that:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Notes",
+      "item": "http://localhost:1313/notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra",
+      "item": "http://localhost:1313/notes/linear-algebra/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Cheat Sheet",
+      "item": "http://localhost:1313/notes/linear-algebra/cheatsheet/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cheat Sheet",
+  "name": "Cheat Sheet",
+  "description": "A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.\n1. The Basis A set of vectors $\\mathcal{B} = {\\mathbf{v}_1, \\dots, \\mathbf{v}_n}$ is a basis for a vector space $\\mathcal{V}$ if:\n$\\mathcal{B}$ is linearly independent. $\\text{span}(\\mathcal{B}) = \\mathcal{V}$. 1.1 Unique Representation Theorem If $\\mathcal{B}$ is a basis for $\\mathcal{V}$, then for every $\\mathbf{x} \\in \\mathcal{V}$, there exists a unique set of scalars $c_1, \\dots, c_n$ such that:\n",
+  "keywords": [
+    "linear algebra", "cheat Sheet"
+  ],
+  "articleBody": "A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.\n1. The Basis A set of vectors $\\mathcal{B} = {\\mathbf{v}_1, \\dots, \\mathbf{v}_n}$ is a basis for a vector space $\\mathcal{V}$ if:\n$\\mathcal{B}$ is linearly independent. $\\text{span}(\\mathcal{B}) = \\mathcal{V}$. 1.1 Unique Representation Theorem If $\\mathcal{B}$ is a basis for $\\mathcal{V}$, then for every $\\mathbf{x} \\in \\mathcal{V}$, there exists a unique set of scalars $c_1, \\dots, c_n$ such that:\n$$\r\\mathbf{x} = c_1 \\mathbf{v}_1 + \\dots + c_n \\mathbf{v}_n\r$$\rThe vector $[\\mathbf{x}]_{\\mathcal{B}} = [c_1, \\dots, c_n]^T$ is the coordinate vector of $\\mathbf{x}$ relative to $\\mathcal{B}$.\n2. Dimension The dimension of a non-zero vector space $\\mathcal{V}$, denoted $\\dim(\\mathcal{V})$, is the number of vectors in any basis for $\\mathcal{V}$.\nIf $\\dim(\\mathcal{V}) = n$, then: Any set of more than $n$ vectors in $\\mathcal{V}$ is linearly dependent. Any set of fewer than $n$ vectors in $\\mathcal{V}$ cannot span $\\mathcal{V}$. The Basis Theorem: In an $n$-dimensional space, any set of $n$ linearly independent vectors is automatically a basis. 3. Standard Bases In $\\mathbb{R}^n$: The standard basis is $\\mathcal{E} = {\\mathbf{e}_1, \\dots, \\mathbf{e}_n}$, where $\\mathbf{e}_i$ has a $1$ in the $i$-th position and $0$ elsewhere. In $\\mathbb{P}_n$ (Polynomials): The standard basis is ${1, x, x^2, \\dots, x^n}$. $\\dim(\\mathbb{P}_n) = n+1$. In $\\mathbb{M}_{m \\times n}$ (Matrices): The standard basis consists of matrices $E_{ij}$ with a $1$ at $(i, j)$ and $0$ elsewhere. $\\dim(\\mathbb{M}_{m \\times n}) = mn$. 4. Geometry in $\\mathbb{R}^n$ 4.1 Lines A line in $\\mathbb{R}^n$ is a 1-dimensional subspace (if it passes through the origin) or an affine set.\nVector Form: $\\mathbf{x} = \\mathbf{p} + t\\mathbf{v}$, where $\\mathbf{p}$ is a point on the line and $\\mathbf{v}$ is the direction vector. 4.2 Planes and Hyperplanes Plane in $\\mathbb{R}^3$: A 2-dimensional surface defined by $\\mathbf{x} = \\mathbf{p} + s\\mathbf{u} + t\\mathbf{v}$. Hyperplane in $\\mathbb{R}^n$: An $(n-1)$-dimensional subspace. Normal Equation: $\\mathbf{n} \\cdot (\\mathbf{x} - \\mathbf{p}) = 0$, where $\\mathbf{n}$ is the normal vector. Scalar Form: $a_1 x_1 + a_2 x_2 + \\dots + a_n x_n = b$. 5. Subspace Relations For two subspaces $U, V \\subseteq \\mathcal{W}$:\nSum: $U + V = { \\mathbf{u} + \\mathbf{v} : \\mathbf{u} \\in U, \\mathbf{v} \\in V }$. Intersection: $U \\cap V$ is also a subspace. Grassmann’s Identity: $$\r\\dim(U + V) = \\dim(U) + \\dim(V) - \\dim(U \\cap V)\r$$\rIf $U \\cap V = \\{\\mathbf{0}\\}$, the sum is a **direct sum**, denoted $U \\oplus V$.\rPractice Problem 1: Basis Verification Determine if the set $S$ forms a basis for $\\mathbb{R}^3$:\n$$\rS = \\left\\{ \\begin{bmatrix} 1 \\\\ 0 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 0 \\\\ 1 \\\\ 1 \\end{bmatrix}, \\begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\end{bmatrix} \\right\\}\r$$\rJustify your answer by checking linear independence and the spanning property for $\\mathbb{R}^3$.\rProblem 2: Finding a Subspace Basis Find a basis and the dimension for the subspace $W \\subseteq \\mathbb{R}^4$ defined by the following homogeneous system:\n$$\r\\begin{aligned}\rx_1 - 2x_2 + x_3 \u0026= 0 \\\\\rx_4 \u0026= 0\r\\end{aligned}\r$$\rProblem 3: Dimension of Matrix Spaces Let $\\mathcal{S}_n$ be the vector space of all $n \\times n$ symmetric matrices ($A = A^T$).\nFor $n=2$, provide a basis for $\\mathcal{S}_2$. Prove that for any $n$, $\\dim(\\mathcal{S}_n) = \\frac{n(n+1)}{2}$. Problem 4: Subspace Intersection and Grassmann Let $U$ and $V$ be 5-dimensional subspaces of $\\mathbb{R}^8$.\nWhat is the minimum possible dimension of $U \\cap V$? What is the maximum possible dimension of $U \\cap V$? Hint: Use Grassmann’s Identity and the fact that $\\dim(U+V) \\leq 8$. Problem 5: Polynomial Space Constraints Consider $\\mathbb{P}_3$ (polynomials of degree $\\leq 3$). Let $W$ be the subset of polynomials $p(x)$ such that $p(1) = 0$ and $p’(0) = 0$.\nVerify that $W$ is a subspace. Find a basis for $W$ and state its dimension. Problem 6: Rank and Basis of Fundamental Spaces Suppose a $4 \\times 7$ matrix $A$ has 3 pivots.\nWhat is the dimension of the column space $\\text{Col}(A)$? What is the dimension of the null space $\\text{Null}(A)$? Does $\\text{Col}(A)$ span $\\mathbb{R}^4$? ",
+  "wordCount" : "679",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T00:00:00Z",
+  "dateModified": "2026-02-18T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Jeremy (Kai-Hsiang) Chang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/notes/linear-algebra/cheatsheet/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeremy (Kai-Hsiang) Chang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/favicon.ico"
+    }
+  }
+}
+</script>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+                    crossorigin="anonymous">
+            </head>
+
+                <body id="top">
+                    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jeremy (Kai-Hsiang) Chang (Alt + H)">Jeremy (Kai-Hsiang) Chang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/linear-algebra/">Linear Algebra</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Cheat Sheet
+    </h1>
+    <div class="post-meta"><span title='2026-02-18 00:00:00 +0000 UTC'>February 18, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>679 words</span>&nbsp;·&nbsp;<span>Jeremy (Kai-Hsiang) Chang</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-the-basis">1. The Basis</a>
+      <ul>
+        <li><a href="#11-unique-representation-theorem">1.1 Unique Representation Theorem</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-dimension">2. Dimension</a></li>
+    <li><a href="#3-standard-bases">3. Standard Bases</a></li>
+    <li><a href="#4-geometry-in-mathbbrn">4. Geometry in $\mathbb{R}^n$</a>
+      <ul>
+        <li><a href="#41-lines">4.1 Lines</a></li>
+        <li><a href="#42-planes-and-hyperplanes">4.2 Planes and Hyperplanes</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-subspace-relations">5. Subspace Relations</a></li>
+    <li><a href="#practice">Practice</a>
+      <ul>
+        <li><a href="#problem-1-basis-verification"><strong>Problem 1: Basis Verification</strong></a></li>
+        <li><a href="#problem-2-finding-a-subspace-basis"><strong>Problem 2: Finding a Subspace Basis</strong></a></li>
+        <li><a href="#problem-3-dimension-of-matrix-spaces"><strong>Problem 3: Dimension of Matrix Spaces</strong></a></li>
+        <li><a href="#problem-4-subspace-intersection-and-grassmann"><strong>Problem 4: Subspace Intersection and Grassmann</strong></a></li>
+        <li><a href="#problem-5-polynomial-space-constraints"><strong>Problem 5: Polynomial Space Constraints</strong></a></li>
+        <li><a href="#problem-6-rank-and-basis-of-fundamental-spaces"><strong>Problem 6: Rank and Basis of Fundamental Spaces</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.</p>
+<h2 id="1-the-basis">1. The Basis<a hidden class="anchor" aria-hidden="true" href="#1-the-basis">#</a></h2>
+<p>A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a <strong>basis</strong> for a vector space $\mathcal{V}$ if:</p>
+<ol>
+<li>$\mathcal{B}$ is <strong>linearly independent</strong>.</li>
+<li>$\text{span}(\mathcal{B}) = \mathcal{V}$.</li>
+</ol>
+<h3 id="11-unique-representation-theorem">1.1 Unique Representation Theorem<a hidden class="anchor" aria-hidden="true" href="#11-unique-representation-theorem">#</a></h3>
+<p>If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a <strong>unique</strong> set of scalars $c_1, \dots, c_n$ such that:</p>
+<p>
+$$
+\mathbf{x} = c_1 \mathbf{v}_1 + \dots + c_n \mathbf{v}_n
+$$
+</p>
+<p>The vector $[\mathbf{x}]_{\mathcal{B}} = [c_1, \dots, c_n]^T$ is the <strong>coordinate vector</strong> of $\mathbf{x}$ relative to $\mathcal{B}$.</p>
+<h2 id="2-dimension">2. Dimension<a hidden class="anchor" aria-hidden="true" href="#2-dimension">#</a></h2>
+<p>The <strong>dimension</strong> of a non-zero vector space $\mathcal{V}$, denoted $\dim(\mathcal{V})$, is the number of vectors in any basis for $\mathcal{V}$.</p>
+<ul>
+<li>If $\dim(\mathcal{V}) = n$, then:
+<ul>
+<li>Any set of more than $n$ vectors in $\mathcal{V}$ is linearly dependent.</li>
+<li>Any set of fewer than $n$ vectors in $\mathcal{V}$ cannot span $\mathcal{V}$.</li>
+</ul>
+</li>
+<li><strong>The Basis Theorem</strong>: In an $n$-dimensional space, any set of $n$ linearly independent vectors is automatically a basis.</li>
+</ul>
+<h2 id="3-standard-bases">3. Standard Bases<a hidden class="anchor" aria-hidden="true" href="#3-standard-bases">#</a></h2>
+<ul>
+<li><strong>In $\mathbb{R}^n$</strong>: The standard basis is $\mathcal{E} = {\mathbf{e}_1, \dots, \mathbf{e}_n}$, where $\mathbf{e}_i$ has a $1$ in the $i$-th position and $0$ elsewhere.</li>
+<li><strong>In $\mathbb{P}_n$ (Polynomials)</strong>: The standard basis is ${1, x, x^2, \dots, x^n}$. $\dim(\mathbb{P}_n) = n+1$.</li>
+<li><strong>In $\mathbb{M}_{m \times n}$ (Matrices)</strong>: The standard basis consists of matrices $E_{ij}$ with a $1$ at $(i, j)$ and $0$ elsewhere. $\dim(\mathbb{M}_{m \times n}) = mn$.</li>
+</ul>
+<h2 id="4-geometry-in-mathbbrn">4. Geometry in $\mathbb{R}^n$<a hidden class="anchor" aria-hidden="true" href="#4-geometry-in-mathbbrn">#</a></h2>
+<h3 id="41-lines">4.1 Lines<a hidden class="anchor" aria-hidden="true" href="#41-lines">#</a></h3>
+<p>A line in $\mathbb{R}^n$ is a 1-dimensional subspace (if it passes through the origin) or an affine set.</p>
+<ul>
+<li><strong>Vector Form</strong>: $\mathbf{x} = \mathbf{p} + t\mathbf{v}$, where $\mathbf{p}$ is a point on the line and $\mathbf{v}$ is the direction vector.</li>
+</ul>
+<h3 id="42-planes-and-hyperplanes">4.2 Planes and Hyperplanes<a hidden class="anchor" aria-hidden="true" href="#42-planes-and-hyperplanes">#</a></h3>
+<ul>
+<li><strong>Plane in $\mathbb{R}^3$</strong>: A 2-dimensional surface defined by $\mathbf{x} = \mathbf{p} + s\mathbf{u} + t\mathbf{v}$.</li>
+<li><strong>Hyperplane in $\mathbb{R}^n$</strong>: An $(n-1)$-dimensional subspace.
+<ul>
+<li><strong>Normal Equation</strong>: $\mathbf{n} \cdot (\mathbf{x} - \mathbf{p}) = 0$, where $\mathbf{n}$ is the normal vector.</li>
+<li><strong>Scalar Form</strong>: $a_1 x_1 + a_2 x_2 + \dots + a_n x_n = b$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-subspace-relations">5. Subspace Relations<a hidden class="anchor" aria-hidden="true" href="#5-subspace-relations">#</a></h2>
+<p>For two subspaces $U, V \subseteq \mathcal{W}$:</p>
+<ul>
+<li><strong>Sum</strong>: $U + V = { \mathbf{u} + \mathbf{v} : \mathbf{u} \in U, \mathbf{v} \in V }$.</li>
+<li><strong>Intersection</strong>: $U \cap V$ is also a subspace.</li>
+<li><strong>Grassmann&rsquo;s Identity</strong>:</li>
+</ul>
+<p>
+$$
+\dim(U + V) = \dim(U) + \dim(V) - \dim(U \cap V)
+$$
+</p>
+If $U \cap V = \{\mathbf{0}\}$, the sum is a **direct sum**, denoted $U \oplus V$.
+<hr>
+<h2 id="practice">Practice<a hidden class="anchor" aria-hidden="true" href="#practice">#</a></h2>
+<h3 id="problem-1-basis-verification"><strong>Problem 1: Basis Verification</strong><a hidden class="anchor" aria-hidden="true" href="#problem-1-basis-verification">#</a></h3>
+<p>Determine if the set $S$ forms a basis for $\mathbb{R}^3$:</p>
+<p>
+$$
+S = \left\{ \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} \right\}
+$$
+</p>
+Justify your answer by checking linear independence and the spanning property for $\mathbb{R}^3$.
+<h3 id="problem-2-finding-a-subspace-basis"><strong>Problem 2: Finding a Subspace Basis</strong><a hidden class="anchor" aria-hidden="true" href="#problem-2-finding-a-subspace-basis">#</a></h3>
+<p>Find a basis and the dimension for the subspace $W \subseteq \mathbb{R}^4$ defined by the following homogeneous system:</p>
+<p>
+$$
+\begin{aligned}
+x_1 - 2x_2 + x_3 &= 0 \\
+x_4 &= 0
+\end{aligned}
+$$
+</p>
+<h3 id="problem-3-dimension-of-matrix-spaces"><strong>Problem 3: Dimension of Matrix Spaces</strong><a hidden class="anchor" aria-hidden="true" href="#problem-3-dimension-of-matrix-spaces">#</a></h3>
+<p>Let $\mathcal{S}_n$ be the vector space of all $n \times n$ <strong>symmetric matrices</strong> ($A = A^T$).</p>
+<ol>
+<li>For $n=2$, provide a basis for $\mathcal{S}_2$.</li>
+<li>Prove that for any $n$, $\dim(\mathcal{S}_n) = \frac{n(n+1)}{2}$.</li>
+</ol>
+<h3 id="problem-4-subspace-intersection-and-grassmann"><strong>Problem 4: Subspace Intersection and Grassmann</strong><a hidden class="anchor" aria-hidden="true" href="#problem-4-subspace-intersection-and-grassmann">#</a></h3>
+<p>Let $U$ and $V$ be 5-dimensional subspaces of $\mathbb{R}^8$.</p>
+<ol>
+<li>What is the <strong>minimum</strong> possible dimension of $U \cap V$?</li>
+<li>What is the <strong>maximum</strong> possible dimension of $U \cap V$?
+<em>Hint: Use Grassmann&rsquo;s Identity and the fact that $\dim(U+V) \leq 8$.</em></li>
+</ol>
+<h3 id="problem-5-polynomial-space-constraints"><strong>Problem 5: Polynomial Space Constraints</strong><a hidden class="anchor" aria-hidden="true" href="#problem-5-polynomial-space-constraints">#</a></h3>
+<p>Consider $\mathbb{P}_3$ (polynomials of degree $\leq 3$). Let $W$ be the subset of polynomials $p(x)$ such that $p(1) = 0$ and $p&rsquo;(0) = 0$.</p>
+<ol>
+<li>Verify that $W$ is a subspace.</li>
+<li>Find a basis for $W$ and state its dimension.</li>
+</ol>
+<h3 id="problem-6-rank-and-basis-of-fundamental-spaces"><strong>Problem 6: Rank and Basis of Fundamental Spaces</strong><a hidden class="anchor" aria-hidden="true" href="#problem-6-rank-and-basis-of-fundamental-spaces">#</a></h3>
+<p>Suppose a $4 \times 7$ matrix $A$ has 3 pivots.</p>
+<ol>
+<li>What is the dimension of the column space $\text{Col}(A)$?</li>
+<li>What is the dimension of the null space $\text{Null}(A)$?</li>
+<li>Does $\text{Col}(A)$ span $\mathbb{R}^4$?</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/cheat-sheet/">Cheat Sheet</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/notes/linear-algebra/07-determinants/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>07. Determinants</span>
+  </a>
+  <a class="next" href="http://localhost:1313/notes/linear-algebra/08-subspaces/">
+    <span class="title">Next »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+                    </main>
+                    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Jeremy (Kai-Hsiang) Chang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script></body>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+        </html>

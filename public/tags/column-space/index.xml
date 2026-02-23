@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Column Space on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/column-space/</link>
+    <description>Recent content in Column Space on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/column-space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>09. Rank and the Matrix Spaces</title>
+      <link>http://localhost:1313/notes/linear-algebra/09-rank-and-matrix-spaces/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/09-rank-and-matrix-spaces/</guid>
+      <description>&lt;p&gt;For $A \in \mathbb{R}^{m \times n}$, four fundamental subspaces summarize its action and solvability properties.&lt;/p&gt;
+&lt;h2 id=&#34;four-fundamental-subspaces&#34;&gt;Four fundamental subspaces&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Column space&lt;/strong&gt; $\text{Col}(A) \subseteq \mathbb{R}^m$: all $A\mathbf{x}$; dimension $r = \text{rank}(A)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Row space&lt;/strong&gt; $\text{Row}(A) \subseteq \mathbb{R}^n$: span of rows; dimension $r$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Null space&lt;/strong&gt; $\text{Nul}(A) \subseteq \mathbb{R}^n$: all $\mathbf{x}$ with $A\mathbf{x}=0$; dimension $n-r$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Left null space&lt;/strong&gt; $\text{Nul}(A^T) \subseteq \mathbb{R}^m$: all $\mathbf{y}$ with $A^T\mathbf{y}=0$; dimension $m-r$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Rank–nullity theorem:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$$
+\text{rank}(A) + \dim(\text{Nul}(A)) = n.
+$$&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

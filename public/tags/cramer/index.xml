@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cramer on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/cramer/</link>
+    <description>Recent content in Cramer on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cramer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>11. Matrix Inverses and Determinants</title>
+      <link>http://localhost:1313/notes/linear-algebra/11-inverses-and-determinants/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/11-inverses-and-determinants/</guid>
+      <description>&lt;p&gt;Invertibility and determinants tell us when $A\mathbf{x}=\mathbf{b}$ has a unique solution and give explicit formulas (Cramer, adjugate) and algorithms (Gauss–Jordan).&lt;/p&gt;
+&lt;h2 id=&#34;invertibility-conditions-n-times-n&#34;&gt;Invertibility conditions ($n \times n$)&lt;/h2&gt;
+&lt;p&gt;$A$ is &lt;strong&gt;invertible (non-singular)&lt;/strong&gt; iff any (hence all) of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\det(A) \neq 0$.&lt;/li&gt;
+&lt;li&gt;$\text{rank}(A) = n$.&lt;/li&gt;
+&lt;li&gt;Columns (and rows) are linearly independent.&lt;/li&gt;
+&lt;li&gt;$A\mathbf{x} = \mathbf{0}$ has only the trivial solution $\mathbf{x} = \mathbf{0}$.&lt;/li&gt;
+&lt;li&gt;$A$ is row-equivalent to $I$.&lt;/li&gt;
+&lt;li&gt;$0$ is not an eigenvalue of $A$.&lt;/li&gt;
+&lt;li&gt;$A^T A$ is positive definite.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;gaussjordan-elimination&#34;&gt;Gauss–Jordan elimination&lt;/h2&gt;
+&lt;p&gt;To find $A^{-1}$: form $[A \mid I]$, apply row operations until $A$ becomes $I$; then $[I \mid A^{-1}]$. &lt;strong&gt;Elementary row operations (EROs)&lt;/strong&gt;: row swap, multiply row by nonzero scalar, add a multiple of one row to another.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

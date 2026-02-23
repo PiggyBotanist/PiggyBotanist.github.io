@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kernel on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/kernel/</link>
+    <description>Recent content in Kernel on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>15. Linear Transformations</title>
+      <link>http://localhost:1313/notes/linear-algebra/15-linear-transformations/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/15-linear-transformations/</guid>
+      <description>&lt;p&gt;Linear transformations preserve vector addition and scalar multiplication; in coordinates they are exactly matrix multiplications.&lt;/p&gt;
+&lt;h2 id=&#34;definition&#34;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;$T : V \to W$ is linear if for all $\mathbf{u},\mathbf{v} \in V$ and scalars $c$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})$,&lt;/li&gt;
+&lt;li&gt;$T(c\mathbf{u}) = c,T(\mathbf{u})$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Equivalently, $T(c\mathbf{u}+\mathbf{v}) = cT(\mathbf{u}) + T(\mathbf{v})$.&lt;/p&gt;
+&lt;h2 id=&#34;standard-matrix&#34;&gt;Standard matrix&lt;/h2&gt;
+&lt;p&gt;For $T : \mathbb{R}^n \to \mathbb{R}^m$, there exists a unique matrix $A$ such that $T(\mathbf{x}) = A\mathbf{x}$. If $\mathbf{e}_i$ are the standard basis vectors,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

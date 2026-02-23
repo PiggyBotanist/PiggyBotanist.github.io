@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Row Space on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/row-space/</link>
+    <description>Recent content in Row Space on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/row-space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>9. Rank and the Matrix Spaces</title>
+      <link>http://localhost:1313/notes/linear-algebra/9-rank-and-matrix-spaces/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/9-rank-and-matrix-spaces/</guid>
+      <description>&lt;p&gt;For a matrix $A$, the four fundamental subspaces (row space, column space, null space, left null space) and their dimensions are summarized by the rank and the rank–nullity theorem.&lt;/p&gt;
+&lt;h2 id=&#34;four-fundamental-subspaces-a-in-mathbbrm-times-n&#34;&gt;Four fundamental subspaces ($A \in \mathbb{R}^{m \times n}$)&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Space&lt;/th&gt;
+          &lt;th&gt;Notation&lt;/th&gt;
+          &lt;th&gt;Subspace of&lt;/th&gt;
+          &lt;th&gt;Dimension&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Row space&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;$\text{Row}(A)$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{R}^n$&lt;/td&gt;
+          &lt;td&gt;$\text{rank}(A)$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Column space&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;$\text{Col}(A)$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{R}^m$&lt;/td&gt;
+          &lt;td&gt;$\text{rank}(A)$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Null space&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;$\text{Nul}(A)$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{R}^n$&lt;/td&gt;
+          &lt;td&gt;$n - \text{rank}(A)$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Left null space&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;$\text{Nul}(A^T)$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{R}^m$&lt;/td&gt;
+          &lt;td&gt;$m - \text{rank}(A)$&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;$\text{Row}(A)$ = span of rows of $A$.&lt;/li&gt;
+&lt;li&gt;$\text{Col}(A)$ = span of columns of $A$ = range of $\mathbf{x} \mapsto A\mathbf{x}$.&lt;/li&gt;
+&lt;li&gt;$\text{Nul}(A) = {\mathbf{x} : A\mathbf{x} = \mathbf{0}}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Rank–nullity theorem&lt;/strong&gt;: $\text{rank}(A) + \dim(\text{Nul}(A)) = n$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

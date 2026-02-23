@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cholesky on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/cholesky/</link>
+    <description>Recent content in Cholesky on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cholesky/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>13. Matrix Factorizations</title>
+      <link>http://localhost:1313/notes/linear-algebra/13-matrix-factorizations/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/13-matrix-factorizations/</guid>
+      <description>&lt;p&gt;Matrix factorizations rewrite matrices as products with simpler structure, making systems and least squares problems faster and more stable to solve.&lt;/p&gt;
+&lt;h2 id=&#34;lu-and-plu&#34;&gt;LU and PLU&lt;/h2&gt;
+&lt;p&gt;If $A$ can be reduced without row swaps:&lt;/p&gt;
+&lt;p&gt;$$
+A = LU,
+$$&lt;/p&gt;
+&lt;p&gt;with $L$ unit lower triangular and $U$ upper triangular.&lt;/p&gt;
+&lt;p&gt;In general,&lt;/p&gt;
+&lt;p&gt;$$
+P A = L U,
+$$&lt;/p&gt;
+&lt;p&gt;where $P$ is a permutation matrix encoding row swaps.&lt;/p&gt;
+&lt;p&gt;Solving $A\mathbf{x} = \mathbf{b}$ becomes solve $L\mathbf{y} = P\mathbf{b}$ (forward) then $U\mathbf{x} = \mathbf{y}$ (backward).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

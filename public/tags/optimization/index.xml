@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Optimization on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/tags/optimization/</link>
+    <description>Recent content in Optimization on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01. Vectors and Norms</title>
+      <link>http://localhost:1313/notes/linear-algebra/01-vectors-norms/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/01-vectors-norms/</guid>
+      <description>&lt;p&gt;A vector $\mathbf{v} \in \mathbb{R}^n$ is an ordered $n$-tuple of real numbers, often represented as a column. Vectors are the basic objects in linear algebra and appear as feature vectors, parameter vectors, gradients, and encodings in high-dimensional manifolds.&lt;/p&gt;
+&lt;h2 id=&#34;basic-definitions&#34;&gt;Basic Definitions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Zero vector&lt;/strong&gt;: $\mathbf{0} = [0, \ldots, 0]^T$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unit vector&lt;/strong&gt;: A vector $\mathbf{u}$ with $|\mathbf{u}| = 1$. To &lt;strong&gt;normalize&lt;/strong&gt; a nonzero $\mathbf{v}$:
+&lt;p&gt;
+$$
+\hat{\mathbf{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}
+$$
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linear combination&lt;/strong&gt;: $\mathbf{w} = c_1 \mathbf{v}_1 + \cdots + c_k \mathbf{v}_k$ for scalars $c_i \in \mathbb{R}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Span&lt;/strong&gt;: The set of all linear combinations $\text{span}({\mathbf{v}_i}) = { \sum c_i \mathbf{v}_i }$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vector-norms&#34;&gt;Vector Norms&lt;/h2&gt;
+&lt;p&gt;A norm $|\cdot|$ maps vectors to non‑negative reals, inducing a topology on $\mathbb{R}^n$. The &lt;strong&gt;$p$-norm&lt;/strong&gt; ($p \ge 1$) is defined as:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

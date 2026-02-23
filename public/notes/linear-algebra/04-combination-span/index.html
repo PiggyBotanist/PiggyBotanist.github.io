@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+        <html lang="en" dir=" auto" data-theme="auto">
+
+            <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>04. Linear Combinations and Span | Jeremy (Kai-Hsiang) Chang</title>
+<meta name="keywords" content="linear algebra, span, rref, independence">
+<meta name="description" content="Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the Span, which geometrically represents the subspace reachable by a set of vectors.
+1. Linear Combinations
+A vector $\mathbf{w}$ is a linear combination of a set $S = {\mathbf{v}_1, \dots, \mathbf{v}_k}$ if there exist scalars $c_i \in \mathbb{F}$ such that:
+
+$$
+\mathbf{w} = \sum_{i=1}^k c_i \mathbf{v}_i = c_1 \mathbf{v}_1 &#43; c_2 \mathbf{v}_2 &#43; \dots &#43; c_k \mathbf{v}_k
+$$
+">
+<meta name="author" content="Jeremy (Kai-Hsiang) Chang">
+<link rel="canonical" href="http://localhost:1313/notes/linear-algebra/04-combination-span/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/linear-algebra/04-combination-span/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/notes/linear-algebra/04-combination-span/">
+  <meta property="og:site_name" content="Jeremy (Kai-Hsiang) Chang">
+  <meta property="og:title" content="04. Linear Combinations and Span">
+  <meta property="og:description" content="Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the Span, which geometrically represents the subspace reachable by a set of vectors.
+1. Linear Combinations A vector $\mathbf{w}$ is a linear combination of a set $S = {\mathbf{v}_1, \dots, \mathbf{v}_k}$ if there exist scalars $c_i \in \mathbb{F}$ such that:
+$$\mathbf{w} = \sum_{i=1}^k c_i \mathbf{v}_i = c_1 \mathbf{v}_1 &#43; c_2 \mathbf{v}_2 &#43; \dots &#43; c_k \mathbf{v}_k$$">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:tag" content="Linear Algebra">
+    <meta property="article:tag" content="Span">
+    <meta property="article:tag" content="Rref">
+    <meta property="article:tag" content="Independence">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="04. Linear Combinations and Span">
+<meta name="twitter:description" content="Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the Span, which geometrically represents the subspace reachable by a set of vectors.
+1. Linear Combinations
+A vector $\mathbf{w}$ is a linear combination of a set $S = {\mathbf{v}_1, \dots, \mathbf{v}_k}$ if there exist scalars $c_i \in \mathbb{F}$ such that:
+
+$$
+\mathbf{w} = \sum_{i=1}^k c_i \mathbf{v}_i = c_1 \mathbf{v}_1 &#43; c_2 \mathbf{v}_2 &#43; \dots &#43; c_k \mathbf{v}_k
+$$
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Notes",
+      "item": "http://localhost:1313/notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra",
+      "item": "http://localhost:1313/notes/linear-algebra/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "04. Linear Combinations and Span",
+      "item": "http://localhost:1313/notes/linear-algebra/04-combination-span/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "04. Linear Combinations and Span",
+  "name": "04. Linear Combinations and Span",
+  "description": "Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the Span, which geometrically represents the subspace reachable by a set of vectors.\n1. Linear Combinations A vector $\\mathbf{w}$ is a linear combination of a set $S = {\\mathbf{v}_1, \\dots, \\mathbf{v}_k}$ if there exist scalars $c_i \\in \\mathbb{F}$ such that:\n$$\r\\mathbf{w} = \\sum_{i=1}^k c_i \\mathbf{v}_i = c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2 + \\dots + c_k \\mathbf{v}_k\r$$\r",
+  "keywords": [
+    "linear algebra", "span", "rref", "independence"
+  ],
+  "articleBody": "Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the Span, which geometrically represents the subspace reachable by a set of vectors.\n1. Linear Combinations A vector $\\mathbf{w}$ is a linear combination of a set $S = {\\mathbf{v}_1, \\dots, \\mathbf{v}_k}$ if there exist scalars $c_i \\in \\mathbb{F}$ such that:\n$$\r\\mathbf{w} = \\sum_{i=1}^k c_i \\mathbf{v}_i = c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2 + \\dots + c_k \\mathbf{v}_k\r$$\rMatrix-Vector View: If $A = [\\mathbf{v}_1 \\dots \\mathbf{v}_k]$, then $A\\mathbf{x} = \\mathbf{w}$ is exactly the linear combination of the columns of $A$ weighted by the components of $\\mathbf{x}$. 2. Span The Span of a set $S$ is the set of all possible linear combinations of vectors in $S$:\n$$\r\\text{span}(S) = \\left\\{ \\sum c_i \\mathbf{v}_i : c_i \\in \\mathbb{F} \\right\\}\r$$\rSubspace Property: $\\text{span}(S)$ is always a subspace of the ambient space $\\mathcal{V}$. It is the smallest subspace containing all vectors in $S$. Consistency: $A\\mathbf{x} = \\mathbf{b}$ is consistent if and only if $\\mathbf{b} \\in \\text{span}(\\text{columns of } A)$. 3. Linear Independence A set ${\\mathbf{v}_1, \\dots, \\mathbf{v}_k}$ is linearly independent if the vector equation:\n$$\r\\sum_{i=1}^k c_i \\mathbf{v}_i = \\mathbf{0}\r$$\rhas only the **trivial solution** ($c_i = 0$ for all $i$).\rLinear Dependence: If a non-trivial solution exists, at least one vector can be written as a linear combination of the others. Null Space Relation: The columns of $A$ are independent if and only if $\\mathcal{N}(A) = {\\mathbf{0}}$. 4. Row Echelon Form (REF) and RREF We use Elementary Row Operations to reduce a matrix to forms that reveal dependency and span.\n4.1 Row Echelon Form (REF) A matrix is in REF if:\nAll non-zero rows are above all zero rows. Each leading entry (pivot) of a row is in a column to the right of the pivot of the row above it. All entries in a column below a pivot are zero. 4.2 Reduced Row Echelon Form (RREF) A matrix is in RREF if it is in REF and:\nEvery pivot is $1$. Each pivot is the only non-zero entry in its column. The RREF of a matrix is unique.\n5. Summary of System Solutions For a system $[A | \\mathbf{b}]$:\nConsistent: No row in the RREF looks like $[0 \\dots 0 | \\text{non-zero}]$. Unique Solution: Every column of $A$ has a pivot. Infinitely Many Solutions: The system is consistent and there is at least one column without a pivot (Free Variable). 6. Fundamental Links For $n$ vectors in $\\mathbb{R}^n$:\nThey are independent $\\iff$ the matrix $A$ has $n$ pivots $\\iff \\det(A) \\neq 0$. They span $\\mathbb{R}^n$ $\\iff$ the matrix $A$ has $n$ pivots $\\iff \\det(A) \\neq 0$. Practice Problem 1: Linear Combinations of Independent Vectors Suppose the set of vectors ${\\mathbf{v}_1, \\mathbf{v}_2, \\mathbf{v}_3} \\subset \\mathbb{R}^n$ is linearly independent. Define a new set of vectors:\n$$\r\\mathbf{w}_1 = \\mathbf{v}_1 + \\mathbf{v}_2, \\quad \\mathbf{w}_2 = \\mathbf{v}_2 + \\mathbf{v}_3, \\quad \\mathbf{w}_3 = \\mathbf{v}_3 + \\mathbf{v}_1\r$$\rIs the set $\\{\\mathbf{w}_1, \\mathbf{w}_2, \\mathbf{w}_3\\}$ linearly independent? Prove your answer using the definition $\\sum c_i \\mathbf{w}_i = \\mathbf{0}$.\rProblem 2: Matrix Products and Span Let $A \\in \\mathbb{R}^{m \\times n}$ and $B \\in \\mathbb{R}^{n \\times p}$. Let $C = AB$.\nProve that the column space (span of the columns) of $C$ is a subspace of the column space of $A$. Prove that $\\text{rank}(AB) \\leq \\min(\\text{rank}(A), \\text{rank}(B))$. Hint: Use the column-wise perspective of matrix multiplication. Problem 3: Finding the Condition for Span Consider the vectors:\n$$\r\\mathbf{v}_1 = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}, \\quad \\mathbf{v}_2 = \\begin{bmatrix} 4 \\\\ 5 \\\\ 6 \\end{bmatrix}, \\quad \\mathbf{b} = \\begin{bmatrix} b_1 \\\\ b_2 \\\\ b_3 \\end{bmatrix}\r$$\rUse row reduction on the augmented matrix $[ \\mathbf{v}_1 \\,\\, \\mathbf{v}_2 \\mid \\mathbf{b} ]$ to find the specific linear constraint on $b_1, b_2, b_3$ that must be satisfied for $\\mathbf{b}$ to be in $\\text{span}(\\mathbf{v}_1, \\mathbf{v}_2)$.\rProblem 4: Polynomial Space Independence Linear algebra concepts apply to any vector space. Consider the space of polynomials of degree $\\leq 2$, denoted $\\mathbb{P}_2$. Determine if the following set is linearly independent:\n$$\rp_1(x) = 1, \\quad p_2(x) = 1 + x, \\quad p_3(x) = 1 + x + x^2\r$$\r*Note: Treat the coefficients as components of a vector in $\\mathbb{R}^3$.*\rProblem 5: RREF and the Identity Matrix Let $A$ be an $n \\times n$ square matrix.\nIf the RREF of $A$ is $I_n$, what can you conclude about the span of the columns of $A$? If the RREF of $A$ has a row of zeros, what does this imply about the linear independence of the rows of $A$? Problem 6: The Homogeneous System Suppose a $5 \\times 8$ matrix $A$ has $5$ pivot columns.\nIs the system $A\\mathbf{x} = \\mathbf{0}$ guaranteed to have non-trivial solutions? Does the span of the columns of $A$ equal $\\mathbb{R}^5$? How many free variables are in the general solution? ",
+  "wordCount" : "808",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T00:00:00Z",
+  "dateModified": "2026-02-18T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Jeremy (Kai-Hsiang) Chang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/notes/linear-algebra/04-combination-span/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeremy (Kai-Hsiang) Chang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/favicon.ico"
+    }
+  }
+}
+</script>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+                    crossorigin="anonymous">
+            </head>
+
+                <body id="top">
+                    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jeremy (Kai-Hsiang) Chang (Alt + H)">Jeremy (Kai-Hsiang) Chang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/linear-algebra/">Linear Algebra</a></div>
+    <h1 class="post-title entry-hint-parent">
+      04. Linear Combinations and Span
+    </h1>
+    <div class="post-meta"><span title='2026-02-18 00:00:00 +0000 UTC'>February 18, 2026</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>808 words</span>&nbsp;·&nbsp;<span>Jeremy (Kai-Hsiang) Chang</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-linear-combinations">1. Linear Combinations</a></li>
+    <li><a href="#2-span">2. Span</a></li>
+    <li><a href="#3-linear-independence">3. Linear Independence</a></li>
+    <li><a href="#4-row-echelon-form-ref-and-rref">4. Row Echelon Form (REF) and RREF</a>
+      <ul>
+        <li><a href="#41-row-echelon-form-ref">4.1 Row Echelon Form (REF)</a></li>
+        <li><a href="#42-reduced-row-echelon-form-rref">4.2 Reduced Row Echelon Form (RREF)</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-summary-of-system-solutions">5. Summary of System Solutions</a></li>
+    <li><a href="#6-fundamental-links">6. Fundamental Links</a></li>
+    <li><a href="#practice">Practice</a>
+      <ul>
+        <li><a href="#problem-1-linear-combinations-of-independent-vectors"><strong>Problem 1: Linear Combinations of Independent Vectors</strong></a></li>
+        <li><a href="#problem-2-matrix-products-and-span"><strong>Problem 2: Matrix Products and Span</strong></a></li>
+        <li><a href="#problem-3-finding-the-condition-for-span"><strong>Problem 3: Finding the Condition for Span</strong></a></li>
+        <li><a href="#problem-4-polynomial-space-independence"><strong>Problem 4: Polynomial Space Independence</strong></a></li>
+        <li><a href="#problem-5-rref-and-the-identity-matrix"><strong>Problem 5: RREF and the Identity Matrix</strong></a></li>
+        <li><a href="#problem-6-the-homogeneous-system"><strong>Problem 6: The Homogeneous System</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Linear combinations allow us to build new vectors from existing ones. The collection of all such vectors defines the <strong>Span</strong>, which geometrically represents the subspace reachable by a set of vectors.</p>
+<h2 id="1-linear-combinations">1. Linear Combinations<a hidden class="anchor" aria-hidden="true" href="#1-linear-combinations">#</a></h2>
+<p>A vector $\mathbf{w}$ is a <strong>linear combination</strong> of a set $S = {\mathbf{v}_1, \dots, \mathbf{v}_k}$ if there exist scalars $c_i \in \mathbb{F}$ such that:</p>
+<p>
+$$
+\mathbf{w} = \sum_{i=1}^k c_i \mathbf{v}_i = c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \dots + c_k \mathbf{v}_k
+$$
+</p>
+<ul>
+<li><strong>Matrix-Vector View</strong>: If $A = [\mathbf{v}_1 \dots \mathbf{v}_k]$, then $A\mathbf{x} = \mathbf{w}$ is exactly the linear combination of the columns of $A$ weighted by the components of $\mathbf{x}$.</li>
+</ul>
+<h2 id="2-span">2. Span<a hidden class="anchor" aria-hidden="true" href="#2-span">#</a></h2>
+<p>The <strong>Span</strong> of a set $S$ is the set of all possible linear combinations of vectors in $S$:</p>
+<p>
+$$
+\text{span}(S) = \left\{ \sum c_i \mathbf{v}_i : c_i \in \mathbb{F} \right\}
+$$
+</p>
+<ul>
+<li><strong>Subspace Property</strong>: $\text{span}(S)$ is always a subspace of the ambient space $\mathcal{V}$. It is the smallest subspace containing all vectors in $S$.</li>
+<li><strong>Consistency</strong>: $A\mathbf{x} = \mathbf{b}$ is consistent if and only if $\mathbf{b} \in \text{span}(\text{columns of } A)$.</li>
+</ul>
+<h2 id="3-linear-independence">3. Linear Independence<a hidden class="anchor" aria-hidden="true" href="#3-linear-independence">#</a></h2>
+<p>A set ${\mathbf{v}_1, \dots, \mathbf{v}_k}$ is <strong>linearly independent</strong> if the vector equation:</p>
+<p>
+$$
+\sum_{i=1}^k c_i \mathbf{v}_i = \mathbf{0}
+$$
+</p>
+has only the **trivial solution** ($c_i = 0$ for all $i$).
+<ul>
+<li><strong>Linear Dependence</strong>: If a non-trivial solution exists, at least one vector can be written as a linear combination of the others.</li>
+<li><strong>Null Space Relation</strong>: The columns of $A$ are independent if and only if $\mathcal{N}(A) = {\mathbf{0}}$.</li>
+</ul>
+<h2 id="4-row-echelon-form-ref-and-rref">4. Row Echelon Form (REF) and RREF<a hidden class="anchor" aria-hidden="true" href="#4-row-echelon-form-ref-and-rref">#</a></h2>
+<p>We use <strong>Elementary Row Operations</strong> to reduce a matrix to forms that reveal dependency and span.</p>
+<h3 id="41-row-echelon-form-ref">4.1 Row Echelon Form (REF)<a hidden class="anchor" aria-hidden="true" href="#41-row-echelon-form-ref">#</a></h3>
+<p>A matrix is in <strong>REF</strong> if:</p>
+<ol>
+<li>All non-zero rows are above all zero rows.</li>
+<li>Each leading entry (pivot) of a row is in a column to the right of the pivot of the row above it.</li>
+<li>All entries in a column below a pivot are zero.</li>
+</ol>
+<h3 id="42-reduced-row-echelon-form-rref">4.2 Reduced Row Echelon Form (RREF)<a hidden class="anchor" aria-hidden="true" href="#42-reduced-row-echelon-form-rref">#</a></h3>
+<p>A matrix is in <strong>RREF</strong> if it is in REF and:</p>
+<ol>
+<li>Every pivot is $1$.</li>
+<li>Each pivot is the only non-zero entry in its column.</li>
+</ol>
+<p><strong>The RREF of a matrix is unique.</strong></p>
+<h2 id="5-summary-of-system-solutions">5. Summary of System Solutions<a hidden class="anchor" aria-hidden="true" href="#5-summary-of-system-solutions">#</a></h2>
+<p>For a system $[A | \mathbf{b}]$:</p>
+<ul>
+<li><strong>Consistent</strong>: No row in the RREF looks like $[0 \dots 0 | \text{non-zero}]$.</li>
+<li><strong>Unique Solution</strong>: Every column of $A$ has a pivot.</li>
+<li><strong>Infinitely Many Solutions</strong>: The system is consistent and there is at least one column without a pivot (<strong>Free Variable</strong>).</li>
+</ul>
+<h2 id="6-fundamental-links">6. Fundamental Links<a hidden class="anchor" aria-hidden="true" href="#6-fundamental-links">#</a></h2>
+<p>For $n$ vectors in $\mathbb{R}^n$:</p>
+<ul>
+<li>They are <strong>independent</strong> $\iff$ the matrix $A$ has $n$ pivots $\iff \det(A) \neq 0$.</li>
+<li>They <strong>span</strong> $\mathbb{R}^n$ $\iff$ the matrix $A$ has $n$ pivots $\iff \det(A) \neq 0$.</li>
+</ul>
+<hr>
+<h2 id="practice">Practice<a hidden class="anchor" aria-hidden="true" href="#practice">#</a></h2>
+<h3 id="problem-1-linear-combinations-of-independent-vectors"><strong>Problem 1: Linear Combinations of Independent Vectors</strong><a hidden class="anchor" aria-hidden="true" href="#problem-1-linear-combinations-of-independent-vectors">#</a></h3>
+<p>Suppose the set of vectors ${\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3} \subset \mathbb{R}^n$ is <strong>linearly independent</strong>. Define a new set of vectors:</p>
+<p>
+$$
+\mathbf{w}_1 = \mathbf{v}_1 + \mathbf{v}_2, \quad \mathbf{w}_2 = \mathbf{v}_2 + \mathbf{v}_3, \quad \mathbf{w}_3 = \mathbf{v}_3 + \mathbf{v}_1
+$$
+</p>
+Is the set $\{\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3\}$ linearly independent? Prove your answer using the definition $\sum c_i \mathbf{w}_i = \mathbf{0}$.
+<h3 id="problem-2-matrix-products-and-span"><strong>Problem 2: Matrix Products and Span</strong><a hidden class="anchor" aria-hidden="true" href="#problem-2-matrix-products-and-span">#</a></h3>
+<p>Let $A \in \mathbb{R}^{m \times n}$ and $B \in \mathbb{R}^{n \times p}$. Let $C = AB$.</p>
+<ol>
+<li>Prove that the <strong>column space</strong> (span of the columns) of $C$ is a subspace of the column space of $A$.</li>
+<li>Prove that $\text{rank}(AB) \leq \min(\text{rank}(A), \text{rank}(B))$.
+<em>Hint: Use the column-wise perspective of matrix multiplication.</em></li>
+</ol>
+<h3 id="problem-3-finding-the-condition-for-span"><strong>Problem 3: Finding the Condition for Span</strong><a hidden class="anchor" aria-hidden="true" href="#problem-3-finding-the-condition-for-span">#</a></h3>
+<p>Consider the vectors:</p>
+<p>
+$$
+\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}
+$$
+</p>
+Use row reduction on the augmented matrix $[ \mathbf{v}_1 \,\, \mathbf{v}_2 \mid \mathbf{b} ]$ to find the specific linear constraint on $b_1, b_2, b_3$ that must be satisfied for $\mathbf{b}$ to be in $\text{span}(\mathbf{v}_1, \mathbf{v}_2)$.
+<h3 id="problem-4-polynomial-space-independence"><strong>Problem 4: Polynomial Space Independence</strong><a hidden class="anchor" aria-hidden="true" href="#problem-4-polynomial-space-independence">#</a></h3>
+<p>Linear algebra concepts apply to any vector space. Consider the space of polynomials of degree $\leq 2$, denoted $\mathbb{P}_2$.
+Determine if the following set is linearly independent:</p>
+<p>
+$$
+p_1(x) = 1, \quad p_2(x) = 1 + x, \quad p_3(x) = 1 + x + x^2
+$$
+</p>
+*Note: Treat the coefficients as components of a vector in $\mathbb{R}^3$.*
+<h3 id="problem-5-rref-and-the-identity-matrix"><strong>Problem 5: RREF and the Identity Matrix</strong><a hidden class="anchor" aria-hidden="true" href="#problem-5-rref-and-the-identity-matrix">#</a></h3>
+<p>Let $A$ be an $n \times n$ square matrix.</p>
+<ol>
+<li>If the RREF of $A$ is $I_n$, what can you conclude about the span of the columns of $A$?</li>
+<li>If the RREF of $A$ has a row of zeros, what does this imply about the linear independence of the rows of $A$?</li>
+</ol>
+<h3 id="problem-6-the-homogeneous-system"><strong>Problem 6: The Homogeneous System</strong><a hidden class="anchor" aria-hidden="true" href="#problem-6-the-homogeneous-system">#</a></h3>
+<p>Suppose a $5 \times 8$ matrix $A$ has $5$ pivot columns.</p>
+<ol>
+<li>Is the system $A\mathbf{x} = \mathbf{0}$ guaranteed to have non-trivial solutions?</li>
+<li>Does the span of the columns of $A$ equal $\mathbb{R}^5$?</li>
+<li>How many <strong>free variables</strong> are in the general solution?</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/span/">Span</a></li>
+      <li><a href="http://localhost:1313/tags/rref/">Rref</a></li>
+      <li><a href="http://localhost:1313/tags/independence/">Independence</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/notes/linear-algebra/03-matrix-definition/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>03. Matrices</span>
+  </a>
+  <a class="next" href="http://localhost:1313/notes/linear-algebra/05-basis-dimension/">
+    <span class="title">Next »</span>
+    <br>
+    <span>05. Basis and Dimension</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+                    </main>
+                    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Jeremy (Kai-Hsiang) Chang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script></body>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+        </html>

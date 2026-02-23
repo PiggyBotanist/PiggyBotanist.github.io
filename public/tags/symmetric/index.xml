@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Symmetric on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/symmetric/</link>
+    <description>Recent content in Symmetric on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/symmetric/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10. Matrix Taxonomy: Definitions and Identities</title>
+      <link>http://localhost:1313/notes/linear-algebra/10-matrix-taxonomy/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/10-matrix-taxonomy/</guid>
+      <description>&lt;p&gt;Many special matrix classes have strong structural and spectral properties that algorithms exploit.&lt;/p&gt;
+&lt;h2 id=&#34;structural-forms&#34;&gt;Structural forms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Identity&lt;/strong&gt; $I$: $a_{ii}=1$, $a_{ij}=0$ for $i\ne j$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Diagonal&lt;/strong&gt;: $a_{ij}=0$ for $i\ne j$; eigenvalues are diagonal entries.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scalar&lt;/strong&gt;: $A = cI$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Triangular&lt;/strong&gt;: upper ($a_{ij}=0$ for $i&amp;gt;j$) or lower; $\det(A)=\prod_i a_{ii}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;symmetrybased-matrices&#34;&gt;Symmetry‑based matrices&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Symmetric&lt;/strong&gt;: $A = A^T$.
+&lt;ul&gt;
+&lt;li&gt;Real eigenvalues; orthogonal eigenvectors for distinct eigenvalues.&lt;/li&gt;
+&lt;li&gt;Always diagonalizable by an orthogonal matrix.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skew‑symmetric&lt;/strong&gt;: $A = -A^T$.
+&lt;ul&gt;
+&lt;li&gt;Diagonal is zero; eigenvalues are purely imaginary or $0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hermitian&lt;/strong&gt;: $A = A^H = \overline{A}^T$ (complex analogue of symmetric).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;transformationbased-matrices&#34;&gt;Transformation‑based matrices&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Orthogonal&lt;/strong&gt; $Q$: $Q^T Q = Q Q^T = I$.
+&lt;ul&gt;
+&lt;li&gt;Columns form an orthonormal basis; $|Q\mathbf{x}| = |\mathbf{x}|$; $\det(Q)=\pm1$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unitary&lt;/strong&gt; $U$: $U^H U = I$ (complex analogue).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permutation&lt;/strong&gt; $P$: a row‑permutation of $I$; $P^T = P^{-1}$, $\det(P)=\pm 1$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;operational-properties&#34;&gt;Operational properties&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Idempotent&lt;/strong&gt;: $A^2 = A$ (projections); eigenvalues in ${0,1}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nilpotent&lt;/strong&gt;: $A^k = 0$ for some $k$; all eigenvalues $0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Involutory&lt;/strong&gt;: $A^2 = I$ (e.g., reflections); eigenvalues $\pm1$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Normal&lt;/strong&gt;: $A A^H = A^H A$; includes symmetric, skew‑symmetric, orthogonal, unitary; all are unitarily diagonalizable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;singularity-and-definiteness&#34;&gt;Singularity and definiteness&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Singular&lt;/strong&gt;: $\det(A)=0$; not invertible; at least one eigenvalue $0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nonsingular&lt;/strong&gt;: $\det(A)\ne0$; full rank; invertible.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Positive definite&lt;/strong&gt; ($A \succ 0$): $\mathbf{x}^T A \mathbf{x} &amp;gt; 0$ for all $\mathbf{x}\ne0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Positive semidefinite&lt;/strong&gt; ($A \succeq 0$): $\mathbf{x}^T A \mathbf{x} \ge 0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Positive (semi)‑definite matrices appear as covariance matrices, Gram matrices, and Hessians in optimization.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

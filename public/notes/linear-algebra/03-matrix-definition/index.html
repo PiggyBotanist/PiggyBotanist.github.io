@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+        <html lang="en" dir=" auto" data-theme="auto">
+
+            <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>03. Matrices | Jeremy (Kai-Hsiang) Chang</title>
+<meta name="keywords" content="linear algebra, matrices, operators">
+<meta name="description" content="A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.
+1. Fundamental Definitions
+For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.
+
+Transpose: $A^T$ where $[A]^T_{ij} = a_{ji}$.
+Trace: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$.
+
+Cyclic Property: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$.
+
+
+
+2. Matrix Multiplication: Four Perspectives
+Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:">
+<meta name="author" content="Jeremy (Kai-Hsiang) Chang">
+<link rel="canonical" href="http://localhost:1313/notes/linear-algebra/03-matrix-definition/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/linear-algebra/03-matrix-definition/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/notes/linear-algebra/03-matrix-definition/">
+  <meta property="og:site_name" content="Jeremy (Kai-Hsiang) Chang">
+  <meta property="og:title" content="03. Matrices">
+  <meta property="og:description" content="A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.
+1. Fundamental Definitions For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.
+Transpose: $A^T$ where $[A]^T_{ij} = a_{ji}$. Trace: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$. Cyclic Property: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$. 2. Matrix Multiplication: Four Perspectives Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:tag" content="Linear Algebra">
+    <meta property="article:tag" content="Matrices">
+    <meta property="article:tag" content="Operators">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="03. Matrices">
+<meta name="twitter:description" content="A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.
+1. Fundamental Definitions
+For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.
+
+Transpose: $A^T$ where $[A]^T_{ij} = a_{ji}$.
+Trace: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$.
+
+Cyclic Property: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$.
+
+
+
+2. Matrix Multiplication: Four Perspectives
+Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Notes",
+      "item": "http://localhost:1313/notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra",
+      "item": "http://localhost:1313/notes/linear-algebra/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "03. Matrices",
+      "item": "http://localhost:1313/notes/linear-algebra/03-matrix-definition/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "03. Matrices",
+  "name": "03. Matrices",
+  "description": "A matrix $A \\in \\mathbb{F}^{m \\times n}$ represents a linear transformation $T: \\mathbb{F}^n \\to \\mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.\n1. Fundamental Definitions For $A \\in \\mathbb{R}^{m \\times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.\nTranspose: $A^T$ where $[A]^T_{ij} = a_{ji}$. Trace: Only for square matrices ($n \\times n$), $\\text{Tr}(A) = \\sum_{i=1}^n a_{ii}$. Cyclic Property: $\\text{Tr}(ABC) = \\text{Tr}(BCA) = \\text{Tr}(CAB)$. 2. Matrix Multiplication: Four Perspectives Given $C = AB$ where $A \\in \\mathbb{R}^{m \\times p}$ and $B \\in \\mathbb{R}^{p \\times n}$:\n",
+  "keywords": [
+    "linear algebra", "matrices", "operators"
+  ],
+  "articleBody": "A matrix $A \\in \\mathbb{F}^{m \\times n}$ represents a linear transformation $T: \\mathbb{F}^n \\to \\mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.\n1. Fundamental Definitions For $A \\in \\mathbb{R}^{m \\times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.\nTranspose: $A^T$ where $[A]^T_{ij} = a_{ji}$. Trace: Only for square matrices ($n \\times n$), $\\text{Tr}(A) = \\sum_{i=1}^n a_{ii}$. Cyclic Property: $\\text{Tr}(ABC) = \\text{Tr}(BCA) = \\text{Tr}(CAB)$. 2. Matrix Multiplication: Four Perspectives Given $C = AB$ where $A \\in \\mathbb{R}^{m \\times p}$ and $B \\in \\mathbb{R}^{p \\times n}$:\nInner Product (Entry-wise): $c_{ij} = \\sum_{k=1}^p a_{ik}b_{kj}$. Column-wise: The columns of $C$ are linear combinations of columns of $A$: $\\mathbf{c}_j = A \\mathbf{b}_j$. Row-wise: The rows of $C$ are linear combinations of rows of $B$: $\\mathbf{c}_i^T = \\mathbf{a}_i^T B$. Outer Product Sum: $C$ is the sum of $p$ rank-1 matrices: $$\rC = \\sum_{k=1}^p \\mathbf{a}_k \\mathbf{b}_k^T\r$$\r3. Special Matrix Structures 3.1. Fundamental Matrices Identity Matrix ($I_n$): A square matrix where $\\delta_{ij} = 1$ if $i=j$ and $0$ otherwise. Neutral element: $AI = IA = A$. Scalar Matrix: A diagonal matrix where all diagonal entries are equal ($cI$). Represents uniform scaling in $\\mathbb{R}^n$. Diagonal Matrix: $D = \\text{diag}(d_1, \\dots, d_n)$ where $d_{ij} = 0$ for $i \\neq j$. Elementary Matrix ($E$): Generated by a single row operation on $I$. Left-multiplication $EA$ applies the operation to $A$. 3.2. Symmetry and Hermitian Properties Properties related to the transpose ($A^T$) and conjugate transpose ($A^H$):\nSymmetric: $A = A^T$. Hermitian: $A = A^H$ (where $A^H = \\overline{A}^T$). For Hermitian matrices, $\\langle A\\mathbf{x}, \\mathbf{y} \\rangle = \\langle \\mathbf{x}, A\\mathbf{y} \\rangle$. All diagonal entries of a Hermitian matrix must be real. Skew-Hermitian: $A = -A^H$. Normal: $AA^H = A^H A$. Both Hermitian and Unitary matrices are normal. 3.3. Elementary Operations Used to manipulate matrices without altering the row space:\nReplacement: $R_i \\leftarrow R_i + cR_j$. Interchange: $R_i \\leftrightarrow R_j$. Scaling: $R_i \\leftarrow cR_i$ ($c \\neq 0$). 3.4. Circular Operations and Circulant Matrices Indices $i, j$ are treated under modular arithmetic $\\pmod n$.\nCircular Add/Sub: $i \\oplus j = (i + j) \\pmod n$ and $i \\ominus j = (i - j) \\pmod n$. Circulant Matrix: $$\rC = \\begin{bmatrix} c_0 \u0026 c_{n-1} \u0026 \\dots \u0026 c_1 \\\\ c_1 \u0026 c_0 \u0026 \\dots \u0026 c_2 \\\\ \\vdots \u0026 \\vdots \u0026 \\ddots \u0026 \\vdots \\\\ c_{n-1} \u0026 c_{n-2} \u0026 \\dots \u0026 c_0 \\end{bmatrix}, \\quad C_{ij} = c_{(i-j) \\pmod n}\r$$\r*All circulant matrices commute and are diagonalized by the Discrete Fourier Transform (DFT) matrix.*\r3.5. Structural Classes Orthogonal/Unitary: $Q^T Q = I$ / $U^H U = I$. Idempotent: $A^2 = A$ (Projection operator). Nilpotent: $A^k = \\mathbf{0}$ for some $k$. Permutation ($P$): $P^T P = I$. Rows are a reordering of $I$. 3.6. Block Matrices (Partitioned Matrices) Matrices can be subdivided into blocks to simplify operations:\n$$\rA = \\begin{bmatrix} A_{11} \u0026 A_{12} \\\\ A_{21} \u0026 A_{22} \\end{bmatrix}\r$$\rBlock Multiplication: Possible if sub-matrix dimensions are compatible. Block Diagonal: $A = \\text{diag}(A_1, A_2, \\dots, A_k)$. Determinant: For a block diagonal matrix, $\\det(A) = \\prod \\det(A_i)$. 5. Algebraic Properties Non-commutativity: Generally, $AB \\neq BA$. Distributivity: $A(B+C) = AB + AC$. Transpose of Product: $(AB)^T = B^T A^T$. Practice Trace-Inner Product: Show that the Frobenius inner product $\\langle A, B \\rangle_F = \\text{Tr}(A^T B)$ can be written as $\\text{vec}(A) \\cdot \\text{vec}(B)$. Commutators: The commutator is defined as $[A, B] = AB - BA$. Show that if $A$ and $B$ are skew-symmetric, their commutator is also skew-symmetric. Orthogonal Matrices: Prove that if $Q$ is an orthogonal matrix, then $\\det(Q) = \\pm 1$. Rank-1 Update: Let $A$ be a square matrix and $\\mathbf{u}, \\mathbf{v}$ be vectors. Express the trace of the updated matrix $A + \\mathbf{u}\\mathbf{v}^T$ in terms of $\\text{Tr}(A)$ and $\\mathbf{u}^T \\mathbf{v}$. ",
+  "wordCount" : "629",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T00:00:00Z",
+  "dateModified": "2026-02-18T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Jeremy (Kai-Hsiang) Chang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/notes/linear-algebra/03-matrix-definition/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeremy (Kai-Hsiang) Chang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/favicon.ico"
+    }
+  }
+}
+</script>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+                    crossorigin="anonymous">
+            </head>
+
+                <body id="top">
+                    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jeremy (Kai-Hsiang) Chang (Alt + H)">Jeremy (Kai-Hsiang) Chang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/linear-algebra/">Linear Algebra</a></div>
+    <h1 class="post-title entry-hint-parent">
+      03. Matrices
+    </h1>
+    <div class="post-meta"><span title='2026-02-18 00:00:00 +0000 UTC'>February 18, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>629 words</span>&nbsp;·&nbsp;<span>Jeremy (Kai-Hsiang) Chang</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-fundamental-definitions">1. Fundamental Definitions</a></li>
+    <li><a href="#2-matrix-multiplication-four-perspectives">2. Matrix Multiplication: Four Perspectives</a></li>
+    <li><a href="#3-special-matrix-structures">3. Special Matrix Structures</a>
+      <ul>
+        <li><a href="#31-fundamental-matrices">3.1. Fundamental Matrices</a></li>
+        <li><a href="#32-symmetry-and-hermitian-properties">3.2. Symmetry and Hermitian Properties</a></li>
+        <li><a href="#33-elementary-operations">3.3. Elementary Operations</a></li>
+        <li><a href="#34-circular-operations-and-circulant-matrices">3.4. Circular Operations and Circulant Matrices</a></li>
+        <li><a href="#35-structural-classes">3.5. Structural Classes</a></li>
+        <li><a href="#36-block-matrices-partitioned-matrices">3.6. Block Matrices (Partitioned Matrices)</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-algebraic-properties">5. Algebraic Properties</a></li>
+    <li><a href="#practice">Practice</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.</p>
+<h2 id="1-fundamental-definitions">1. Fundamental Definitions<a hidden class="anchor" aria-hidden="true" href="#1-fundamental-definitions">#</a></h2>
+<p>For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.</p>
+<ul>
+<li><strong>Transpose</strong>: $A^T$ where $[A]^T_{ij} = a_{ji}$.</li>
+<li><strong>Trace</strong>: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$.
+<ul>
+<li><em>Cyclic Property</em>: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-matrix-multiplication-four-perspectives">2. Matrix Multiplication: Four Perspectives<a hidden class="anchor" aria-hidden="true" href="#2-matrix-multiplication-four-perspectives">#</a></h2>
+<p>Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:</p>
+<ol>
+<li><strong>Inner Product (Entry-wise)</strong>: $c_{ij} = \sum_{k=1}^p a_{ik}b_{kj}$.</li>
+<li><strong>Column-wise</strong>: The columns of $C$ are linear combinations of columns of $A$: $\mathbf{c}_j = A \mathbf{b}_j$.</li>
+<li><strong>Row-wise</strong>: The rows of $C$ are linear combinations of rows of $B$: $\mathbf{c}_i^T = \mathbf{a}_i^T B$.</li>
+<li><strong>Outer Product Sum</strong>: $C$ is the sum of $p$ rank-1 matrices:</li>
+</ol>
+<p>
+$$
+C = \sum_{k=1}^p \mathbf{a}_k \mathbf{b}_k^T
+$$
+</p>
+<h2 id="3-special-matrix-structures">3. Special Matrix Structures<a hidden class="anchor" aria-hidden="true" href="#3-special-matrix-structures">#</a></h2>
+<h3 id="31-fundamental-matrices">3.1. Fundamental Matrices<a hidden class="anchor" aria-hidden="true" href="#31-fundamental-matrices">#</a></h3>
+<ul>
+<li><strong>Identity Matrix ($I_n$)</strong>: A square matrix where $\delta_{ij} = 1$ if $i=j$ and $0$ otherwise.
+<ul>
+<li>Neutral element: $AI = IA = A$.</li>
+</ul>
+</li>
+<li><strong>Scalar Matrix</strong>: A diagonal matrix where all diagonal entries are equal ($cI$).
+<ul>
+<li>Represents uniform scaling in $\mathbb{R}^n$.</li>
+</ul>
+</li>
+<li><strong>Diagonal Matrix</strong>: $D = \text{diag}(d_1, \dots, d_n)$ where $d_{ij} = 0$ for $i \neq j$.</li>
+<li><strong>Elementary Matrix ($E$)</strong>: Generated by a single row operation on $I$. Left-multiplication $EA$ applies the operation to $A$.</li>
+</ul>
+<h3 id="32-symmetry-and-hermitian-properties">3.2. Symmetry and Hermitian Properties<a hidden class="anchor" aria-hidden="true" href="#32-symmetry-and-hermitian-properties">#</a></h3>
+<p>Properties related to the transpose ($A^T$) and conjugate transpose ($A^H$):</p>
+<ul>
+<li><strong>Symmetric</strong>: $A = A^T$.</li>
+<li><strong>Hermitian</strong>: $A = A^H$ (where $A^H = \overline{A}^T$).
+<ul>
+<li>For Hermitian matrices, $\langle A\mathbf{x}, \mathbf{y} \rangle = \langle \mathbf{x}, A\mathbf{y} \rangle$.</li>
+<li>All diagonal entries of a Hermitian matrix must be real.</li>
+</ul>
+</li>
+<li><strong>Skew-Hermitian</strong>: $A = -A^H$.</li>
+<li><strong>Normal</strong>: $AA^H = A^H A$. Both Hermitian and Unitary matrices are normal.</li>
+</ul>
+<h3 id="33-elementary-operations">3.3. Elementary Operations<a hidden class="anchor" aria-hidden="true" href="#33-elementary-operations">#</a></h3>
+<p>Used to manipulate matrices without altering the row space:</p>
+<ol>
+<li><strong>Replacement</strong>: $R_i \leftarrow R_i + cR_j$.</li>
+<li><strong>Interchange</strong>: $R_i \leftrightarrow R_j$.</li>
+<li><strong>Scaling</strong>: $R_i \leftarrow cR_i$ ($c \neq 0$).</li>
+</ol>
+<h3 id="34-circular-operations-and-circulant-matrices">3.4. Circular Operations and Circulant Matrices<a hidden class="anchor" aria-hidden="true" href="#34-circular-operations-and-circulant-matrices">#</a></h3>
+<p>Indices $i, j$ are treated under modular arithmetic $\pmod n$.</p>
+<ul>
+<li><strong>Circular Add/Sub</strong>: $i \oplus j = (i + j) \pmod n$ and $i \ominus j = (i - j) \pmod n$.</li>
+<li><strong>Circulant Matrix</strong>:</li>
+</ul>
+<p>
+$$
+C = \begin{bmatrix} c_0 & c_{n-1} & \dots & c_1 \\ c_1 & c_0 & \dots & c_2 \\ \vdots & \vdots & \ddots & \vdots \\ c_{n-1} & c_{n-2} & \dots & c_0 \end{bmatrix}, \quad C_{ij} = c_{(i-j) \pmod n}
+$$
+</p>
+*All circulant matrices commute and are diagonalized by the Discrete Fourier Transform (DFT) matrix.*
+<h3 id="35-structural-classes">3.5. Structural Classes<a hidden class="anchor" aria-hidden="true" href="#35-structural-classes">#</a></h3>
+<ul>
+<li><strong>Orthogonal/Unitary</strong>: $Q^T Q = I$ / $U^H U = I$.</li>
+<li><strong>Idempotent</strong>: $A^2 = A$ (Projection operator).</li>
+<li><strong>Nilpotent</strong>: $A^k = \mathbf{0}$ for some $k$.</li>
+<li><strong>Permutation ($P$)</strong>: $P^T P = I$. Rows are a reordering of $I$.</li>
+</ul>
+<h3 id="36-block-matrices-partitioned-matrices">3.6. Block Matrices (Partitioned Matrices)<a hidden class="anchor" aria-hidden="true" href="#36-block-matrices-partitioned-matrices">#</a></h3>
+<p>Matrices can be subdivided into blocks to simplify operations:</p>
+<p>
+$$
+A = \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix}
+$$
+</p>
+<ul>
+<li><strong>Block Multiplication</strong>: Possible if sub-matrix dimensions are compatible.</li>
+<li><strong>Block Diagonal</strong>: $A = \text{diag}(A_1, A_2, \dots, A_k)$.</li>
+<li><strong>Determinant</strong>: For a block diagonal matrix, $\det(A) = \prod \det(A_i)$.</li>
+</ul>
+<h2 id="5-algebraic-properties">5. Algebraic Properties<a hidden class="anchor" aria-hidden="true" href="#5-algebraic-properties">#</a></h2>
+<ul>
+<li><strong>Non-commutativity</strong>: Generally, $AB \neq BA$.</li>
+<li><strong>Distributivity</strong>: $A(B+C) = AB + AC$.</li>
+<li><strong>Transpose of Product</strong>: $(AB)^T = B^T A^T$.</li>
+</ul>
+<hr>
+<h2 id="practice">Practice<a hidden class="anchor" aria-hidden="true" href="#practice">#</a></h2>
+<ol>
+<li><strong>Trace-Inner Product</strong>: Show that the Frobenius inner product $\langle A, B \rangle_F = \text{Tr}(A^T B)$ can be written as $\text{vec}(A) \cdot \text{vec}(B)$.</li>
+<li><strong>Commutators</strong>: The commutator is defined as $[A, B] = AB - BA$. Show that if $A$ and $B$ are skew-symmetric, their commutator is also skew-symmetric.</li>
+<li><strong>Orthogonal Matrices</strong>: Prove that if $Q$ is an orthogonal matrix, then $\det(Q) = \pm 1$.</li>
+<li><strong>Rank-1 Update</strong>: Let $A$ be a square matrix and $\mathbf{u}, \mathbf{v}$ be vectors. Express the trace of the updated matrix $A + \mathbf{u}\mathbf{v}^T$ in terms of $\text{Tr}(A)$ and $\mathbf{u}^T \mathbf{v}$.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/matrices/">Matrices</a></li>
+      <li><a href="http://localhost:1313/tags/operators/">Operators</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/notes/linear-algebra/02-geometry-products/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>02. Geometry and Products</span>
+  </a>
+  <a class="next" href="http://localhost:1313/notes/linear-algebra/04-combination-span/">
+    <span class="title">Next »</span>
+    <br>
+    <span>04. Linear Combinations and Span</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+                    </main>
+                    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Jeremy (Kai-Hsiang) Chang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script></body>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+        </html>

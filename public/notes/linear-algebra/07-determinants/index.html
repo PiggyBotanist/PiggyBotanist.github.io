@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+        <html lang="en" dir=" auto" data-theme="auto">
+
+            <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>07. Determinants | Jeremy (Kai-Hsiang) Chang</title>
+<meta name="keywords" content="linear algebra, determinants, volume, permutations">
+<meta name="description" content="The determinant $\det(A)$ is a scalar value that characterizes a square matrix $A \in \mathbb{F}^{n \times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.
+1. Formal Definitions
+1.1 Leibniz Formula
+The determinant can be defined using permutations $\sigma$ of the set ${1, \dots, n}$:
+
+$$
+\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i, \sigma(i)}
+$$
+
+where $\text{sgn}(\sigma)$ is the signature of the permutation ($&#43;1$ for even, $-1$ for odd).
+1.2 Laplace Expansion (Cofactors)
+Expanding along row $i$:">
+<meta name="author" content="Jeremy (Kai-Hsiang) Chang">
+<link rel="canonical" href="http://localhost:1313/notes/linear-algebra/07-determinants/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/linear-algebra/07-determinants/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/notes/linear-algebra/07-determinants/">
+  <meta property="og:site_name" content="Jeremy (Kai-Hsiang) Chang">
+  <meta property="og:title" content="07. Determinants">
+  <meta property="og:description" content="The determinant $\det(A)$ is a scalar value that characterizes a square matrix $A \in \mathbb{F}^{n \times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.
+1. Formal Definitions 1.1 Leibniz Formula The determinant can be defined using permutations $\sigma$ of the set ${1, \dots, n}$:
+$$\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i, \sigma(i)}$$where $\text{sgn}(\sigma)$ is the signature of the permutation ($&#43;1$ for even, $-1$ for odd).1.2 Laplace Expansion (Cofactors) Expanding along row $i$:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:tag" content="Linear Algebra">
+    <meta property="article:tag" content="Determinants">
+    <meta property="article:tag" content="Volume">
+    <meta property="article:tag" content="Permutations">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="07. Determinants">
+<meta name="twitter:description" content="The determinant $\det(A)$ is a scalar value that characterizes a square matrix $A \in \mathbb{F}^{n \times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.
+1. Formal Definitions
+1.1 Leibniz Formula
+The determinant can be defined using permutations $\sigma$ of the set ${1, \dots, n}$:
+
+$$
+\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i, \sigma(i)}
+$$
+
+where $\text{sgn}(\sigma)$ is the signature of the permutation ($&#43;1$ for even, $-1$ for odd).
+1.2 Laplace Expansion (Cofactors)
+Expanding along row $i$:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Notes",
+      "item": "http://localhost:1313/notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra",
+      "item": "http://localhost:1313/notes/linear-algebra/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "07. Determinants",
+      "item": "http://localhost:1313/notes/linear-algebra/07-determinants/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "07. Determinants",
+  "name": "07. Determinants",
+  "description": "The determinant $\\det(A)$ is a scalar value that characterizes a square matrix $A \\in \\mathbb{F}^{n \\times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.\n1. Formal Definitions 1.1 Leibniz Formula The determinant can be defined using permutations $\\sigma$ of the set ${1, \\dots, n}$:\n$$\r\\det(A) = \\sum_{\\sigma \\in S_n} \\text{sgn}(\\sigma) \\prod_{i=1}^n a_{i, \\sigma(i)}\r$$\rwhere $\\text{sgn}(\\sigma)$ is the signature of the permutation ($+1$ for even, $-1$ for odd).\r1.2 Laplace Expansion (Cofactors) Expanding along row $i$:\n",
+  "keywords": [
+    "linear algebra", "determinants", "volume", "permutations"
+  ],
+  "articleBody": "The determinant $\\det(A)$ is a scalar value that characterizes a square matrix $A \\in \\mathbb{F}^{n \\times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.\n1. Formal Definitions 1.1 Leibniz Formula The determinant can be defined using permutations $\\sigma$ of the set ${1, \\dots, n}$:\n$$\r\\det(A) = \\sum_{\\sigma \\in S_n} \\text{sgn}(\\sigma) \\prod_{i=1}^n a_{i, \\sigma(i)}\r$$\rwhere $\\text{sgn}(\\sigma)$ is the signature of the permutation ($+1$ for even, $-1$ for odd).\r1.2 Laplace Expansion (Cofactors) Expanding along row $i$:\n$$\r\\det(A) = \\sum_{j=1}^n a_{ij} C_{ij}\r$$\rwhere the cofactor $C_{ij} = (-1)^{i+j} M_{ij}$, and $M_{ij}$ (the minor) is the determinant of the $(n-1) \\times (n-1)$ matrix obtained by deleting row $i$ and column $j$.\r2. Properties of the Determinant Multiplicativity: $\\det(AB) = \\det(A)\\det(B)$. Transpose: $\\det(A^T) = \\det(A)$. Inversion: $\\det(A^{-1}) = \\frac{1}{\\det(A)}$. Scalar Scaling: $\\det(cA) = c^n \\det(A)$ for $A \\in \\mathbb{F}^{n \\times n}$. Row Operations: Interchange: Swapping two rows multiplies the determinant by $-1$. Scaling: Multiplying a row by $k$ multiplies the determinant by $k$. Replacement: Adding a multiple of one row to another does not change the determinant. 3. Geometric and Algebraic Significance Invertibility: $A$ is invertible $\\iff \\det(A) \\neq 0$. Volume: In $\\mathbb{R}^n$, the volume of the parallelepiped formed by the columns of $A$ is $|\\det(A)|$. Orientation: If $\\det(A) \u003e 0$, the transformation preserves orientation; if $\\det(A) \u003c 0$, it reverses it. Triangular Matrices: For upper or lower triangular matrices, $\\det(A) = \\prod_{i=1}^n a_{ii}$. 4. Cramer’s Rule For a system $A\\mathbf{x} = \\mathbf{b}$ with invertible $A$, the $i$-th component of the solution is:\n$$\rx_i = \\frac{\\det(A_i(\\mathbf{b}))}{\\det(A)}\r$$\rwhere $A_i(\\mathbf{b})$ is the matrix $A$ with its $i$-th column replaced by $\\mathbf{b}$.\rPractice Problem 1: Calculation via Row Reduction Compute the determinant of the following matrix by reducing it to upper triangular form:\n$$\rA = \\begin{bmatrix} 1 \u0026 2 \u0026 3 \\\\ 2 \u0026 5 \u0026 9 \\\\ 3 \u0026 9 \u0026 19 \\end{bmatrix}\r$$\rProblem 2: Determinant Identities Let $A$ and $B$ be $4 \\times 4$ matrices with $\\det(A) = -2$ and $\\det(B) = 5$. Compute:\n$\\det(A^2)$ $\\det(2B)$ $\\det(A^T B^{-1})$ Problem 4: Vandermonde Determinant Show that for $n=2$, the determinant of the Vandermonde matrix:\n$$\rV = \\begin{bmatrix} 1 \u0026 x_0 \\\\ 1 \u0026 x_1 \\end{bmatrix}\r$$\ris $(x_1 - x_0)$. Generalize the result for $n=3$.\rProblem 5: Block Matrix Determinants Prove that for a block triangular matrix of the form:\n$$\rM = \\begin{bmatrix} A \u0026 B \\\\ \\mathbf{0} \u0026 D \\end{bmatrix}\r$$\rwhere $A$ and $D$ are square matrices, $\\det(M) = \\det(A)\\det(D)$. Does this hold if the $\\mathbf{0}$ block is non-zero?\rProblem 6: Nilpotent Matrices Suppose $A$ is a square matrix such that $A^k = \\mathbf{0}$ for some positive integer $k$. Prove that $\\det(A) = 0$. What does this imply about the invertibility of nilpotent matrices?\nProblem 7: Orthogonal Matrices Let $Q$ be an orthogonal matrix ($Q^T Q = I$). Prove that $\\det(Q) = \\pm 1$. Provide an example of a $2 \\times 2$ orthogonal matrix with determinant $-1$.\n",
+  "wordCount" : "499",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T00:00:00Z",
+  "dateModified": "2026-02-18T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Jeremy (Kai-Hsiang) Chang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/notes/linear-algebra/07-determinants/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeremy (Kai-Hsiang) Chang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/favicon.ico"
+    }
+  }
+}
+</script>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+                    crossorigin="anonymous">
+            </head>
+
+                <body id="top">
+                    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jeremy (Kai-Hsiang) Chang (Alt + H)">Jeremy (Kai-Hsiang) Chang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/linear-algebra/">Linear Algebra</a></div>
+    <h1 class="post-title entry-hint-parent">
+      07. Determinants
+    </h1>
+    <div class="post-meta"><span title='2026-02-18 00:00:00 +0000 UTC'>February 18, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>499 words</span>&nbsp;·&nbsp;<span>Jeremy (Kai-Hsiang) Chang</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-formal-definitions">1. Formal Definitions</a>
+      <ul>
+        <li><a href="#11-leibniz-formula">1.1 Leibniz Formula</a></li>
+        <li><a href="#12-laplace-expansion-cofactors">1.2 Laplace Expansion (Cofactors)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-properties-of-the-determinant">2. Properties of the Determinant</a></li>
+    <li><a href="#3-geometric-and-algebraic-significance">3. Geometric and Algebraic Significance</a></li>
+    <li><a href="#4-cramers-rule">4. Cramer&rsquo;s Rule</a></li>
+    <li><a href="#practice">Practice</a>
+      <ul>
+        <li><a href="#problem-1-calculation-via-row-reduction"><strong>Problem 1: Calculation via Row Reduction</strong></a></li>
+        <li><a href="#problem-2-determinant-identities"><strong>Problem 2: Determinant Identities</strong></a></li>
+        <li><a href="#problem-4-vandermonde-determinant"><strong>Problem 4: Vandermonde Determinant</strong></a></li>
+        <li><a href="#problem-5-block-matrix-determinants"><strong>Problem 5: Block Matrix Determinants</strong></a></li>
+        <li><a href="#problem-6-nilpotent-matrices"><strong>Problem 6: Nilpotent Matrices</strong></a></li>
+        <li><a href="#problem-7-orthogonal-matrices"><strong>Problem 7: Orthogonal Matrices</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>The determinant $\det(A)$ is a scalar value that characterizes a square matrix $A \in \mathbb{F}^{n \times n}$. Geometrically, it represents the factor by which the linear transformation $A$ scales $n$-dimensional volume.</p>
+<h2 id="1-formal-definitions">1. Formal Definitions<a hidden class="anchor" aria-hidden="true" href="#1-formal-definitions">#</a></h2>
+<h3 id="11-leibniz-formula">1.1 Leibniz Formula<a hidden class="anchor" aria-hidden="true" href="#11-leibniz-formula">#</a></h3>
+<p>The determinant can be defined using permutations $\sigma$ of the set ${1, \dots, n}$:</p>
+<p>
+$$
+\det(A) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i, \sigma(i)}
+$$
+</p>
+where $\text{sgn}(\sigma)$ is the signature of the permutation ($+1$ for even, $-1$ for odd).
+<h3 id="12-laplace-expansion-cofactors">1.2 Laplace Expansion (Cofactors)<a hidden class="anchor" aria-hidden="true" href="#12-laplace-expansion-cofactors">#</a></h3>
+<p>Expanding along row $i$:</p>
+<p>
+$$
+\det(A) = \sum_{j=1}^n a_{ij} C_{ij}
+$$
+</p>
+where the cofactor $C_{ij} = (-1)^{i+j} M_{ij}$, and $M_{ij}$ (the minor) is the determinant of the $(n-1) \times (n-1)$ matrix obtained by deleting row $i$ and column $j$.
+<h2 id="2-properties-of-the-determinant">2. Properties of the Determinant<a hidden class="anchor" aria-hidden="true" href="#2-properties-of-the-determinant">#</a></h2>
+<ol>
+<li><strong>Multiplicativity</strong>: $\det(AB) = \det(A)\det(B)$.</li>
+<li><strong>Transpose</strong>: $\det(A^T) = \det(A)$.</li>
+<li><strong>Inversion</strong>: $\det(A^{-1}) = \frac{1}{\det(A)}$.</li>
+<li><strong>Scalar Scaling</strong>: $\det(cA) = c^n \det(A)$ for $A \in \mathbb{F}^{n \times n}$.</li>
+<li><strong>Row Operations</strong>:
+<ul>
+<li><strong>Interchange</strong>: Swapping two rows multiplies the determinant by $-1$.</li>
+<li><strong>Scaling</strong>: Multiplying a row by $k$ multiplies the determinant by $k$.</li>
+<li><strong>Replacement</strong>: Adding a multiple of one row to another does not change the determinant.</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-geometric-and-algebraic-significance">3. Geometric and Algebraic Significance<a hidden class="anchor" aria-hidden="true" href="#3-geometric-and-algebraic-significance">#</a></h2>
+<ul>
+<li><strong>Invertibility</strong>: $A$ is invertible $\iff \det(A) \neq 0$.</li>
+<li><strong>Volume</strong>: In $\mathbb{R}^n$, the volume of the parallelepiped formed by the columns of $A$ is $|\det(A)|$.</li>
+<li><strong>Orientation</strong>: If $\det(A) &gt; 0$, the transformation preserves orientation; if $\det(A) &lt; 0$, it reverses it.</li>
+<li><strong>Triangular Matrices</strong>: For upper or lower triangular matrices, $\det(A) = \prod_{i=1}^n a_{ii}$.</li>
+</ul>
+<h2 id="4-cramers-rule">4. Cramer&rsquo;s Rule<a hidden class="anchor" aria-hidden="true" href="#4-cramers-rule">#</a></h2>
+<p>For a system $A\mathbf{x} = \mathbf{b}$ with invertible $A$, the $i$-th component of the solution is:</p>
+<p>
+$$
+x_i = \frac{\det(A_i(\mathbf{b}))}{\det(A)}
+$$
+</p>
+where $A_i(\mathbf{b})$ is the matrix $A$ with its $i$-th column replaced by $\mathbf{b}$.
+<hr>
+<h2 id="practice">Practice<a hidden class="anchor" aria-hidden="true" href="#practice">#</a></h2>
+<h3 id="problem-1-calculation-via-row-reduction"><strong>Problem 1: Calculation via Row Reduction</strong><a hidden class="anchor" aria-hidden="true" href="#problem-1-calculation-via-row-reduction">#</a></h3>
+<p>Compute the determinant of the following matrix by reducing it to upper triangular form:</p>
+<p>
+$$
+A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 5 & 9 \\ 3 & 9 & 19 \end{bmatrix}
+$$
+</p>
+<h3 id="problem-2-determinant-identities"><strong>Problem 2: Determinant Identities</strong><a hidden class="anchor" aria-hidden="true" href="#problem-2-determinant-identities">#</a></h3>
+<p>Let $A$ and $B$ be $4 \times 4$ matrices with $\det(A) = -2$ and $\det(B) = 5$. Compute:</p>
+<ol>
+<li>$\det(A^2)$</li>
+<li>$\det(2B)$</li>
+<li>$\det(A^T B^{-1})$</li>
+</ol>
+<h3 id="problem-4-vandermonde-determinant"><strong>Problem 4: Vandermonde Determinant</strong><a hidden class="anchor" aria-hidden="true" href="#problem-4-vandermonde-determinant">#</a></h3>
+<p>Show that for $n=2$, the determinant of the Vandermonde matrix:</p>
+<p>
+$$
+V = \begin{bmatrix} 1 & x_0 \\ 1 & x_1 \end{bmatrix}
+$$
+</p>
+is $(x_1 - x_0)$. Generalize the result for $n=3$.
+<h3 id="problem-5-block-matrix-determinants"><strong>Problem 5: Block Matrix Determinants</strong><a hidden class="anchor" aria-hidden="true" href="#problem-5-block-matrix-determinants">#</a></h3>
+<p>Prove that for a block triangular matrix of the form:</p>
+<p>
+$$
+M = \begin{bmatrix} A & B \\ \mathbf{0} & D \end{bmatrix}
+$$
+</p>
+where $A$ and $D$ are square matrices, $\det(M) = \det(A)\det(D)$. Does this hold if the $\mathbf{0}$ block is non-zero?
+<h3 id="problem-6-nilpotent-matrices"><strong>Problem 6: Nilpotent Matrices</strong><a hidden class="anchor" aria-hidden="true" href="#problem-6-nilpotent-matrices">#</a></h3>
+<p>Suppose $A$ is a square matrix such that $A^k = \mathbf{0}$ for some positive integer $k$. Prove that $\det(A) = 0$. What does this imply about the invertibility of nilpotent matrices?</p>
+<h3 id="problem-7-orthogonal-matrices"><strong>Problem 7: Orthogonal Matrices</strong><a hidden class="anchor" aria-hidden="true" href="#problem-7-orthogonal-matrices">#</a></h3>
+<p>Let $Q$ be an orthogonal matrix ($Q^T Q = I$). Prove that $\det(Q) = \pm 1$. Provide an example of a $2 \times 2$ orthogonal matrix with determinant $-1$.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/determinants/">Determinants</a></li>
+      <li><a href="http://localhost:1313/tags/volume/">Volume</a></li>
+      <li><a href="http://localhost:1313/tags/permutations/">Permutations</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/notes/linear-algebra/06-inverses/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>06. Matrix Inverses</span>
+  </a>
+  <a class="next" href="http://localhost:1313/notes/linear-algebra/cheatsheet/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Cheat Sheet</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+                    </main>
+                    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Jeremy (Kai-Hsiang) Chang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script></body>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+        </html>

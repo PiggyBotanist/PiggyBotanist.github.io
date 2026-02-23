@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Geometry on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/tags/geometry/</link>
+    <description>Recent content in Geometry on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/geometry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>02. Geometry and Products</title>
+      <link>http://localhost:1313/notes/linear-algebra/02-geometry-products/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/02-geometry-products/</guid>
+      <description>&lt;p&gt;Geometry in $\mathbb{R}^n$ is induced by the &lt;strong&gt;inner product&lt;/strong&gt;, which allows for the definition of angles, orthogonality, and projections.&lt;/p&gt;
+&lt;h2 id=&#34;1-inner-product-spaces-ips&#34;&gt;1. Inner Product Spaces (IPS)&lt;/h2&gt;
+&lt;p&gt;An inner product $\langle \cdot, \cdot \rangle$ on a vector space $\mathcal{V}$ is a mapping $\mathcal{V} \times \mathcal{V} \to \mathbb{F}$ satisfying:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Conjugate Symmetry&lt;/strong&gt;: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linearity&lt;/strong&gt;: $\langle c\mathbf{u} + \mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle + \langle \mathbf{w}, \mathbf{v} \rangle$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Positive Definiteness&lt;/strong&gt;: $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$ and $\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = \mathbf{0}$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The &lt;strong&gt;standard dot product&lt;/strong&gt; in $\mathbb{R}^n$ is $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum u_i v_i$.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>05. Basis and Dimension</title>
+      <link>http://localhost:1313/notes/linear-algebra/05-basis-dimension/</link>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/05-basis-dimension/</guid>
+      <description>&lt;p&gt;A basis provides a unique coordinate system for a vector space. The number of vectors in a basis defines the dimension of the space, which is invariant regardless of the choice of basis.&lt;/p&gt;
+&lt;h2 id=&#34;1-the-basis&#34;&gt;1. The Basis&lt;/h2&gt;
+&lt;p&gt;A set of vectors $\mathcal{B} = {\mathbf{v}_1, \dots, \mathbf{v}_n}$ is a &lt;strong&gt;basis&lt;/strong&gt; for a vector space $\mathcal{V}$ if:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\mathcal{B}$ is &lt;strong&gt;linearly independent&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;$\text{span}(\mathcal{B}) = \mathcal{V}$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;11-unique-representation-theorem&#34;&gt;1.1 Unique Representation Theorem&lt;/h3&gt;
+&lt;p&gt;If $\mathcal{B}$ is a basis for $\mathcal{V}$, then for every $\mathbf{x} \in \mathcal{V}$, there exists a &lt;strong&gt;unique&lt;/strong&gt; set of scalars $c_1, \dots, c_n$ such that:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
