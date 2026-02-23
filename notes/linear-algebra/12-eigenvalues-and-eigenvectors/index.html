@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+        <html lang="en" dir=" auto" data-theme="auto">
+
+            <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>12. Eigenvalues and Eigenvectors | Your Name - CS/ML/Computational Biology Portfolio</title>
+<meta name="keywords" content="linear algebra, eigenvalues, diagonalization, spectral theorem">
+<meta name="description" content="Eigenvalues and eigenvectors describe how a matrix stretches and rotates; they underlie diagonalization, stability of dynamical systems, and principal component analysis.
+Definitions
+
+Eigenvalue equation: $A\mathbf{v} = \lambda \mathbf{v}$ for $\mathbf{v} \neq \mathbf{0}$.
+Characteristic equation: $p(\lambda) = \det(A - \lambda I) = 0$; roots are eigenvalues.
+Eigenspace $E_\lambda$: $\text{Nul}(A - \lambda I)$ (all eigenvectors for $\lambda$ plus $\mathbf{0}$).
+
+Trace, determinant, and eigenvalues
+For $n \times n$ matrix $A$ with eigenvalues $\lambda_1, \ldots, \lambda_n$:">
+<meta name="author" content="Your Name">
+<link rel="canonical" href="http://localhost:1313/notes/linear-algebra/12-eigenvalues-and-eigenvectors/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/linear-algebra/12-eigenvalues-and-eigenvectors/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/notes/linear-algebra/12-eigenvalues-and-eigenvectors/">
+  <meta property="og:site_name" content="Your Name - CS/ML/Computational Biology Portfolio">
+  <meta property="og:title" content="12. Eigenvalues and Eigenvectors">
+  <meta property="og:description" content="Eigenvalues and eigenvectors describe how a matrix stretches and rotates; they underlie diagonalization, stability of dynamical systems, and principal component analysis.
+Definitions Eigenvalue equation: $A\mathbf{v} = \lambda \mathbf{v}$ for $\mathbf{v} \neq \mathbf{0}$. Characteristic equation: $p(\lambda) = \det(A - \lambda I) = 0$; roots are eigenvalues. Eigenspace $E_\lambda$: $\text{Nul}(A - \lambda I)$ (all eigenvectors for $\lambda$ plus $\mathbf{0}$). Trace, determinant, and eigenvalues For $n \times n$ matrix $A$ with eigenvalues $\lambda_1, \ldots, \lambda_n$:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2024-01-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-01T00:00:00+00:00">
+    <meta property="article:tag" content="Linear Algebra">
+    <meta property="article:tag" content="Eigenvalues">
+    <meta property="article:tag" content="Diagonalization">
+    <meta property="article:tag" content="Spectral Theorem">
+      <meta property="og:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/profile.jpg">
+<meta name="twitter:title" content="12. Eigenvalues and Eigenvectors">
+<meta name="twitter:description" content="Eigenvalues and eigenvectors describe how a matrix stretches and rotates; they underlie diagonalization, stability of dynamical systems, and principal component analysis.
+Definitions
+
+Eigenvalue equation: $A\mathbf{v} = \lambda \mathbf{v}$ for $\mathbf{v} \neq \mathbf{0}$.
+Characteristic equation: $p(\lambda) = \det(A - \lambda I) = 0$; roots are eigenvalues.
+Eigenspace $E_\lambda$: $\text{Nul}(A - \lambda I)$ (all eigenvectors for $\lambda$ plus $\mathbf{0}$).
+
+Trace, determinant, and eigenvalues
+For $n \times n$ matrix $A$ with eigenvalues $\lambda_1, \ldots, \lambda_n$:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Notes",
+      "item": "http://localhost:1313/notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra",
+      "item": "http://localhost:1313/notes/linear-algebra/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "12. Eigenvalues and Eigenvectors",
+      "item": "http://localhost:1313/notes/linear-algebra/12-eigenvalues-and-eigenvectors/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "12. Eigenvalues and Eigenvectors",
+  "name": "12. Eigenvalues and Eigenvectors",
+  "description": "Eigenvalues and eigenvectors describe how a matrix stretches and rotates; they underlie diagonalization, stability of dynamical systems, and principal component analysis.\nDefinitions Eigenvalue equation: $A\\mathbf{v} = \\lambda \\mathbf{v}$ for $\\mathbf{v} \\neq \\mathbf{0}$. Characteristic equation: $p(\\lambda) = \\det(A - \\lambda I) = 0$; roots are eigenvalues. Eigenspace $E_\\lambda$: $\\text{Nul}(A - \\lambda I)$ (all eigenvectors for $\\lambda$ plus $\\mathbf{0}$). Trace, determinant, and eigenvalues For $n \\times n$ matrix $A$ with eigenvalues $\\lambda_1, \\ldots, \\lambda_n$:\n",
+  "keywords": [
+    "linear algebra", "eigenvalues", "diagonalization", "spectral theorem"
+  ],
+  "articleBody": "Eigenvalues and eigenvectors describe how a matrix stretches and rotates; they underlie diagonalization, stability of dynamical systems, and principal component analysis.\nDefinitions Eigenvalue equation: $A\\mathbf{v} = \\lambda \\mathbf{v}$ for $\\mathbf{v} \\neq \\mathbf{0}$. Characteristic equation: $p(\\lambda) = \\det(A - \\lambda I) = 0$; roots are eigenvalues. Eigenspace $E_\\lambda$: $\\text{Nul}(A - \\lambda I)$ (all eigenvectors for $\\lambda$ plus $\\mathbf{0}$). Trace, determinant, and eigenvalues For $n \\times n$ matrix $A$ with eigenvalues $\\lambda_1, \\ldots, \\lambda_n$:\nTrace: $\\text{tr}(A) = \\sum_i a_{ii} = \\sum_i \\lambda_i$. Determinant: $\\det(A) = \\prod_i \\lambda_i$. $A$ is invertible iff $0$ is not an eigenvalue. Multiplicity and diagonalizability Algebraic multiplicity (AM): Multiplicity of $\\lambda$ as a root of $p(\\lambda)$. Geometric multiplicity (GM): $\\dim(E_\\lambda) = \\dim(\\text{Nul}(A - \\lambda I))$. Always: $1 \\le \\text{GM} \\le \\text{AM}$. Diagonalizable: $A$ has a basis of eigenvectors iff $\\text{GM} = \\text{AM}$ for every eigenvalue. Then $A = P \\Lambda P^{-1}$ with $P = [\\mathbf{v}_1 \\ \\cdots \\ \\mathbf{v}_n]$ and $\\Lambda = \\text{diag}(\\lambda_1,\\ldots,\\lambda_n)$. Defective: Some $\\lambda$ has $\\text{GM} \u003c \\text{AM}$; $A$ is not diagonalizable (use Jordan form). Spectral theorem (symmetric matrices) If $A = A^T$ (real symmetric), then:\nAll eigenvalues are real. Eigenvectors for distinct eigenvalues are orthogonal. $A$ is orthogonally diagonalizable: $A = Q \\Lambda Q^T$ with $Q^T = Q^{-1}$. So we can choose an orthonormal basis of eigenvectors—the foundation of PCA and many spectral methods.\nFunctional identities If $A\\mathbf{v} = \\lambda \\mathbf{v}$:\n$A^k \\mathbf{v} = \\lambda^k \\mathbf{v}$; $A^k = P \\Lambda^k P^{-1}$. $A^{-1}\\mathbf{v} = \\lambda^{-1} \\mathbf{v}$ (if $\\lambda \\neq 0$). For a polynomial $q$, $q(A)$ has eigenvalues $q(\\lambda)$. Matrix exponential: $e^{At} = P e^{\\Lambda t} P^{-1} = P ,\\text{diag}(e^{\\lambda_1 t}, \\ldots, e^{\\lambda_n t}) P^{-1}$. Spectral radius: $\\rho(A) = \\max_i |\\lambda_i|$; $A^k \\to 0$ iff $\\rho(A) \u003c 1$. Cayley–Hamilton theorem Every square matrix satisfies its own characteristic equation: $p(A) = \\mathbf{0}$. So $A^n$ (and higher powers) can be written as a linear combination of $I, A, \\ldots, A^{n-1}$; this can be used to compute $A^{-1}$ or $e^{At}$.\nGerschgorin circle theorem Every eigenvalue of $A$ lies in at least one Gerschgorin disc:\n$$ D_i = \\left{ z \\in \\mathbb{C} : |z - a_{ii}| \\le \\sum_{j \\neq i} |a_{ij}| \\right} $$\n(sum of off-diagonal absolute values in row $i$). Useful for quick bounds on eigenvalue locations.\n",
+  "wordCount" : "367",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/images/profile.jpg","datePublished": "2024-01-01T00:00:00Z",
+  "dateModified": "2024-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Your Name"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/notes/linear-algebra/12-eigenvalues-and-eigenvectors/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Name - CS/ML/Computational Biology Portfolio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/favicon.ico"
+    }
+  }
+}
+</script>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+                    crossorigin="anonymous">
+            </head>
+
+                <body id="top">
+                    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Your Name - CS/ML/Computational Biology Portfolio (Alt + H)">Your Name - CS/ML/Computational Biology Portfolio</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/experience/" title="Experience">
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/notes/" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/uploads/resume.pdf" title="📄 Resume">
+                    <span>📄 Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/linear-algebra/">Linear Algebra</a></div>
+    <h1 class="post-title entry-hint-parent">
+      12. Eigenvalues and Eigenvectors
+    </h1>
+    <div class="post-meta"><span title='2024-01-01 00:00:00 +0000 UTC'>January 1, 2024</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>367 words</span>&nbsp;·&nbsp;<span>Your Name</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#trace-determinant-and-eigenvalues">Trace, determinant, and eigenvalues</a></li>
+    <li><a href="#multiplicity-and-diagonalizability">Multiplicity and diagonalizability</a></li>
+    <li><a href="#spectral-theorem-symmetric-matrices">Spectral theorem (symmetric matrices)</a></li>
+    <li><a href="#functional-identities">Functional identities</a></li>
+    <li><a href="#cayleyhamilton-theorem">Cayley–Hamilton theorem</a></li>
+    <li><a href="#gerschgorin-circle-theorem">Gerschgorin circle theorem</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Eigenvalues and eigenvectors describe how a matrix stretches and rotates; they underlie diagonalization, stability of dynamical systems, and principal component analysis.</p>
+<h2 id="definitions">Definitions<a hidden class="anchor" aria-hidden="true" href="#definitions">#</a></h2>
+<ul>
+<li><strong>Eigenvalue equation</strong>: $A\mathbf{v} = \lambda \mathbf{v}$ for $\mathbf{v} \neq \mathbf{0}$.</li>
+<li><strong>Characteristic equation</strong>: $p(\lambda) = \det(A - \lambda I) = 0$; roots are eigenvalues.</li>
+<li><strong>Eigenspace</strong> $E_\lambda$: $\text{Nul}(A - \lambda I)$ (all eigenvectors for $\lambda$ plus $\mathbf{0}$).</li>
+</ul>
+<h2 id="trace-determinant-and-eigenvalues">Trace, determinant, and eigenvalues<a hidden class="anchor" aria-hidden="true" href="#trace-determinant-and-eigenvalues">#</a></h2>
+<p>For $n \times n$ matrix $A$ with eigenvalues $\lambda_1, \ldots, \lambda_n$:</p>
+<ul>
+<li><strong>Trace</strong>: $\text{tr}(A) = \sum_i a_{ii} = \sum_i \lambda_i$.</li>
+<li><strong>Determinant</strong>: $\det(A) = \prod_i \lambda_i$.</li>
+<li>$A$ is invertible iff $0$ is not an eigenvalue.</li>
+</ul>
+<h2 id="multiplicity-and-diagonalizability">Multiplicity and diagonalizability<a hidden class="anchor" aria-hidden="true" href="#multiplicity-and-diagonalizability">#</a></h2>
+<ul>
+<li><strong>Algebraic multiplicity (AM)</strong>: Multiplicity of $\lambda$ as a root of $p(\lambda)$.</li>
+<li><strong>Geometric multiplicity (GM)</strong>: $\dim(E_\lambda) = \dim(\text{Nul}(A - \lambda I))$.</li>
+<li>Always: $1 \le \text{GM} \le \text{AM}$.</li>
+<li><strong>Diagonalizable</strong>: $A$ has a basis of eigenvectors iff $\text{GM} = \text{AM}$ for every eigenvalue. Then $A = P \Lambda P^{-1}$ with $P = [\mathbf{v}_1 \ \cdots \ \mathbf{v}_n]$ and $\Lambda = \text{diag}(\lambda_1,\ldots,\lambda_n)$.</li>
+<li><strong>Defective</strong>: Some $\lambda$ has $\text{GM} &lt; \text{AM}$; $A$ is not diagonalizable (use Jordan form).</li>
+</ul>
+<h2 id="spectral-theorem-symmetric-matrices">Spectral theorem (symmetric matrices)<a hidden class="anchor" aria-hidden="true" href="#spectral-theorem-symmetric-matrices">#</a></h2>
+<p>If $A = A^T$ (real symmetric), then:</p>
+<ol>
+<li>All eigenvalues are <strong>real</strong>.</li>
+<li>Eigenvectors for distinct eigenvalues are <strong>orthogonal</strong>.</li>
+<li>$A$ is <strong>orthogonally diagonalizable</strong>: $A = Q \Lambda Q^T$ with $Q^T = Q^{-1}$.</li>
+</ol>
+<p>So we can choose an orthonormal basis of eigenvectors—the foundation of PCA and many spectral methods.</p>
+<h2 id="functional-identities">Functional identities<a hidden class="anchor" aria-hidden="true" href="#functional-identities">#</a></h2>
+<p>If $A\mathbf{v} = \lambda \mathbf{v}$:</p>
+<ul>
+<li>$A^k \mathbf{v} = \lambda^k \mathbf{v}$; $A^k = P \Lambda^k P^{-1}$.</li>
+<li>$A^{-1}\mathbf{v} = \lambda^{-1} \mathbf{v}$ (if $\lambda \neq 0$).</li>
+<li>For a polynomial $q$, $q(A)$ has eigenvalues $q(\lambda)$.</li>
+<li><strong>Matrix exponential</strong>: $e^{At} = P e^{\Lambda t} P^{-1} = P ,\text{diag}(e^{\lambda_1 t}, \ldots, e^{\lambda_n t}) P^{-1}$.</li>
+<li><strong>Spectral radius</strong>: $\rho(A) = \max_i |\lambda_i|$; $A^k \to 0$ iff $\rho(A) &lt; 1$.</li>
+</ul>
+<h2 id="cayleyhamilton-theorem">Cayley–Hamilton theorem<a hidden class="anchor" aria-hidden="true" href="#cayleyhamilton-theorem">#</a></h2>
+<p>Every square matrix satisfies its own characteristic equation: $p(A) = \mathbf{0}$. So $A^n$ (and higher powers) can be written as a linear combination of $I, A, \ldots, A^{n-1}$; this can be used to compute $A^{-1}$ or $e^{At}$.</p>
+<h2 id="gerschgorin-circle-theorem">Gerschgorin circle theorem<a hidden class="anchor" aria-hidden="true" href="#gerschgorin-circle-theorem">#</a></h2>
+<p>Every eigenvalue of $A$ lies in at least one <strong>Gerschgorin disc</strong>:</p>
+<p>$$
+D_i = \left{ z \in \mathbb{C} : |z - a_{ii}| \le \sum_{j \neq i} |a_{ij}| \right}
+$$</p>
+<p>(sum of off-diagonal absolute values in row $i$). Useful for quick bounds on eigenvalue locations.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/eigenvalues/">Eigenvalues</a></li>
+      <li><a href="http://localhost:1313/tags/diagonalization/">Diagonalization</a></li>
+      <li><a href="http://localhost:1313/tags/spectral-theorem/">Spectral Theorem</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/notes/linear-algebra/11-inverses-and-determinants/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>11. Matrix Inverses and Determinants</span>
+  </a>
+  <a class="next" href="http://localhost:1313/notes/linear-algebra/13-matrix-factorizations/">
+    <span class="title">Next »</span>
+    <br>
+    <span>13. Matrix Factorizations</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+                    </main>
+                    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Your Name - CS/ML/Computational Biology Portfolio</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+        </html>

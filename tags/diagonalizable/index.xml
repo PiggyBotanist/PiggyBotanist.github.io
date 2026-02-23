@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Diagonalizable on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/diagonalizable/</link>
+    <description>Recent content in Diagonalizable on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/diagonalizable/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10. Matrix Taxonomy: Definitions and Identities</title>
+      <link>http://localhost:1313/notes/linear-algebra/10-matrix-taxonomy/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/10-matrix-taxonomy/</guid>
+      <description>&lt;p&gt;Matrices are classified by shape, symmetry, and special algebraic properties; these determine eigenvalue structure and which factorizations apply.&lt;/p&gt;
+&lt;h2 id=&#34;elementary-structural-forms&#34;&gt;Elementary structural forms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Identity $I$&lt;/strong&gt;: $a_{ij} = 1$ if $i=j$, else $0$. $AI = IA = A$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Diagonal $D$&lt;/strong&gt;: $a_{ij} = 0$ for $i \neq j$. Eigenvalues = diagonal entries; $\det(D) = \prod_i d_{ii}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scalar matrix&lt;/strong&gt;: $A = cI$ (all diagonal entries equal).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Triangular&lt;/strong&gt;: &lt;strong&gt;Upper&lt;/strong&gt; $U$: $a_{ij}=0$ for $i&amp;gt;j$. &lt;strong&gt;Lower&lt;/strong&gt; $L$: $a_{ij}=0$ for $i&amp;lt;j$. For any triangular matrix, $\det = \prod_i a_{ii}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;symmetry-based-matrices&#34;&gt;Symmetry-based matrices&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Symmetric&lt;/strong&gt; ($A = A^T$): Real eigenvalues; orthogonal eigenvectors for distinct eigenvalues; always diagonalizable over $\mathbb{R}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skew-symmetric&lt;/strong&gt; ($A = -A^T$): Diagonal entries $0$; eigenvalues purely imaginary or zero; if $n$ is odd, $\det(A)=0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hermitian&lt;/strong&gt; ($A = A^H = \overline{A}^T$): Complex analogue of symmetric; $\mathbf{x}^H A \mathbf{x}$ is real for all $\mathbf{x}$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;transformation-based-matrices&#34;&gt;Transformation-based matrices&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Orthogonal $Q$&lt;/strong&gt;: $Q^T Q = Q Q^T = I$, so $Q^{-1} = Q^T$. Columns/rows are orthonormal; preserves dot products and norms ($|Q\mathbf{x}| = |\mathbf{x}|$); $\det(Q) = \pm 1$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unitary $U$&lt;/strong&gt;: $U^H U = I$ (complex analogue of orthogonal).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Permutation $P$&lt;/strong&gt;: Obtained by reordering rows of $I$; $P^T = P^{-1}$; $\det(P) = \pm 1$ (sign of permutation).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;operational-properties&#34;&gt;Operational properties&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Idempotent&lt;/strong&gt;: $A^2 = A$ (e.g., projection matrices); eigenvalues in ${0,1}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nilpotent&lt;/strong&gt;: $A^k = \mathbf{0}$ for some $k$; all eigenvalues $0$; $\text{tr}(A)=\det(A)=0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Involutory&lt;/strong&gt;: $A^2 = I$ (e.g., reflections); eigenvalues in ${1,-1}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Normal&lt;/strong&gt;: $A A^H = A^H A$; includes symmetric, skew-symmetric, orthogonal, unitary; normal matrices are unitarily diagonalizable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;singularity-and-definiteness&#34;&gt;Singularity and definiteness&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Singular&lt;/strong&gt;: $\det(A)=0$; not invertible; at least one eigenvalue $0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Non-singular&lt;/strong&gt;: $\det(A) \neq 0$; full rank; invertible.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Defective&lt;/strong&gt;: Fewer than $n$ linearly independent eigenvectors; not diagonalizable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Positive definite&lt;/strong&gt; ($A \succ 0$): $\mathbf{x}^T A \mathbf{x} &amp;gt; 0$ for all $\mathbf{x} \neq \mathbf{0}$; all eigenvalues $&amp;gt; 0$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Positive semi-definite&lt;/strong&gt; ($A \succeq 0$): $\mathbf{x}^T A \mathbf{x} \ge 0$; all eigenvalues $\ge 0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Positive definiteness appears in covariance matrices, Hessians at minima, and stability of linear systems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

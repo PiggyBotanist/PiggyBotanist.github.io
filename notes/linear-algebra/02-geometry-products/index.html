@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+        <html lang="en" dir=" auto" data-theme="auto">
+
+            <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>02. Geometry and Products | Jeremy (Kai-Hsiang) Chang</title>
+<meta name="keywords" content="linear algebra, geometry, inner products, cross products">
+<meta name="description" content="Geometry in $\mathbb{R}^n$ is induced by the inner product, which allows for the definition of angles, orthogonality, and projections.
+1. Inner Product Spaces (IPS)
+An inner product $\langle \cdot, \cdot \rangle$ on a vector space $\mathcal{V}$ is a mapping $\mathcal{V} \times \mathcal{V} \to \mathbb{F}$ satisfying:
+
+Conjugate Symmetry: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$.
+Linearity: $\langle c\mathbf{u} &#43; \mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle &#43; \langle \mathbf{w}, \mathbf{v} \rangle$.
+Positive Definiteness: $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$ and $\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = \mathbf{0}$.
+
+The standard dot product in $\mathbb{R}^n$ is $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum u_i v_i$.">
+<meta name="author" content="Jeremy (Kai-Hsiang) Chang">
+<link rel="canonical" href="http://localhost:1313/notes/linear-algebra/02-geometry-products/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/images/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/linear-algebra/02-geometry-products/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/notes/linear-algebra/02-geometry-products/">
+  <meta property="og:site_name" content="Jeremy (Kai-Hsiang) Chang">
+  <meta property="og:title" content="02. Geometry and Products">
+  <meta property="og:description" content="Geometry in $\mathbb{R}^n$ is induced by the inner product, which allows for the definition of angles, orthogonality, and projections.
+1. Inner Product Spaces (IPS) An inner product $\langle \cdot, \cdot \rangle$ on a vector space $\mathcal{V}$ is a mapping $\mathcal{V} \times \mathcal{V} \to \mathbb{F}$ satisfying:
+Conjugate Symmetry: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$. Linearity: $\langle c\mathbf{u} &#43; \mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle &#43; \langle \mathbf{w}, \mathbf{v} \rangle$. Positive Definiteness: $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$ and $\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = \mathbf{0}$. The standard dot product in $\mathbb{R}^n$ is $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum u_i v_i$.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-02-18T00:00:00+00:00">
+    <meta property="article:tag" content="Linear Algebra">
+    <meta property="article:tag" content="Geometry">
+    <meta property="article:tag" content="Inner Products">
+    <meta property="article:tag" content="Cross Products">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="02. Geometry and Products">
+<meta name="twitter:description" content="Geometry in $\mathbb{R}^n$ is induced by the inner product, which allows for the definition of angles, orthogonality, and projections.
+1. Inner Product Spaces (IPS)
+An inner product $\langle \cdot, \cdot \rangle$ on a vector space $\mathcal{V}$ is a mapping $\mathcal{V} \times \mathcal{V} \to \mathbb{F}$ satisfying:
+
+Conjugate Symmetry: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$.
+Linearity: $\langle c\mathbf{u} &#43; \mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle &#43; \langle \mathbf{w}, \mathbf{v} \rangle$.
+Positive Definiteness: $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$ and $\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = \mathbf{0}$.
+
+The standard dot product in $\mathbb{R}^n$ is $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum u_i v_i$.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Notes",
+      "item": "http://localhost:1313/notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Algebra",
+      "item": "http://localhost:1313/notes/linear-algebra/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "02. Geometry and Products",
+      "item": "http://localhost:1313/notes/linear-algebra/02-geometry-products/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "02. Geometry and Products",
+  "name": "02. Geometry and Products",
+  "description": "Geometry in $\\mathbb{R}^n$ is induced by the inner product, which allows for the definition of angles, orthogonality, and projections.\n1. Inner Product Spaces (IPS) An inner product $\\langle \\cdot, \\cdot \\rangle$ on a vector space $\\mathcal{V}$ is a mapping $\\mathcal{V} \\times \\mathcal{V} \\to \\mathbb{F}$ satisfying:\nConjugate Symmetry: $\\langle \\mathbf{u}, \\mathbf{v} \\rangle = \\overline{\\langle \\mathbf{v}, \\mathbf{u} \\rangle}$. Linearity: $\\langle c\\mathbf{u} + \\mathbf{w}, \\mathbf{v} \\rangle = c\\langle \\mathbf{u}, \\mathbf{v} \\rangle + \\langle \\mathbf{w}, \\mathbf{v} \\rangle$. Positive Definiteness: $\\langle \\mathbf{v}, \\mathbf{v} \\rangle \\ge 0$ and $\\langle \\mathbf{v}, \\mathbf{v} \\rangle = 0 \\iff \\mathbf{v} = \\mathbf{0}$. The standard dot product in $\\mathbb{R}^n$ is $\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{u}^T \\mathbf{v} = \\sum u_i v_i$.\n",
+  "keywords": [
+    "linear algebra", "geometry", "inner products", "cross products"
+  ],
+  "articleBody": "Geometry in $\\mathbb{R}^n$ is induced by the inner product, which allows for the definition of angles, orthogonality, and projections.\n1. Inner Product Spaces (IPS) An inner product $\\langle \\cdot, \\cdot \\rangle$ on a vector space $\\mathcal{V}$ is a mapping $\\mathcal{V} \\times \\mathcal{V} \\to \\mathbb{F}$ satisfying:\nConjugate Symmetry: $\\langle \\mathbf{u}, \\mathbf{v} \\rangle = \\overline{\\langle \\mathbf{v}, \\mathbf{u} \\rangle}$. Linearity: $\\langle c\\mathbf{u} + \\mathbf{w}, \\mathbf{v} \\rangle = c\\langle \\mathbf{u}, \\mathbf{v} \\rangle + \\langle \\mathbf{w}, \\mathbf{v} \\rangle$. Positive Definiteness: $\\langle \\mathbf{v}, \\mathbf{v} \\rangle \\ge 0$ and $\\langle \\mathbf{v}, \\mathbf{v} \\rangle = 0 \\iff \\mathbf{v} = \\mathbf{0}$. The standard dot product in $\\mathbb{R}^n$ is $\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{u}^T \\mathbf{v} = \\sum u_i v_i$.\n2. Geometric Interpretations 2.1 Angles and Orthogonality The angle $\\theta$ between two vectors in $\\mathbb{R}^n$ is given by:\n$$\r\\cos \\theta = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{\\|\\mathbf{u}\\|_2 \\|\\mathbf{v}\\|_2}\r$$\rOrthogonality: $\\mathbf{u} \\perp \\mathbf{v} \\iff \\mathbf{u} \\cdot \\mathbf{v} = 0$. Pythagorean Theorem: If $\\mathbf{u} \\perp \\mathbf{v}$, then $|\\mathbf{u} + \\mathbf{v}|^2 = |\\mathbf{u}|^2 + |\\mathbf{v}|^2$. 2.2 Projections and Components The orthogonal projection of $\\mathbf{u}$ onto $\\mathbf{v}$ is the vector in $\\text{span}(\\mathbf{v})$ closest to $\\mathbf{u}$:\nProjection operator: $\\text{proj}_{\\mathbf{v}} \\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2} \\mathbf{v}$ Scalar component: $\\text{comp}_{\\mathbf{v}} \\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|}$ The projection can be represented by a projection matrix $P$:\n$$\rP = \\frac{\\mathbf{v}\\mathbf{v}^T}{\\mathbf{v}^T \\mathbf{v}} \\implies \\text{proj}_{\\mathbf{v}} \\mathbf{u} = P\\mathbf{u}\r$$\r3. Cross Product Unlike the dot product, the cross product is specific to $\\mathbb{R}^3$ (and $\\mathbb{R}^7$).\n3D Definition: $\\mathbf{w} = \\mathbf{u} \\times \\mathbf{v} = |\\mathbf{u}| |\\mathbf{v}| \\sin \\theta , \\mathbf{n}$, where $\\mathbf{n}$ follows the right-hand rule. Determinant Form: $$\r\\mathbf{u} \\times \\mathbf{v} = \\det \\begin{bmatrix} \\mathbf{i} \u0026 \\mathbf{j} \u0026 \\mathbf{k} \\\\ u_1 \u0026 u_2 \u0026 u_3 \\\\ v_1 \u0026 v_2 \u0026 v_3 \\end{bmatrix}\r$$\r2D Cross Product (Scalar): In $\\mathbb{R}^2$, $\\mathbf{u} \\times \\mathbf{v} = u_1 v_2 - u_2 v_1$. This represents the signed area of the parallelogram formed by $\\mathbf{u}$ and $\\mathbf{v}$. 4. Fundamental Inequalities Cauchy-Schwarz Inequality: $|\\mathbf{u} \\cdot \\mathbf{v}| \\le |\\mathbf{u}| |\\mathbf{v}|$. Equality holds iff $\\mathbf{u}$ and $\\mathbf{v}$ are linearly dependent. Triangle Inequality: $|\\mathbf{u} + \\mathbf{v}| \\le |\\mathbf{u}| + |\\mathbf{v}|$. Parallelogram Law: $2|\\mathbf{u}|^2 + 2|\\mathbf{v}|^2 = |\\mathbf{u} + \\mathbf{v}|^2 + |\\mathbf{u} - \\mathbf{v}|^2$. 5. Polarization Identity In a real inner product space, the inner product can be recovered entirely from the norm:\n$$\r\\mathbf{u} \\cdot \\mathbf{v} = \\frac{1}{4} \\left( \\|\\mathbf{u} + \\mathbf{v}\\|^2 - \\|\\mathbf{u} - \\mathbf{v}\\|^2 \\right)\r$$\rThis implies that the geometry (angles) is fully determined by the metric (lengths) in $L_2$.\rPractice $a$ and $b$ are vectors:\nProve: $|a+b|^2 + |a-b|^2 = 2|a|^2 + 2|b|^2$ Prove: $a \\cdot b = \\frac{1}{4} |a+b|^2 - \\frac{1}{4} |a-b|^2 $ Prove that the distance from $ax + by + c = 0$ to $P_0(x_0, y_0)$ is: $$ D = \\frac{|ax_0 + by_0 + c|}{\\sqrt{a^2 + b^2}} $$\n",
+  "wordCount" : "453",
+  "inLanguage": "en",
+  "datePublished": "2026-02-18T00:00:00Z",
+  "dateModified": "2026-02-18T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Jeremy (Kai-Hsiang) Chang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/notes/linear-algebra/02-geometry-products/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeremy (Kai-Hsiang) Chang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/favicon.ico"
+    }
+  }
+}
+</script>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+                    crossorigin="anonymous">
+            </head>
+
+                <body id="top">
+                    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jeremy (Kai-Hsiang) Chang (Alt + H)">Jeremy (Kai-Hsiang) Chang</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/linear-algebra/">Linear Algebra</a></div>
+    <h1 class="post-title entry-hint-parent">
+      02. Geometry and Products
+    </h1>
+    <div class="post-meta"><span title='2026-02-18 00:00:00 +0000 UTC'>February 18, 2026</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>453 words</span>&nbsp;·&nbsp;<span>Jeremy (Kai-Hsiang) Chang</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-inner-product-spaces-ips">1. Inner Product Spaces (IPS)</a></li>
+    <li><a href="#2-geometric-interpretations">2. Geometric Interpretations</a>
+      <ul>
+        <li><a href="#21-angles-and-orthogonality">2.1 Angles and Orthogonality</a></li>
+        <li><a href="#22-projections-and-components">2.2 Projections and Components</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-cross-product">3. Cross Product</a></li>
+    <li><a href="#4-fundamental-inequalities">4. Fundamental Inequalities</a></li>
+    <li><a href="#5-polarization-identity">5. Polarization Identity</a></li>
+    <li><a href="#practice">Practice</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Geometry in $\mathbb{R}^n$ is induced by the <strong>inner product</strong>, which allows for the definition of angles, orthogonality, and projections.</p>
+<h2 id="1-inner-product-spaces-ips">1. Inner Product Spaces (IPS)<a hidden class="anchor" aria-hidden="true" href="#1-inner-product-spaces-ips">#</a></h2>
+<p>An inner product $\langle \cdot, \cdot \rangle$ on a vector space $\mathcal{V}$ is a mapping $\mathcal{V} \times \mathcal{V} \to \mathbb{F}$ satisfying:</p>
+<ol>
+<li><strong>Conjugate Symmetry</strong>: $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$.</li>
+<li><strong>Linearity</strong>: $\langle c\mathbf{u} + \mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle + \langle \mathbf{w}, \mathbf{v} \rangle$.</li>
+<li><strong>Positive Definiteness</strong>: $\langle \mathbf{v}, \mathbf{v} \rangle \ge 0$ and $\langle \mathbf{v}, \mathbf{v} \rangle = 0 \iff \mathbf{v} = \mathbf{0}$.</li>
+</ol>
+<p>The <strong>standard dot product</strong> in $\mathbb{R}^n$ is $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum u_i v_i$.</p>
+<h2 id="2-geometric-interpretations">2. Geometric Interpretations<a hidden class="anchor" aria-hidden="true" href="#2-geometric-interpretations">#</a></h2>
+<h3 id="21-angles-and-orthogonality">2.1 Angles and Orthogonality<a hidden class="anchor" aria-hidden="true" href="#21-angles-and-orthogonality">#</a></h3>
+<p>The angle $\theta$ between two vectors in $\mathbb{R}^n$ is given by:</p>
+<p>
+$$
+\cos \theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|_2 \|\mathbf{v}\|_2}
+$$
+</p>
+<ul>
+<li><strong>Orthogonality</strong>: $\mathbf{u} \perp \mathbf{v} \iff \mathbf{u} \cdot \mathbf{v} = 0$.</li>
+<li><strong>Pythagorean Theorem</strong>: If $\mathbf{u} \perp \mathbf{v}$, then $|\mathbf{u} + \mathbf{v}|^2 = |\mathbf{u}|^2 + |\mathbf{v}|^2$.</li>
+</ul>
+<h3 id="22-projections-and-components">2.2 Projections and Components<a hidden class="anchor" aria-hidden="true" href="#22-projections-and-components">#</a></h3>
+<p>The <strong>orthogonal projection</strong> of $\mathbf{u}$ onto $\mathbf{v}$ is the vector in $\text{span}(\mathbf{v})$ closest to $\mathbf{u}$:</p>
+<ul>
+<li><strong>Projection operator</strong>: $\text{proj}_{\mathbf{v}} \mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{v}|^2} \mathbf{v}$</li>
+<li><strong>Scalar component</strong>: $\text{comp}_{\mathbf{v}} \mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{|\mathbf{v}|}$</li>
+</ul>
+<p>The projection can be represented by a <strong>projection matrix</strong> $P$:</p>
+<p>
+$$
+P = \frac{\mathbf{v}\mathbf{v}^T}{\mathbf{v}^T \mathbf{v}} \implies \text{proj}_{\mathbf{v}} \mathbf{u} = P\mathbf{u}
+$$
+</p>
+<h2 id="3-cross-product">3. Cross Product<a hidden class="anchor" aria-hidden="true" href="#3-cross-product">#</a></h2>
+<p>Unlike the dot product, the cross product is specific to $\mathbb{R}^3$ (and $\mathbb{R}^7$).</p>
+<ul>
+<li><strong>3D Definition</strong>: $\mathbf{w} = \mathbf{u} \times \mathbf{v} = |\mathbf{u}| |\mathbf{v}| \sin \theta , \mathbf{n}$, where $\mathbf{n}$ follows the right-hand rule.</li>
+<li><strong>Determinant Form</strong>:</li>
+</ul>
+<p>
+  $$
+  \mathbf{u} \times \mathbf{v} = \det \begin{bmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{bmatrix}
+  $$
+</p>
+<ul>
+<li><strong>2D Cross Product (Scalar)</strong>: In $\mathbb{R}^2$, $\mathbf{u} \times \mathbf{v} = u_1 v_2 - u_2 v_1$. This represents the signed area of the parallelogram formed by $\mathbf{u}$ and $\mathbf{v}$.</li>
+</ul>
+<h2 id="4-fundamental-inequalities">4. Fundamental Inequalities<a hidden class="anchor" aria-hidden="true" href="#4-fundamental-inequalities">#</a></h2>
+<ol>
+<li><strong>Cauchy-Schwarz Inequality</strong>:
+$|\mathbf{u} \cdot \mathbf{v}| \le |\mathbf{u}| |\mathbf{v}|$. Equality holds iff $\mathbf{u}$ and $\mathbf{v}$ are linearly dependent.</li>
+<li><strong>Triangle Inequality</strong>:
+$|\mathbf{u} + \mathbf{v}| \le |\mathbf{u}| + |\mathbf{v}|$.</li>
+<li><strong>Parallelogram Law</strong>:
+$2|\mathbf{u}|^2 + 2|\mathbf{v}|^2 = |\mathbf{u} + \mathbf{v}|^2 + |\mathbf{u} - \mathbf{v}|^2$.</li>
+</ol>
+<h2 id="5-polarization-identity">5. Polarization Identity<a hidden class="anchor" aria-hidden="true" href="#5-polarization-identity">#</a></h2>
+<p>In a real inner product space, the inner product can be recovered entirely from the norm:</p>
+<p>
+$$
+\mathbf{u} \cdot \mathbf{v} = \frac{1}{4} \left( \|\mathbf{u} + \mathbf{v}\|^2 - \|\mathbf{u} - \mathbf{v}\|^2 \right)
+$$
+</p>
+This implies that the geometry (angles) is fully determined by the metric (lengths) in $L_2$.
+<hr>
+<h2 id="practice">Practice<a hidden class="anchor" aria-hidden="true" href="#practice">#</a></h2>
+<p>$a$ and $b$ are vectors:</p>
+<ol>
+<li>Prove: $|a+b|^2 + |a-b|^2 = 2|a|^2 + 2|b|^2$</li>
+<li>Prove: $a \cdot b = \frac{1}{4} |a+b|^2 - \frac{1}{4} |a-b|^2 $</li>
+<li>Prove that the distance from $ax + by + c = 0$ to $P_0(x_0, y_0)$ is:</li>
+</ol>
+<p>$$
+D = \frac{|ax_0 + by_0 + c|}{\sqrt{a^2 + b^2}}
+$$</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/geometry/">Geometry</a></li>
+      <li><a href="http://localhost:1313/tags/inner-products/">Inner Products</a></li>
+      <li><a href="http://localhost:1313/tags/cross-products/">Cross Products</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/notes/linear-algebra/01-vectors-norms/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>01. Vectors and Norms</span>
+  </a>
+  <a class="next" href="http://localhost:1313/notes/linear-algebra/03-matrix-definition/">
+    <span class="title">Next »</span>
+    <br>
+    <span>03. Matrices</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+                    </main>
+                    
+<footer class="footer">
+    <span>&copy; 2026 <a href="http://localhost:1313/">Jeremy (Kai-Hsiang) Chang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script></body>
+
+                
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false }
+      ],
+      ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      throwOnError: false
+    });
+  });
+</script>
+
+        </html>

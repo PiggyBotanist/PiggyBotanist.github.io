@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrices on Jeremy (Kai-Hsiang) Chang</title><link>https://PiggyBotanist.github.io/tags/matrices/</link><description>Recent content in Matrices on Jeremy (Kai-Hsiang) Chang</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://PiggyBotanist.github.io/tags/matrices/index.xml" rel="self" type="application/rss+xml"/><item><title>03. Matrices</title><link>https://PiggyBotanist.github.io/notes/linear-algebra/03-matrix-definition/</link><pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate><guid>https://PiggyBotanist.github.io/notes/linear-algebra/03-matrix-definition/</guid><description>&lt;p&gt;A matrix $A \in \mathbb{F}^{m \times n}$ represents a linear transformation $T: \mathbb{F}^n \to \mathbb{F}^m$. In high-dimensional contexts, we view matrices as structured operators rather than mere data grids.&lt;/p&gt;
+&lt;h2 id="1-fundamental-definitions"&gt;1. Fundamental Definitions&lt;/h2&gt;
+&lt;p&gt;For $A \in \mathbb{R}^{m \times n}$, the entry in the $i$-th row and $j$-th column is denoted $a_{ij}$ or $[A]_{ij}$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transpose&lt;/strong&gt;: $A^T$ where $[A]^T_{ij} = a_{ji}$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trace&lt;/strong&gt;: Only for square matrices ($n \times n$), $\text{Tr}(A) = \sum_{i=1}^n a_{ii}$.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Cyclic Property&lt;/em&gt;: $\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-matrix-multiplication-four-perspectives"&gt;2. Matrix Multiplication: Four Perspectives&lt;/h2&gt;
+&lt;p&gt;Given $C = AB$ where $A \in \mathbb{R}^{m \times p}$ and $B \in \mathbb{R}^{p \times n}$:&lt;/p&gt;</description></item></channel></rss>

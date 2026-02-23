@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>QR on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/qr/</link>
+    <description>Recent content in QR on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/qr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>13. Matrix Factorizations</title>
+      <link>http://localhost:1313/notes/linear-algebra/13-matrix-factorizations/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/13-matrix-factorizations/</guid>
+      <description>&lt;p&gt;Matrix factorizations rewrite matrices as products with simpler structure, making systems and least squares problems faster and more stable to solve.&lt;/p&gt;
+&lt;h2 id=&#34;lu-and-plu&#34;&gt;LU and PLU&lt;/h2&gt;
+&lt;p&gt;If $A$ can be reduced without row swaps:&lt;/p&gt;
+&lt;p&gt;$$
+A = LU,
+$$&lt;/p&gt;
+&lt;p&gt;with $L$ unit lower triangular and $U$ upper triangular.&lt;/p&gt;
+&lt;p&gt;In general,&lt;/p&gt;
+&lt;p&gt;$$
+P A = L U,
+$$&lt;/p&gt;
+&lt;p&gt;where $P$ is a permutation matrix encoding row swaps.&lt;/p&gt;
+&lt;p&gt;Solving $A\mathbf{x} = \mathbf{b}$ becomes solve $L\mathbf{y} = P\mathbf{b}$ (forward) then $U\mathbf{x} = \mathbf{y}$ (backward).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gram–Schmidt Process and QR</title>
+      <link>http://localhost:1313/notes/linear-algebra/gram-schmidt-and-qr/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/gram-schmidt-and-qr/</guid>
+      <description>&lt;p&gt;Gram–Schmidt turns a basis into an orthonormal basis; QR factorization is the matrix form of this process.&lt;/p&gt;
+&lt;h2 id=&#34;gramschmidt-algorithm&#34;&gt;Gram–Schmidt algorithm&lt;/h2&gt;
+&lt;p&gt;Given linearly independent ${\mathbf{v}_1,\dots,\mathbf{v}_n}$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set $\mathbf{u}_1 = \mathbf{v}_1$.&lt;/li&gt;
+&lt;li&gt;For $k \ge 2$:
+$$
+\mathbf{u}_k
+= \mathbf{v}&lt;em&gt;k - \sum&lt;/em&gt;{j=1}^{k-1}
+\frac{\langle \mathbf{v}_k,\mathbf{u}_j\rangle}{\langle \mathbf{u}_j,\mathbf{u}_j\rangle},\mathbf{u}_j.
+$$&lt;/li&gt;
+&lt;li&gt;Normalize: $\mathbf{e}_k = \mathbf{u}_k / |\mathbf{u}_k|$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The $\mathbf{e}_k$ form an orthonormal basis.&lt;/p&gt;
+&lt;h2 id=&#34;connection-to-qr&#34;&gt;Connection to QR&lt;/h2&gt;
+&lt;p&gt;If $A$ has columns $\mathbf{v}_1,\dots,\mathbf{v}_n$ and Gram–Schmidt produces $\mathbf{e}_1,\dots,\mathbf{e}_n$, define&lt;/p&gt;
+&lt;p&gt;$$
+Q = [\mathbf{e}_1\ \cdots\ \mathbf{e}&lt;em&gt;n],
+\qquad
+R&lt;/em&gt;{ij} = \langle \mathbf{v}_j,\mathbf{e}_i\rangle.
+$$&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

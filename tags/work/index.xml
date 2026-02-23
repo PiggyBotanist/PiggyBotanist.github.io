@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Work on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/tags/work/</link>
+    <description>Recent content in Work on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Engineer Intern - Foqus Technologies</title>
+      <link>http://localhost:1313/experience/foqus-ai-engineer/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/foqus-ai-engineer/</guid>
+      <description>Training and optimizing image-reconstruction models for downsampled MRI data</description>
+    </item>
+    <item>
+      <title>Backend Developer - Animal Health Laboratory</title>
+      <link>http://localhost:1313/experience/animal-health-lab/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/animal-health-lab/</guid>
+      <description>Developed internal inventory management system reducing technician workload by 10 hours per week</description>
+    </item>
+    <item>
+      <title>Game Design/Research Intern - Gearbox Softwares</title>
+      <link>http://localhost:1313/experience/gearbox-game-research/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/gearbox-game-research/</guid>
+      <description>Full-stack development of biologically meaningful game prototypes for AI training</description>
+    </item>
+  </channel>
+</rss>

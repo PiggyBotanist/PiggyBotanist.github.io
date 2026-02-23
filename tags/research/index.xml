@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Research on Jeremy (Kai-Hsiang) Chang</title>
+    <link>http://localhost:1313/tags/research/</link>
+    <description>Recent content in Research on Jeremy (Kai-Hsiang) Chang</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game Design/Research Intern - Gearbox Softwares</title>
+      <link>http://localhost:1313/experience/gearbox-game-research/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/gearbox-game-research/</guid>
+      <description>Full-stack development of biologically meaningful game prototypes for AI training</description>
+    </item>
+    <item>
+      <title>Graduate Research Student - McGill University</title>
+      <link>http://localhost:1313/experience/mcgill-graduate-research/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/mcgill-graduate-research/</guid>
+      <description>Conducting research on high-dimensional clustering using large-scale video games for Human-in-the-Loop AI training</description>
+    </item>
+    <item>
+      <title>Graduate Research Student - University of Guelph</title>
+      <link>http://localhost:1313/experience/guelph-graduate-research/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/experience/guelph-graduate-research/</guid>
+      <description>Applied ML pipelines to proteomics and metabolomics data for predictive modeling</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vectors on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/vectors/</link>
+    <description>Recent content in Vectors on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vectors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01. Vector Fundamentals</title>
+      <link>http://localhost:1313/notes/linear-algebra/01-vector-fundamentals/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/01-vector-fundamentals/</guid>
+      <description>&lt;p&gt;A vector $\mathbf{v} \in \mathbb{R}^n$ is an ordered $n$-tuple of real numbers, often represented as a column. Vectors are the basic objects in linear algebra and show up as feature vectors, parameter vectors, gradients, and encodings.&lt;/p&gt;
+&lt;h2 id=&#34;basic-definitions&#34;&gt;Basic definitions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Zero vector&lt;/strong&gt;: $\mathbf{0} = [0, \ldots, 0]^T$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unit vector&lt;/strong&gt;: A vector $\mathbf{u}$ with $|\mathbf{u}| = 1$. To &lt;strong&gt;normalize&lt;/strong&gt; a nonzero $\mathbf{v}$:
+$$
+\hat{\mathbf{v}} = \frac{\mathbf{v}}{|\mathbf{v}|}
+$$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linear combination&lt;/strong&gt;: $\mathbf{w} = c_1 \mathbf{v}_1 + \cdots + c_k \mathbf{v}_k$ for scalars $c_i$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vector-norms&#34;&gt;Vector norms&lt;/h2&gt;
+&lt;p&gt;A norm $|\cdot|$ maps vectors to non‑negative reals. The &lt;strong&gt;$p$-norm&lt;/strong&gt; ($p \ge 1$) is&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

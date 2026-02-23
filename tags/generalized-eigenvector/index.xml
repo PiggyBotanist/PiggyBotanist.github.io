@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Generalized Eigenvector on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/generalized-eigenvector/</link>
+    <description>Recent content in Generalized Eigenvector on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/generalized-eigenvector/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jordan Normal Form and Defective Matrices</title>
+      <link>http://localhost:1313/notes/linear-algebra/jordan-form-and-defective/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/jordan-form-and-defective/</guid>
+      <description>&lt;p&gt;When a matrix is not diagonalizable (fewer than $n$ linearly independent eigenvectors), Jordan normal form still gives a nearly diagonal representation using generalized eigenvectors.&lt;/p&gt;
+&lt;h2 id=&#34;generalized-eigenvectors&#34;&gt;Generalized eigenvectors&lt;/h2&gt;
+&lt;p&gt;$\mathbf{v}$ is a &lt;strong&gt;generalized eigenvector of rank $k$&lt;/strong&gt; for eigenvalue $\lambda$ if&lt;/p&gt;
+&lt;p&gt;$$
+(A - \lambda I)^k \mathbf{v} = \mathbf{0} \quad \text{and} \quad (A - \lambda I)^{k-1} \mathbf{v} \neq \mathbf{0}
+$$&lt;/p&gt;
+&lt;p&gt;Ordinary eigenvectors are rank 1. Generalized eigenvectors extend the idea when $\text{GM} &amp;lt; \text{AM}$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dot Product on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/dot-product/</link>
+    <description>Recent content in Dot Product on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dot-product/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>02. Products and Geometry</title>
+      <link>http://localhost:1313/notes/linear-algebra/02-products-and-geometry/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/02-products-and-geometry/</guid>
+      <description>&lt;p&gt;Inner products measure alignment and angles; cross products in $\mathbb{R}^3$ produce perpendicular vectors and areas/volumes.&lt;/p&gt;
+&lt;h2 id=&#34;dot-product-inner-product&#34;&gt;Dot product (inner product)&lt;/h2&gt;
+&lt;p&gt;For $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$:&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{u} \cdot \mathbf{v}
+= \mathbf{u}^T \mathbf{v}
+= \sum_{i=1}^n u_i v_i
+= |\mathbf{u}|,|\mathbf{v}| \cos\theta.
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key facts:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$|\mathbf{u} \cdot \mathbf{v}| \le |\mathbf{u}|,|\mathbf{v}|$ (Cauchy–Schwarz).&lt;/li&gt;
+&lt;li&gt;$\mathbf{u} \cdot \mathbf{v} = 0 \iff$ $\mathbf{u}$ and $\mathbf{v}$ are orthogonal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cross-product-mathbbr3&#34;&gt;Cross product ($\mathbb{R}^3$)&lt;/h2&gt;
+&lt;p&gt;For $\mathbf{u}, \mathbf{v} \in \mathbb{R}^3$:&lt;/p&gt;
+&lt;p&gt;$$
+\mathbf{u} \times \mathbf{v}
+= \det \begin{bmatrix}
+\mathbf{i} &amp;amp; \mathbf{j} &amp;amp; \mathbf{k} \\
+u_1 &amp;amp; u_2 &amp;amp; u_3 \\
+v_1 &amp;amp; v_2 &amp;amp; v_3
+\end{bmatrix}
+= \begin{pmatrix}
+u_2 v_3 - u_3 v_2 \\
+u_3 v_1 - u_1 v_3 \\
+u_1 v_2 - u_2 v_1
+\end{pmatrix}.
+$$&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vector Space on Your Name - CS/ML/Computational Biology Portfolio</title>
+    <link>http://localhost:1313/tags/vector-space/</link>
+    <description>Recent content in Vector Space on Your Name - CS/ML/Computational Biology Portfolio</description>
+    <image>
+      <title>Your Name - CS/ML/Computational Biology Portfolio</title>
+      <url>http://localhost:1313/images/profile.jpg</url>
+      <link>http://localhost:1313/images/profile.jpg</link>
+    </image>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vector-space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>05. Vector Spaces and Subspaces</title>
+      <link>http://localhost:1313/notes/linear-algebra/05-vector-spaces-and-subspaces/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/linear-algebra/05-vector-spaces-and-subspaces/</guid>
+      <description>&lt;p&gt;Vector spaces capture the algebra of addition and scalar multiplication; subspaces are “closed” subsets behaving like smaller vector spaces.&lt;/p&gt;
+&lt;h2 id=&#34;vector-space-axioms-over-mathbbr&#34;&gt;Vector space axioms (over $\mathbb{R}$)&lt;/h2&gt;
+&lt;p&gt;For $V$ with vectors $\mathbf{u},\mathbf{v},\mathbf{w}$ and scalars $c,d$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$V$ is closed under $+$ and scalar multiplication.&lt;/li&gt;
+&lt;li&gt;Addition is commutative and associative.&lt;/li&gt;
+&lt;li&gt;There is a zero vector $\mathbf{0}$ and additive inverses $-\mathbf{v}$.&lt;/li&gt;
+&lt;li&gt;Scalar multiplication distributes: $c(\mathbf{u}+\mathbf{v}) = c\mathbf{u}+c\mathbf{v}$ and $(c+d)\mathbf{v} = c\mathbf{v}+d\mathbf{v}$.&lt;/li&gt;
+&lt;li&gt;Scalar multiplication is associative: $c(d\mathbf{v}) = (cd)\mathbf{v}$.&lt;/li&gt;
+&lt;li&gt;$1\mathbf{v} = \mathbf{v}$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Examples include $\mathbb{R}^n$, spaces of matrices, polynomials, and many function spaces.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
